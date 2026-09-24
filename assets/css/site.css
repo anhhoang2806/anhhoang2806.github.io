@@ -1262,6 +1262,59 @@ li a:hover, li a:focus-visible {
 .page-contact .shell--narrow .prose,
 .page-contact .shell--narrow .dek { max-inline-size: none; }
 
+/* --- 5.18a contact.html on a wide screen -------------------
+   Measured at 1920: the 52rem column used 43% of the viewport
+   and left 537px empty on one side and 552px on the other. The
+   homepage uses 87% at the same width. A page whose job is to
+   be read once and acted on should not be the narrowest thing
+   on the site.
+
+   Widening the column was the wrong lever — it would have given
+   a 1200px-wide text input and a definition list with its value
+   stranded a metre from its label. The width is spent on a
+   SECOND COLUMN instead: how to reach me on the left, what to
+   send on the right, each landing near 600px, which is where the
+   form fields and the prose both want to be anyway.
+
+   main becomes the shell and the grid, so nothing in the HTML
+   moved. The inner .shell elements give up their own wrap and
+   gutter — left in place they would have stacked two gutters
+   plus the grid gap down the middle and pulled both columns off
+   the page's own left and right edges. Below 64rem the whole
+   block is inert and the page is the single column it has always
+   been. */
+@media (min-width: 64rem) {
+  .page-contact main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: calc(var(--grid-gap) * 1.5);
+    align-items: start;
+    inline-size: 100%;
+    max-inline-size: var(--wrap);
+    margin-inline: auto;
+    padding-inline: var(--space-gutter);
+  }
+  /* One gutter for the page, set above; none inside a track. */
+  .page-contact main > * > .shell,
+  .page-contact main > .shell {
+    max-inline-size: none;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+  /* The breadcrumb and the hero address the page, not a column. */
+  .page-contact main > .c-crumbs,
+  .page-contact main > .section:first-of-type { grid-column: 1 / -1; }
+
+  /* --rail is 13.5vw, which was right when a row spanned the whole
+     page and is not once a row sits in a half-width track: at 1440
+     it took 194px of a 558px column and wrapped the LinkedIn value
+     onto a second line after "…tuananhhoang281". Retuned to the
+     track, not the viewport. The token is redefined rather than
+     the rule overridden, so .row would follow too if this page
+     ever grew one. */
+  .page-contact main { --rail: 7.5rem; }
+}
+
 
 /* --- 5.18c The enquiry form --------------------------------
    The only form on the site, and the only place a visitor types
