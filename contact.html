@@ -278,7 +278,7 @@
 }
 </script>
 </head>
-<body>
+<body class="page-contact">
 
 <a class="c-skip" href="#main">Skip to main content</a>
 
@@ -427,20 +427,70 @@
   <!-- ==========================================================
        04 — BUILD NOTE  ·  the only --signal-fix block on the page
        ========================================================== -->
-  <section class="section" id="no-form" aria-labelledby="form-h">
+  <section class="section" id="enquiry" aria-labelledby="enquiry-h">
     <div class="shell shell--narrow">
       <div class="section__rule"></div>
-      <p class="section__folio">04 — Build note</p>
+      <p class="section__folio">04 &mdash; Send a brief</p>
+      <h2 id="enquiry-h" class="section__head">Send a brief</h2>
+      <p class="prose u-mt-md">If you would rather write than open a mail client, this reaches the same inbox. Everything above still works &mdash; senior hiring managers usually prefer to email from their own client so the thread lives where they can find it, and that is a better reason than anything I could put in a field.</p>
 
-      <aside class="c-fix" aria-labelledby="form-h">
-        <p class="c-fix__kicker">Build note · not an omission</p>
-        <h2 class="c-fix__h" id="form-h">There is no contact form, and that is deliberate</h2>
-        <div class="prose">
-          <p>A working form on a static GitHub Pages site needs a third-party form endpoint. This site makes zero third-party requests at runtime — no fonts, no CDN, no analytics, no embeds — and a form would be the one thing that broke that, in exchange for an inbox I would read the same way I read email.</p>
-          <p>Email, phone and LinkedIn above cover every real use case. There is no email-obfuscation script either: a plain mailto link is more accessible, works with JavaScript turned off, and opens in whatever the reader already uses.</p>
-          <p>If you would rather write a longer brief than fill in fields, that is the point. The three things in the section above are the whole form.</p>
+      <!-- Web3Forms. The action is the ONLY third-party URL on the
+           site, and nothing is requested from it until someone
+           presses the button: no script, no iframe, no cookie at
+           page load. That is why this is a plain HTML form and not
+           an embed. The access key is public on purpose: it is a
+           routing identifier, not a secret, which is what the
+           honeypot and hCaptcha are for. See README §8. -->
+      <form class="c-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="e7c5edbf-4d3a-48d6-80f8-4bcd9c78e42e">
+        <input type="hidden" name="subject" value="New enquiry &mdash; Andrew Hoang site">
+        <input type="hidden" name="from_name" value="Andrew Hoang site &mdash; enquiry form">
+
+        <div class="c-form__bot" aria-hidden="true">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
         </div>
-        <p class="source">Build constraint · zero third-party requests at runtime</p>
+
+        <div class="c-form__field">
+          <label class="label" for="cf-name">Your name</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="c-form__field">
+          <label class="label" for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="c-form__field">
+          <label class="label" for="cf-org">Company <span class="c-form__opt">(optional)</span></label>
+          <input type="text" id="cf-org" name="company" autocomplete="organization">
+        </div>
+
+        <div class="c-form__field">
+          <label class="label" for="cf-message">What can I help with?</label>
+          <textarea id="cf-message" name="message" rows="6" required></textarea>
+        </div>
+
+        <p class="c-actions"><button type="submit" class="c-btn c-btn--primary">Send message</button></p>
+      </form>
+
+      <p class="source u-mt-md">Form endpoint &middot; Web3Forms &middot; no request until submit</p>
+    </div>
+  </section>
+
+  <section class="section" id="build-note" aria-labelledby="build-h">
+    <div class="shell shell--narrow">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 &mdash; Build note</p>
+
+      <aside class="c-fix" aria-labelledby="build-h">
+        <p class="c-fix__kicker">Build note &middot; how the form is wired</p>
+        <h2 class="c-fix__h" id="build-h">The form is HTML, not an embed</h2>
+        <div class="prose">
+          <p>A static site on GitHub Pages has no server, so a working form needs somebody else&rsquo;s endpoint. The question is when that endpoint gets contacted. The form above is plain HTML posting to Web3Forms: nothing is fetched from another domain until you press Send &mdash; no script, no iframe, no cookie, nothing at page load. Open the Network tab and read this page; you will see requests to one domain, this one.</p>
+          <p>An embedded form &mdash; a Google Form in an iframe is the usual one &mdash; would load a third party on every render of this page, set cookies before anyone had agreed to anything, and could not be styled to match the site. That is the version this page does not have.</p>
+          <p>There is no email-obfuscation script either: a plain mailto link is more accessible, works with JavaScript turned off, and opens in whatever the reader already uses.</p>
+        </div>
+        <p class="source">Build constraint &middot; zero third-party requests at page load</p>
       </aside>
     </div>
   </section>

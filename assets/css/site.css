@@ -1238,6 +1238,95 @@ li a:hover, li a:focus-visible {
    stays inside the comfortable range. Scoped to this section so the case
    study heroes keep the wider --wrap-narrow. */
 .c-contact .shell--narrow { max-inline-size: 46rem; }
+
+/* --- 5.18b contact.html: one right edge, not four ----------
+   This page is a single 52rem column from top to bottom, and at
+   1215px four different right edges were stacking inside it:
+
+     h1, the .c-dl rules and the buttons   762px
+     .prose                                590px  (62ch cap)
+     .dek                                  514px  (46ch cap)
+
+   Two caps written for pages where the measure has something
+   BESIDE it — a portrait, a second column, a figure — and here
+   there is nothing beside it, so the cap is not protecting a
+   reading measure, it is just leaving the right third of a
+   narrow column empty under a rule that runs the full width.
+
+   Both caps come off, on this page only. The prose lands at
+   about 80 characters, above the 66 that is ideal and at the top
+   of what is comfortable — acceptable because every block on
+   this page is three or four lines, not a long read. Do NOT
+   copy this to the case studies: those ARE long reads, and 62ch
+   is doing real work there. */
+.page-contact .shell--narrow .prose,
+.page-contact .shell--narrow .dek { max-inline-size: none; }
+
+
+/* --- 5.18c The enquiry form --------------------------------
+   The only form on the site, and the only place a visitor types
+   anything. It posts to Web3Forms, which means ONE third-party
+   request — on submit, never on load. The page says so in its
+   own copy, because the zero-requests-at-load claim beside it
+   has to stay checkable in a Network tab.
+
+   Built from the existing tokens, not from new ones: the field
+   radius is --r-sm, the same as every inner tile; the border is
+   --rule-mid, the same hairline as a table body; the focus and
+   hover state is --hover, like every other control. Nothing
+   here is a one-off colour. */
+.c-form {
+  display: grid;
+  gap: var(--s-md);
+  margin-block-start: var(--s-lg);
+}
+/* minmax(0,…) on the track, not just the child: a grid item's
+   default min-width is auto, and a textarea's intrinsic width is
+   its cols attribute, which blew the field past the shell at
+   320px before this was here. */
+.c-form__field { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-3xs); }
+
+.c-form input,
+.c-form textarea {
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  background: var(--surface);
+  border: var(--w-hair) solid var(--rule-mid);
+  border-radius: var(--r-sm);
+  padding: var(--s-2xs) var(--s-xs);
+  min-block-size: 2.75rem;          /* 44px touch target */
+  inline-size: 100%;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.c-form textarea { min-block-size: 9.5rem; resize: vertical; }
+.c-form input:hover,
+.c-form textarea:hover { border-color: var(--hover); }
+.c-form input:focus-visible,
+.c-form textarea:focus-visible { border-color: var(--hover); }
+
+/* The optional marker sits inside the <label>, so it has to undo
+   the three things .label does to text. */
+.c-form__opt {
+  text-transform: none;
+  letter-spacing: var(--tr-normal);
+  font-weight: 400;
+  color: var(--ink-4);
+}
+.c-form .c-actions { margin-block-start: var(--s-2xs); }
+
+/* Honeypot. Bots fill it, humans never see it, and tabindex/
+   aria-hidden keep keyboard and screen-reader users out of it —
+   most examples online omit both and quietly break AT. */
+.c-form__bot {
+  position: absolute;
+  inline-size: 1px; block-size: 1px;
+  overflow: hidden; clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media print { .c-form { display: none; } }
 .c-contact__list { list-style: none; margin: var(--s-lg) 0 0; padding: 0;
                    display: grid; gap: var(--s-sm); }
 .c-contact__list a {
@@ -1882,22 +1971,22 @@ body { background: var(--paper); }
 .c-nav a[aria-current="page"]:hover { background: var(--hover); color: var(--on-hover); }
 
 /* --- 10.3 Sections: air instead of rules -------------------- */
-/* Two adjacent sections each contributed 98px at a 1224px viewport, so the
-   white space between one section's last line and the next section's first
-   was 196px — better than a fifth of the screen, empty. Reduced to about
-   130px at that width, which still separates but no longer strands.
-   One token, one line: every section on all fourteen pages follows it. */
-.section { padding-block: clamp(2.75rem, 5.3vw, 4.75rem); }
-
-/* One section opts out of that rhythm. #results on the homepage
-   ends with a link out to the full register, and opens under the
-   hero's own heavy rule, so both of its gaps were already being
-   held apart by something else: 202px below the hero and 135px
-   above "What I do", against a 64px token doing the work twice.
-   Zeroing it here leaves 138px and 71px. The token is untouched,
-   so the other thirty-odd sections keep the rhythm; this is a
-   single opt-out, spelled on the element. */
-.section--flush { padding-block: 0; }
+/* Measured twice, tightened twice.
+     98px a side  -> 196px between sections. A fifth of the screen, empty.
+     64px a side  -> 131px. Better, and still the largest single stretch of
+                    nothing on about.html, where two of the five joins came
+                    out at 176px because the last card in the section carries
+                    45px of its own padding on top of the section's.
+     36px a side  -> 73px.
+     10px a side  -> 20px, which is what is set below.
+   The number that matters is the SUM: two adjacent sections each pay this,
+   so the visible gap is always double what is written here. 20px is close
+   enough to nothing that the folio pill now reads as a label ON the block
+   above it rather than as the opening of a new one — that is the intended
+   effect, not an oversight, and it is why the figure is flat rather than
+   fluid. There is nothing left to scale at this size. One token, one line,
+   every section on all fourteen pages, no exceptions. */
+.section { padding-block: 10px; }
 .section__rule { display: none; }
 .section__folio {
   display: inline-block;

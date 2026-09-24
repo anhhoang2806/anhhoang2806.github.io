@@ -18,7 +18,7 @@ Every figure on this site is published with the client, the comparison window an
 - [About](https://REPLACE-WITH-YOUR-DOMAIN/about.html): Career history since 2017 — ELSA Speak, UpperCut, LUMEtest · PTE Magic, Craft Hub, Mindful Organization, Phibious, Hellobacsi and earlier agency roles — plus how he works, his stack (Python, SQL, GA4, Search Console, AppsFlyer, BigQuery, Looker Studio, GTM, Ahrefs, SEMrush, Screaming Frog), education and certifications.
 - [Consulting](https://REPLACE-WITH-YOUR-DOMAIN/services.html): What he takes on as a freelance engagement — attribution and measurement audits, technical SEO and site migrations, AEO/GEO content engineering for AI answers, and App Store Optimization. He works with teams in Vietnam, Japan, Thailand, Taiwan and the United States.
 - [Work](https://REPLACE-WITH-YOUR-DOMAIN/work/index.html): Index of eight in-depth case studies plus a table of seventeen further projects, each with its measured result and the source document that result comes from.
-- [Contact](https://REPLACE-WITH-YOUR-DOMAIN/contact.html): Email, phone, LinkedIn and location. Email is the fastest route. There is deliberately no contact form — the site makes zero third-party requests at runtime.
+- [Contact](https://REPLACE-WITH-YOUR-DOMAIN/contact.html): Email, phone, LinkedIn and location. Email is the fastest route. There is also a plain HTML enquiry form posting to Web3Forms — it contacts no third party until submit, so the site still makes zero third-party requests at page load.
 
 ## Case studies
 

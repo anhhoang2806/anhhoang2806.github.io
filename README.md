@@ -626,27 +626,57 @@ of the site tells.
 
 ---
 
-## 8. Contact form — opt-in, and it contradicts a section you have already written
+## 8. Contact form — built and live
 
-Read this before you use it. `contact.html` currently contains a visible section headed
-**"There is no contact form, and that is deliberate"**, which explains that a form needs a
-third-party endpoint and that the site makes zero third-party requests. **If you add a
-form, you must delete or rewrite that section.** Leaving both on the page would be the
-single most obvious self-contradiction on the site.
+`contact.html` §04 carries a working Web3Forms form. The access key is installed
+(`e7c5edbf-…e42e`), so there is nothing left to wire up.
 
-The nuance in your favour: a plain HTML form makes **zero requests until someone presses
-submit**. Your zero-requests-at-page-load guarantee survives completely intact. What
-changes is the claim about there being no third-party endpoint at all. (An embedded Google
-Form iframe would be different — that loads Google on every page render, and is why it is
-not recommended.)
+**The key is public HTML on purpose.** It is a routing identifier, not a secret — that is
+Web3Forms' own design, and it is what the honeypot and hCaptcha exist to protect. Do not
+treat a leak of it as an incident; the worst anyone can do with it is send you mail you
+could already send yourself from the form.
 
-**Web3Forms** is the pick: free tier of 250 submissions a month, unlimited forms and
-domains, 30-day submission history, hCaptcha spam protection. You get an access key by
-entering your email — no account, no card. 250 a month is eight a day, far more headroom
-than inbound enquiries will use.
+**One thing still to do once:** send yourself a real test submission, confirm it arrives,
+and whitelist the sender. Web3Forms keeps 30 days of history — it is a delivery pipe, not
+an archive, so if the notification email never arrives the submission is simply gone and
+you would not know.
 
-**Paste this exactly, inside `<main>` on `contact.html`, in place of the "no contact form"
-section you are removing:**
+Neither `subject` nor `from_name` contains a domain, deliberately. The site has no custom
+domain yet, and a hard-coded one would silently go stale the day it gets one — section 4
+rewrites `https://REPLACE-WITH-YOUR-DOMAIN`, and these two strings have no `https://` to
+match, so they would have been missed.
+
+**What was built, and why it is shaped this way.** The section that used to read
+*"There is no contact form, and that is deliberate"* is gone; keeping it beside a working
+form would have been the single most obvious self-contradiction on the site. In its place
+are two sections: §04 the form, §05 a build note explaining the wiring.
+
+The distinction the copy now rests on, and the one you must not blur: a plain HTML form
+makes **zero requests until someone presses submit**. The zero-requests-at-page-load
+guarantee survives completely intact, and `llms.txt` was reworded to match. An embedded
+form — a Google Form in an iframe is the usual one — would load a third party on **every
+render**, set cookies before anyone agreed to anything, and could not be styled to match
+the site. That is why this is a `<form action="…">` and not an `<iframe>`. If you ever
+swap it for an embed, the claims on `contact.html` §05 and in `llms.txt` both become
+false and must be rewritten first.
+
+Free tier: 250 submissions a month, unlimited forms and domains, 30-day history, hCaptcha
+spam protection. Eight a day — far more headroom than inbound enquiries will use.
+
+Your access key sits in public HTML. That is by design: it is a routing identifier, not a
+secret, which is what the honeypot and hCaptcha are for.
+
+The styling lives in `assets/css/site.css` §5.18c and is built from existing tokens —
+`--r-sm` for the field radius, `--rule-mid` for the border, `--hover` for focus and
+hover. No new colours. Accessibility, since this page is itself a work sample: every
+input has a real `<label for>` and no placeholder-as-label, the `autocomplete`
+attributes are a WCAG 2.2 AA requirement (1.3.5 Identify Input Purpose), and the honeypot
+is clipped rather than `display:none` and carries `tabindex="-1"` plus `aria-hidden` on
+its wrapper so keyboard and screen-reader users never land in it. Most honeypot examples
+online omit those and quietly break assistive technology.
+
+<details>
+<summary>The original paste-in snippet, kept for reference</summary>
 
 ```html
 <form action="https://api.web3forms.com/submit" method="POST">
@@ -681,6 +711,8 @@ section you are removing:**
   <button type="submit">Send message</button>
 </form>
 ```
+
+</details>
 
 Two things to change and nothing else:
 
@@ -848,6 +880,8 @@ safe to ship as it stands — but each one either weakens the site or is a real 
 - [ ] `.gitignore` still contains `_source/`.
 - [ ] No `href="/…"` or `src="/…"` anywhere:
       `grep -rn 'href="/\|src="/' --include="*.html" .` returns nothing.
+- [ ] **A test submission from the contact form arrived in the inbox**, and the sender is
+      whitelisted. The key itself is already installed. See section 8.
 - [ ] Every `REPLACE-WITH-YOUR-DOMAIN` is replaced:
       `grep -rn "REPLACE-WITH-YOUR-DOMAIN" . --exclude-dir=_source --exclude-dir=.git --exclude=README.md`
       returns nothing. (README.md is excluded on purpose — see section 4.)
