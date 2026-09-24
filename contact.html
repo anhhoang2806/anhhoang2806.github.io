@@ -477,23 +477,6 @@
     </div>
   </section>
 
-  <section class="section" id="build-note" aria-labelledby="build-h">
-    <div class="shell shell--narrow">
-      <div class="section__rule"></div>
-      <p class="section__folio">05 &mdash; Build note</p>
-
-      <aside class="c-fix" aria-labelledby="build-h">
-        <p class="c-fix__kicker">Build note &middot; how the form is wired</p>
-        <h2 class="c-fix__h" id="build-h">The form is HTML, not an embed</h2>
-        <div class="prose">
-          <p>A static site on GitHub Pages has no server, so a working form needs somebody else&rsquo;s endpoint. The question is when that endpoint gets contacted. The form above is plain HTML posting to Web3Forms: nothing is fetched from another domain until you press Send &mdash; no script, no iframe, no cookie, nothing at page load. Open the Network tab and read this page; you will see requests to one domain, this one.</p>
-          <p>An embedded form &mdash; a Google Form in an iframe is the usual one &mdash; would load a third party on every render of this page, set cookies before anyone had agreed to anything, and could not be styled to match the site. That is the version this page does not have.</p>
-          <p>There is no email-obfuscation script either: a plain mailto link is more accessible, works with JavaScript turned off, and opens in whatever the reader already uses.</p>
-        </div>
-        <p class="source">Build constraint &middot; zero third-party requests at page load</p>
-      </aside>
-    </div>
-  </section>
 
 </main>
 
