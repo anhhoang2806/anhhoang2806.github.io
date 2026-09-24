@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>InApps Technology — Andrew Hoang</title>
+<meta name="description" content="Organic clicks +116%, 80% of target keywords in the top 10, and inbound leads from 14 to 20 per month.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="InApps Technology — Andrew Hoang">
+<meta property="og:description" content="Organic clicks +116%, 80% of target keywords in the top 10, and inbound leads from 14 to 20 per month.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-13T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-13T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InApps Technology — Andrew Hoang">
+<meta name="twitter:description" content="Organic clicks +116%, 80% of target keywords in the top 10, and inbound leads from 14 to 20 per month.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html",
+      "name": "InApps Technology: 116% Organic Growth | Andrew Hoang",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#webpage" },
+      "headline": "InApps Technology: 116% organic click growth and 80% of keywords in the top 10",
+      "description": "Andrew Hoang grew InApps Technology organic clicks by 116% and impressions by 285%, with 80% of target keywords ranking in the top 10 search results.",
+      "articleSection": "Case Study",
+      "keywords": "B2B SEO, lead generation, organic clicks, B2B marketplace reviews, InApps Technology, mobile app development",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "mentions": [
+        { "@type": "Organization", "name": "InApps Technology" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "InApps Technology" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <nav class="c-crumbs shell shell--narrow" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Work</a></li>
+      <!-- The nav's Work link already carries aria-current="page"; the terminal
+           crumb stays a plain span so only one element announces as current. -->
+      <li><span>InApps Technology</span></li>
+    </ol>
+  </nav>
+
+  <!-- ==========================================================
+       00 — CASE HERO
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 05</p>
+    <!-- The mark is the client's own logo, lifted from Andrew's portfolio
+         deck (see _source/client-logos.md for provenance and the grid
+         mapping). Decorative, so aria-hidden and alt="": the client is
+         already named in full by the h1 beside it, and a logo in the
+         accessibility tree would just read the name twice.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/inapps-technology.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>InApps Technology: organic that produced leads, not just traffic</h1>
+    </div>
+    <p class="dateline">Aug 2024 – Mar 2026 · B2B Services · Consulting engagement</p>
+    <p class="dek">Consulting engagement, August 2024 to March 2026. A mobile app development company selling into a B2B market, where the only result that counts is a qualified inbound enquiry.</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — AT A GLANCE  ·  three figure cells, full-measure shell
+       The figures bar sits in the wide .shell, not shell--narrow:
+       at 4-up a 128px figure does not fit a 52rem column.
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-the-engagement-produced">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — At a glance</p>
+      <h2 id="what-the-engagement-produced" class="section__head">What did the InApps Technology engagement produce?</h2>
+      </div>
+      <p class="prose u-mt-sm">Andrew Hoang grew InApps Technology&rsquo;s organic clicks by 116% and impressions by 285% over Jul&ndash;Oct 2024 against the prior period, following the project&rsquo;s August 2024 launch, placing 80% of target keywords in the top 10. Inbound leads moved from 14 to 20 a month over the same period, and client reviews on B2B marketplace platforms went from zero to 15.</p>
+
+      <!-- Every cell carries its source line. A cell without one cannot ship. -->
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure figure--long">116%</p>
+          <p class="label">More organic clicks</p>
+          <p class="source">InApps Technology · GSC, Jul–Oct 2024 vs the prior period</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure figure--long">285%</p>
+          <p class="label">More organic impressions</p>
+          <p class="source">InApps Technology · GSC, Jul–Oct 2024 vs the prior period</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure">80%</p>
+          <p class="label">Of target keywords in the top 10</p>
+          <p class="source">InApps Technology · target keyword set</p>
+        </li>
+      </ul>
+
+      <p class="c-tags u-mt-md">Engagement: consulting, August 2024 to March 2026 · Sector: B2B technology services, mobile app development · Market: Ho Chi Minh City and international B2B · Core KPI: inbound leads per month</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE SITUATION
+       ========================================================== -->
+  <section class="section" aria-labelledby="the-situation">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The situation</p>
+      <h2 id="the-situation" class="section__head">What was the situation at InApps Technology?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>InApps Technology builds mobile apps for clients. B2B services businesses have a specific organic problem: the search volume is small, the buying cycle is long, and traffic that does not turn into an enquiry is worth nothing at all.</p>
+        <p>So the target was never traffic. It was leads per month, which stood at <b class="fig">14</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — THE CONSTRAINT
+       ========================================================== -->
+  <section class="section" aria-labelledby="the-constraint">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The constraint</p>
+      <h2 id="the-constraint" class="section__head">What made organic search hard at InApps Technology?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Low-volume, high-intent search. There is no large keyword universe to work with in this category — the terms that matter are searched by a small number of people who are ready to buy, and every competitor is chasing the same handful.</p>
+        <p>The second constraint is that in B2B services the decision does not happen on your own website. Buyers compare vendors on third-party marketplaces and directory platforms, and InApps had no reviews on any of them. Zero. Organic rankings can get someone to the shortlist; an empty review profile takes them back off it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — WHAT I DID  ·  three named workstreams
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-i-did">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — What I did</p>
+      <h2 id="what-i-did" class="section__head">What did I do at InApps Technology?</h2>
+      </div>
+
+      <h3 id="buying-intent-keywords" class="u-mt-lg">Targeted the terms with buying intent behind them</h3>
+      <div class="prose u-mt-sm">
+        <p>The organic strategy went after the specific, commercially loaded queries rather than broad category terms. &ldquo;Mobile Apps Developer in HCM&rdquo; reached <b class="fig">#1</b> — a geographic, role-specific, ready-to-hire query. The kind of term a small number of people search and most of them are looking to sign something.</p>
+        <p>Across the target keyword set, <b class="fig">80%</b> reached the top 10.</p>
+      </div>
+      <p class="source u-mt-sm">InApps Technology · #1 for &ldquo;Mobile Apps Developer in HCM&rdquo;; 80% of target keywords in the top 10</p>
+
+      <h3 id="b2b-marketplace-channels" class="u-mt-lg">Diversified into B2B marketplace channels</h3>
+      <div class="prose u-mt-sm">
+        <p>Rather than treating the website as the only acquisition surface, I expanded lead acquisition across B2B marketplace channels, so InApps was present where the vendor comparison was actually happening.</p>
+      </div>
+
+      <h3 id="review-profile" class="u-mt-lg">Built the review profile that the marketplaces depend on</h3>
+      <div class="prose u-mt-sm">
+        <p>Reviews went from <b class="fig">0 &rarr; 15</b>, through client engagement strategies and targeted promotions that encouraged both existing and new clients to describe their experience. On a B2B marketplace this is not vanity — the listing ranking and the buyer&rsquo;s shortlist both depend on it.</p>
+      </div>
+      <p class="source u-mt-sm">InApps Technology · client reviews on B2B platforms</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/inapps-sortlist-listing.png" width="896" height="639" loading="lazy" decoding="async" alt="Sortlist B2B marketplace listing titled &ldquo;All Mobile App Developers in Ho Chi Minh City&rdquo;, with InApps Technology ranked first, carrying a 5-star rating from 15 reviews and both a &ldquo;Highly recommended&rdquo; and a &ldquo;Top awarded&rdquo; badge, above Kyanon Digital and JANETO.">
+        <figcaption class="c-shot__cap"><b>Sortlist B2B marketplace</b> — the &ldquo;All Mobile App Developers in Ho Chi Minh City&rdquo; listing: InApps Technology ranked first, 5 stars from 15 reviews, a &ldquo;Highly recommended&rdquo; badge and a &ldquo;Top awarded&rdquo; badge, above Kyanon Digital and JANETO.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — WHAT IT PRODUCED  ·  one before/after pair with bars,
+       one pair without (a zero base cannot be drawn to scale),
+       then the comparable-metrics table.
+       ========================================================== -->
+  <section class="section" aria-labelledby="measured-results">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — What it produced</p>
+      <h2 id="measured-results" class="section__head">What were the measured results at InApps Technology?</h2>
+      </div>
+      <p class="prose u-mt-sm">Inbound leads at InApps Technology moved from 14 to 20 a month, measured from the project&rsquo;s August 2024 launch — six more qualified enquiries a month in a category where one closed deal is a development contract.</p>
+
+      <div class="c-pair u-mt-lg">
+        <p class="label" id="leads-lab">Inbound leads per month, before and after the engagement</p>
+        <p class="c-pair__figs">
+          <span class="figure figure--long">14</span>
+          <span class="c-pair__arrow" aria-hidden="true">&rarr;</span>
+          <span class="figure figure--long">20</span>
+        </p>
+        <span class="c-pair__bars" aria-hidden="true">
+          <span class="c-pair__bar" style="--fill:70%"></span>
+          <span class="c-pair__bar" style="--fill:100%"></span>
+        </span>
+        <p class="source">InApps Technology · leads per month, following the Aug 2024 launch</p>
+      </div>
+
+      <div class="c-pair u-mt-lg">
+        <p class="label" id="reviews-lab">Client reviews on B2B marketplace platforms, before and after the engagement</p>
+        <p class="c-pair__figs">
+          <span class="figure figure--long">0</span>
+          <span class="c-pair__arrow" aria-hidden="true">&rarr;</span>
+          <span class="figure figure--long">15</span>
+        </p>
+        <p class="source">InApps Technology · B2B platform reviews</p>
+      </div>
+      <p class="prose u-mt-sm">There is no bar under that second pair. The starting value is zero, so there is nothing that can be drawn to scale.</p>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="inapps-results-cap">
+        <table class="c-table" role="table" aria-labelledby="inapps-results-cap">
+          <caption id="inapps-results-cap" class="label">InApps Technology results, with the comparison window and the source document for each figure</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Metric</th>
+              <th role="columnheader" scope="col">Result</th>
+              <th role="columnheader" scope="col">Timeframe</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Inbound leads per month</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">14 &rarr; 20</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">GSC, Jul&ndash;Oct 2024 vs prior period</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Organic clicks</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+116%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">GSC, Jul&ndash;Oct 2024 vs prior period</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Organic impressions</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+285%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">GSC, Jul&ndash;Oct 2024 vs prior period</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Target keywords in the top 10</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">80%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">Aug 2024 – Mar 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Ranking, &ldquo;Mobile Apps Developer in HCM&rdquo;</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">#1</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">Aug 2024 – Mar 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Client reviews on B2B platforms</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">0 &rarr; 15</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">GSC, Jul&ndash;Oct 2024 vs prior period</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Two measures, two charts. Clicks and impressions differ by
+           roughly 200x, so one plot with two y-scales would be a lie
+           about both. Each panel carries its own baseline, and the bar
+           ratio IS the arithmetic: the long bar is 2.16 times the short
+           one, which is a 116% increase, not 216%. -->
+      <figure class="c-chart u-mt-lg">
+        <div class="c-chart__pair">
+          <div>
+            <h3>Organic clicks</h3>
+            <svg viewBox="0 0 360 126" role="img" aria-label="Organic clicks: 3,278 in Apr–Jul 2024, 7,094 in Jul–Oct 2024.">
+              <title>Organic clicks</title>
+              <line class="viz-axis" x1="104" y1="22" x2="104" y2="114"/>
+              <path d="M104.0 38 H185.9 a4 4 0 0 1 4 4 V54.0 a4 4 0 0 1 -4 4 H104.0 Z" fill="var(--viz-before)"/>
+              <text class="viz-label" x="96" y="52" text-anchor="end">Apr–Jul 2024</text>
+              <text class="viz-value" x="197.9" y="53">3,278</text>
+              <path d="M104.0 76 H286.0 a4 4 0 0 1 4 4 V92.0 a4 4 0 0 1 -4 4 H104.0 Z" fill="var(--viz-after)"/>
+              <text class="viz-label" x="96" y="90" text-anchor="end">Jul–Oct 2024</text>
+              <text class="viz-value" x="298.0" y="91">7,094</text>
+              <text class="viz-note" x="104" y="124">Total clicks, Search Console</text>
+              </svg>
+          </div>
+          <div>
+            <h3>Impressions</h3>
+            <svg viewBox="0 0 360 126" role="img" aria-label="Impressions: 346,969 in Apr–Jul 2024, 1,334,149 in Jul–Oct 2024.">
+              <title>Impressions</title>
+              <line class="viz-axis" x1="104" y1="22" x2="104" y2="114"/>
+              <path d="M104.0 38 H148.4 a4 4 0 0 1 4 4 V54.0 a4 4 0 0 1 -4 4 H104.0 Z" fill="var(--viz-before)"/>
+              <text class="viz-label" x="96" y="52" text-anchor="end">Apr–Jul 2024</text>
+              <text class="viz-value" x="160.4" y="53">346,969</text>
+              <path d="M104.0 76 H286.0 a4 4 0 0 1 4 4 V92.0 a4 4 0 0 1 -4 4 H104.0 Z" fill="var(--viz-after)"/>
+              <text class="viz-label" x="96" y="90" text-anchor="end">Jul–Oct 2024</text>
+              <text class="viz-value" x="298.0" y="91">1,334,149</text>
+              <text class="viz-note" x="104" y="124">Total impressions, Search Console</text>
+              </svg>
+          </div>
+        </div>
+        <figcaption class="c-chart__read">Read the ratio, not the multiple. Clicks came to <b class="fig">2.16&times;</b> the previous period, which is an increase of <b class="fig">116%</b>; impressions came to <b class="fig">3.84&times;</b>, an increase of <b class="fig">285%</b>. The figures 216% and 384% are those ratios, and stating them as growth would double-count the base.</figcaption>
+        <p class="source">InApps Technology &middot; Google Search Console &middot; 28 Jul&ndash;27 Oct 2024 against 27 Apr&ndash;27 Jul 2024</p>
+      </figure>
+      <figure class="c-shot">
+        <img src="../assets/img/work/inapps-gsc-performance.png" width="1326" height="393" loading="lazy" decoding="async" alt="Google Search Console period comparison for InApps Technology: total clicks 7,094 against 3,278 in the previous period, up 116.41%; total impressions 1,334,149 against 346,969, up 284.52%; average CTR 0.5% against 0.9%; average position 42.3 against 36.2. The window compared is 7/28/24-10/27/24 versus 4/27/24-7/27/24.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — 7/28/24&ndash;10/27/24 compared with 4/27/24&ndash;7/27/24: total clicks 7,094 versus 3,278 (up 116.41%), total impressions 1,334,149 versus 346,969 (up 284.52%), average CTR 0.5% versus 0.9%, average position 42.3 versus 36.2. Clicks of 7,094 against 3,278 are a 2.16&times; multiple, which is +116% growth; impressions of 1,334,149 against 346,969 are 3.85&times;, or +285%. The figures quoted on this page are the increase over the base, not the multiple of it.</figcaption>
+      </figure>
+
+      <p class="prose u-mt-lg">The lead number is the one that matters. Six more qualified enquiries a month, in a category where one closed deal is a development contract, is a different kind of result from a traffic percentage.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — SCOPE NOTE  ·  the only --signal-fix block on the page
+       ========================================================== -->
+  <section class="section" id="scope" aria-labelledby="scope-of-the-numbers">
+    <div class="shell shell--narrow">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — Scope note</p>
+
+      <aside class="c-fix" aria-labelledby="scope-of-the-numbers">
+        <p class="c-fix__kicker">Scope · how these numbers were counted</p>
+        <h2 class="c-fix__h" id="scope-of-the-numbers">What do the InApps Technology numbers not tell you?</h2>
+        <div class="prose">
+          <p>Every headline figure on this page is a change measured from the InApps Technology project launch in August 2024, not an absolute volume. Clicks up <b class="fig">116%</b> and impressions up <b class="fig">285%</b> are percentage changes. The underlying counts sit in the Google Search Console comparison above — <b class="fig">7,094</b> clicks against <b class="fig">3,278</b>, and <b class="fig">1,334,149</b> impressions against <b class="fig">346,969</b> — and that screenshot states the increases as <b class="fig">116.41%</b> and <b class="fig">284.52%</b>, which is the same growth stated as an increase over the base rather than as a share of it.</p>
+          <p>The lead figure is a monthly count and it covers both routes at once. Leads went from <b class="fig">14 &rarr; 20</b> per month across website organic and the diversified B2B marketplace channels together. The total moved. Which of the two channels moved it is not something this engagement can separate, because the source tracking did not exist before the campaign did.</p>
+        </div>
+        <p class="source">InApps Technology · leads, clicks, impressions and reviews</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="what-i-would-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — What I would do differently</p>
+      <h2 id="what-i-would-do-differently" class="section__head">What would I do differently at InApps Technology?</h2>
+      </div>
+
+      <h3 id="review-programme-earlier" class="u-mt-lg">I would start the review programme in month one, not after the rankings moved.</h3>
+      <div class="prose u-mt-sm">
+        <p>Reviews went from <b class="fig">0 &rarr; 15</b> and they underpin the marketplace channels that produced the extra leads. Because I built the ranking side first, some of the early traffic arrived at a vendor profile with nothing on it. That traffic is not recoverable.</p>
+      </div>
+
+      <h3 id="track-leads-by-source" class="u-mt-lg">I would track leads by source from the beginning.</h3>
+      <div class="prose u-mt-sm">
+        <p>Leads went from <b class="fig">14 &rarr; 20</b> per month across website organic and the diversified marketplace channels together. I can tell you the total moved. I would rather be able to tell you which channel moved it, and that requires the source tracking to exist before the campaign does, not after.</p>
+      </div>
+
+      <h3 id="timeline-expectations" class="u-mt-lg">I would set expectations on timeline earlier.</h3>
+      <div class="prose u-mt-sm">
+        <p>Impressions grew far faster than clicks, and clicks grew faster than leads — which is exactly what a long B2B buying cycle looks like from the inside. Stating that shape up front, before the first monthly report, makes the early months legible instead of worrying.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       08 — NEXT
+       ========================================================== -->
+  <section class="section c-contact" aria-labelledby="next">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">08 — Next</p>
+      <h2 id="next" class="section__head">Next</h2>
+      </div>
+      <p class="prose">Every case study on this site is written the same way: the situation, the constraint, the mechanism, the measured result, and what the number does not say.</p>
+      <p class="prose u-mt-sm"><a href="permate.html">Previous case study: Permate, a marketplace launched into organic from zero</a></p>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+        <a class="c-btn c-btn--primary" href="../services.html">Work with me</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

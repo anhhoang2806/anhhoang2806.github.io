@@ -1,0 +1,2862 @@
+@charset "utf-8";
+/* ============================================================
+   BROADSHEET — andrew-hoang-site
+   The one and only stylesheet. No @import. No web fonts.
+   Zero network requests. Mobile-first. Light + dark.
+
+   CONTENTS
+     1. TOKENS ............ design tokens, dark themes, reduced motion
+     2. RESET ............. box model, overflow discipline, focus
+     3. BASE .............. typography, numerals, links, selection
+     4. LAYOUT ............ shell, section rhythm, row/rail, 12-col
+     5. COMPONENTS ........ skip, head, nav, theme, buttons, figures,
+                            pairs, portrait, prose, table, notes,
+                            services, ledger, fix, roster, doors,
+                            contact, colophon, case hero, crumbs
+     6. UTILITIES ......... visually hidden, wrapping helpers
+     7. MOTION ............ reveal, rules draw, bars grow
+     8. PRINT ............. the page prints as a clean résumé
+   ============================================================ */
+
+
+/* ============================================================
+   1. TOKENS  ·  FINAL. Do not add, rename or redefine.
+   Authoring law: light is the canonical definition on bare :root.
+   Dark is redefined twice so the manual toggle wins both ways.
+   No colour is ever defined only inside a media/attribute block.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* --- Ink & paper (LIGHT — canonical) ---------------------- */
+  /* The ground is a cool near-white, not newsprint. This design is
+     built from white cards floating on a barely-there page, so the
+     page has to sit BEHIND the cards tonally. A warm ground fights
+     white cards and makes them read as dirty grey.               */
+  --paper:        #FAFAFC;  /* page ground — cool near-white       */
+  --paper-2:      #F3F4F8;  /* tinted well, section bands          */
+  --surface:      #FFFFFF;  /* every card, every raised plate      */
+  --surface-2:    #F0F1F5;  /* image ground behind screenshots     */
+
+  --ink:          #141B2D;  /* headlines, figures — deep navy      */
+  --ink-2:        #3C4459;  /* body prose                          */
+  /* #6B7386 until 2026-09-22. It cleared AA on plain paper (4.56) but not
+     on the pastel grounds the redesign introduced: 4.13 on lilac, 4.18 on
+     sky, 4.32 on paper-2 — all under the 4.5 small text needs. Darkened
+     along the same hue and saturation until the worst ground clears 4.6.
+     Still 1.82x lighter than --ink-2, so the hierarchy is intact. */
+  --ink-3:        #646B7D;  /* labels, captions, source lines      */
+  --ink-4:        #A2A8B8;  /* DECORATIVE ONLY — never text        */
+  --ink-invert:   #FFFFFF;
+
+  /* --- Tints: the pastel panels feature sections sit inside --- */
+  --tint-peach:   #FDF1E7;
+  --tint-mint:    #EAF6EF;
+  --tint-sky:     #EAF1FC;
+  --tint-lilac:   #F1EDFB;
+  --tint-blush:   #FDEDF2;
+  --tint-sand:    #F8F3E9;
+
+  /* --- Rules: the entire structure is made of these --------- */
+  --rule-hair:    #ECEDF2;  /* 1px hairline, row dividers          */
+  --rule-mid:     #D8DBE4;  /* 1px stronger, table body            */
+  --rule-heavy:   #141B2D;  /* 2px section opener                  */
+  --w-hair:       1px;
+  --w-heavy:      2px;
+
+  /* --- Accent: vermilion. Rationed to five uses. ------------ */
+  --accent:       #E1502B;
+  --accent-deep:  #BE3A18;  /* accent text on tinted grounds       */
+  --accent-weak:  #FDECE5;  /* the .fig pencil wash. Solid.        */
+  --on-accent:    #FFFFFF;
+
+  /* --- Hover: blue. ONE interaction colour, all 14 pages ----
+     Vermilion stays the resting accent — the masthead dot, the
+     rest-state underline, the section rule. Blue is what the
+     pointer does. Keeping the two apart means a link can be seen
+     to change without the page changing character.
+
+     #3B82F6 is the blue already inside --grad-accent and was the
+     obvious pick, but a link can land on ten different grounds
+     here and it measures 3.20:1 against the worst of them —
+     blue type on the sky tint — which is under AA for small
+     text. Darkened along the same hue until the worst ground
+     clears 5.8; on plain paper it is 6.43. */
+  --hover:        #1D4ED8;
+  --on-hover:     #FFFFFF;  /* 6.70 on --hover                     */
+
+  /* --- Signal: corrections & fixes. ONE section per page. --- */
+  --signal-fix:      #7A5214;  /* umber — a different KIND of claim */
+  --signal-fix-weak: #F2E8D2;
+
+  /* --- Focus ------------------------------------------------ */
+  /* The ring follows the hover colour: hover and keyboard focus
+     are the same state answered by two input devices, and a blue
+     word under a vermilion ring read as two unrelated events. */
+  --focus:        var(--hover);
+  --focus-alt:    #141B2D;  /* 2nd ring on accent grounds          */
+  --selection-bg: #FDECE5;
+  --selection-fg: #141B2D;
+
+  /* --- Type stacks. No web fonts, ever. -----------------------
+     display / ui / serif all use the requested system-ui stack.
+     ALL FOUR roles now use the one requested stack, including
+     --font-mono. Numeric alignment that previously came free from
+     a fixed-width face is now carried explicitly by
+     font-variant-numeric: tabular-nums. See the block at the end. */
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-ui:      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-serif:   system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-mono:    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+
+  /* --- Type scale (fluid 320px → ~1400px) ------------------- */
+  --fs-3xs:       0.6875rem;                                      /* 11px folio */
+  --fs-2xs:       clamp(0.75rem,   0.730rem + 0.09vw, 0.8125rem);
+  --fs-xs:        clamp(0.8125rem, 0.790rem + 0.11vw, 0.875rem);
+  --fs-sm:        clamp(0.875rem,  0.850rem + 0.13vw, 0.9375rem);
+  --fs-base:      clamp(1rem,      0.960rem + 0.19vw, 1.125rem);
+  --fs-md:        clamp(1.125rem,  1.060rem + 0.31vw, 1.3125rem);
+  --fs-lg:        clamp(1.3125rem, 1.190rem + 0.59vw, 1.625rem);
+  --fs-xl:        clamp(1.625rem,  1.410rem + 1.06vw, 2.25rem);
+  --fs-2xl:       clamp(2rem,      1.600rem + 2.00vw, 3.25rem);
+  --fs-3xl:       clamp(2.5rem,    1.660rem + 4.20vw, 5.25rem);   /* h1 */
+  --fs-figure-sm: clamp(1.875rem,  1.300rem + 2.90vw, 3.75rem);   /* 6+ chars  */
+  --fs-figure:    clamp(2.75rem,   1.750rem + 5.00vw, 6rem);      /* 4–5 chars */
+  --fs-figure-xl: clamp(3.25rem,   1.900rem + 6.75vw, 8rem);      /* 1–3 chars */
+
+  /* --- Line heights ----------------------------------------- */
+  --lh-solid:  0.82;   /* oversized figures  */
+  --lh-tight:  0.95;   /* h1                 */
+  --lh-snug:   1.12;   /* h2, h3             */
+  --lh-body:   1.55;   /* UI text, table cells */
+  --lh-prose:  1.68;   /* Georgia running text */
+  --lh-label:  1.25;
+
+  /* --- Tracking --------------------------------------------- */
+  --tr-figure:    -0.045em;
+  --tr-display:   -0.032em;
+  --tr-tight:     -0.014em;
+  --tr-normal:     0em;
+  --tr-caps:       0.10em;   /* faked small-caps labels */
+  --tr-caps-wide:  0.17em;   /* masthead, folios        */
+
+  /* --- Measure ---------------------------------------------- */
+  --measure-prose: 62ch;
+  --measure-dek:   46ch;
+  --measure-label: 26ch;
+
+  /* --- Space scale (4px base) ------------------------------- */
+  --s-3xs: 0.25rem;  --s-2xs: 0.5rem;   --s-xs: 0.75rem;
+  --s-sm:  1rem;     --s-md:  1.5rem;   --s-lg: 2rem;
+  --s-xl:  3rem;     --s-2xl: 4rem;     --s-3xl: 6rem;
+  --s-4xl: 8rem;     --s-5xl: 10rem;
+
+  /* --- The field: ONE visible pitch. 72px = 18 × 4px base. -- */
+  --field:         72px;
+  --field-half:    36px;
+  --space-section: clamp(4.5rem, 3.214rem + 6.43vw, 9rem); /* 72px → 144px */
+  --space-gutter:  clamp(1.25rem, 0.9rem + 1.7vw, 2.5rem); /* 20px → 40px  */
+
+  /* --- Layout ----------------------------------------------- */
+  --wrap:        78rem;   /* full editorial shell        */
+  --wrap-narrow: 52rem;   /* single-column subpages      */
+  --rail:        clamp(6.75rem, 13.5vw, 13.5rem);  /* 108px → 216px */
+  --grid-gap:    clamp(1rem, 0.6rem + 1.9vw, 2.25rem);
+  --cols:        12;
+
+  /* --- Radii ------------------------------------------------
+     This used to read "effectively none, on purpose": the design
+     was 1px rules on a flat plane. It is now rounded plates at
+     different heights, so the scale has to be explicit and shared
+     or every component drifts to its own corner radius.         */
+  --r-0:    0;
+  --r-1:    2px;    /* theme toggle track only */
+  --r-xs:   8px;    /* tags, small chips                */
+  --r-sm:   12px;   /* inputs, buttons, inner tiles     */
+  --r-md:   16px;   /* nested cards                     */
+  --r-lg:   24px;   /* the standard card                */
+  --r-xl:   32px;   /* pastel feature panels, hero well */
+  --r-pill: 999px;  /* pills, theme toggle knob         */
+
+  /* --- Depth ------------------------------------------------
+     Two-layer shadows throughout: a tight contact shadow plus a
+     wide ambient one. A single blur at these radii reads as a
+     grey halo rather than as height.                           */
+  --shadow-none: none;
+  --sh-sm:    0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.05);
+  --sh-md:    0 2px 4px -2px rgba(16,24,40,.05), 0 10px 18px -4px rgba(16,24,40,.07);
+  --sh-lg:    0 6px 10px -4px rgba(16,24,40,.04), 0 22px 32px -8px rgba(16,24,40,.09);
+  --sh-xl:    0 10px 16px -6px rgba(16,24,40,.05), 0 34px 56px -14px rgba(16,24,40,.14);
+  --sh-float: 0 14px 22px -8px rgba(16,24,40,.10), 0 30px 50px -16px rgba(16,24,40,.20);
+  --scrim-end:   linear-gradient(to right, rgba(250,250,252,0), rgba(250,250,252,1));
+
+  /* --- The iridescent sweep ---------------------------------
+     One gradient, reused by every gradient word, button ring and
+     underline, so the effect stays a single decision rather than
+     six near-identical ones.                                   */
+  --grad-accent: linear-gradient(100deg, #F0873B 0%, #E8517E 26%, #8B5CF6 52%, #3B82F6 74%, #17B98A 100%);
+  --grad-wash:   radial-gradient(60% 55% at 18% 12%, rgba(240,135,59,.16), transparent 62%),
+                 radial-gradient(52% 50% at 82% 8%,  rgba(139,92,246,.16), transparent 60%),
+                 radial-gradient(58% 48% at 50% 0%,  rgba(59,130,246,.13), transparent 58%),
+                 radial-gradient(48% 42% at 88% 42%, rgba(23,185,138,.12), transparent 60%);
+
+  /* --- Motion ----------------------------------------------- */
+  --dur-fast: 140ms;
+  --dur:      240ms;
+  --dur-slow: 480ms;
+  --stagger:  60ms;
+  --ease:     cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0.6, 0.3, 1);
+
+  /* --- Component knobs -------------------------------------- */
+  --fill:   100%;   /* per-element delta-bar width, set inline */
+  --bar-h:  3px;
+  --ring-w: 2px;
+  --ring-offset: 3px;
+  --i: 0;           /* stagger index, set inline */
+}
+
+/* --- DARK: system preference, unless light was chosen -------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --paper:        #0F1219;
+    --paper-2:      #161A24;
+    --surface:      #171B26;
+    --surface-2:    #1F2431;
+
+    --ink:          #EEF0F6;
+    --ink-2:        #C3C8D6;
+    --ink-3:        #8E96A8;
+    --ink-4:        #5E6678;
+    --ink-invert:   #0F1219;
+
+    /* Tints keep their hue but drop right down in value, so a pastel
+       panel still reads as a distinct surface instead of glowing out
+       of a dark page. */
+    --tint-peach:   #241A12;
+    --tint-mint:    #10231A;
+    --tint-sky:     #111C2C;
+    --tint-lilac:   #1B1729;
+    --tint-blush:   #261520;
+    --tint-sand:    #221E15;
+
+    --rule-hair:    #242936;
+    --rule-mid:     #39404F;
+    --rule-heavy:   #EEF0F6;
+
+    --accent:       #FF7A52;
+    --accent-deep:  #FF9D7A;
+    --accent-weak:  #33190F;
+    --on-accent:    #1A0C05;
+
+    /* 8.97 on the dark ground, 8.96 carrying --on-hover. */
+    --hover:        #8AB4FF;
+    --on-hover:     #0B1220;
+
+    --signal-fix:      #E8B15F;
+    --signal-fix-weak: #33270F;
+
+    --focus:        var(--hover);
+    --focus-alt:    #1A0C05;
+    --selection-bg: #4A2418;
+    --selection-fg: #EEF0F6;
+
+    --scrim-end:    linear-gradient(to right, rgba(25,23,18,0), rgba(25,23,18,1));
+  }
+}
+
+/* --- DARK: explicit manual choice ---------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Tints keep their hue but drop right down in value, so a pastel
+     panel still reads as a distinct surface instead of glowing out
+     of a dark page. Declared here as well as in the media query:
+     this block is what an explicit theme toggle uses, and without
+     it the toggle fell back to the LIGHT pastels on a dark ground. */
+  --tint-peach:   #241A12;
+  --tint-mint:    #10231A;
+  --tint-sky:     #111C2C;
+  --tint-lilac:   #1B1729;
+  --tint-blush:   #261520;
+  --tint-sand:    #221E15;
+
+  --paper:        #0F1219;
+  --paper-2:      #161A24;
+  --surface:      #171B26;
+  --surface-2:    #1F2431;
+
+  --ink:          #EEF0F6;
+  --ink-2:        #C3C8D6;
+  --ink-3:        #8E96A8;
+  --ink-4:        #5E6678;
+  --ink-invert:   #0F1219;
+
+  --rule-hair:    #242936;
+  --rule-mid:     #39404F;
+  --rule-heavy:   #EEF0F6;
+
+  --accent:       #FF7A52;
+  --accent-deep:  #FF9D7A;
+  --accent-weak:  #33190F;
+  --on-accent:    #1A0C05;
+
+  --hover:        #8AB4FF;
+  --on-hover:     #0B1220;
+
+  --signal-fix:      #E8B15F;
+  --signal-fix-weak: #33270F;
+
+  --focus:        var(--hover);
+  --focus-alt:    #1A0C05;
+  --selection-bg: #4A2418;
+  --selection-fg: #EEF0F6;
+
+  --scrim-end:    linear-gradient(to right, rgba(25,23,18,0), rgba(25,23,18,1));
+}
+
+/* --- Reduced motion: neutralise the timing tokens themselves -- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur:      1ms;
+    --dur-slow: 1ms;
+    --stagger:  0ms;
+  }
+}
+
+
+/* ============================================================
+   2. RESET  ·  the "nothing scrolls sideways" promise
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-block-start: var(--s-lg);
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;            /* NOT hidden — clip does not create a
+                                  scroll container, so position:sticky
+                                  inside the page still works.        */
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Every grid track is minmax(0,1fr); every grid/flex child min-width:0. */
+.grid > *, .flex > * { min-width: 0; }
+
+img, svg, video { max-width: 100%; height: auto; }
+
+::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--ring-w) solid var(--focus);
+  outline-offset: var(--ring-offset);
+}
+
+/* The skip-link target. Focusable, but never ringed on programmatic focus. */
+main:focus { outline: none; }
+
+
+/* ============================================================
+   3. BASE  ·  type roles, two number personalities
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+h1 { font-size: var(--fs-3xl); font-weight: 800;
+     line-height: var(--lh-tight); letter-spacing: var(--tr-display); }
+h2 { font-size: var(--fs-xl);  font-weight: 700;
+     line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+h3 { font-size: var(--fs-lg);  font-weight: 700;
+     line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+h4 { font-size: var(--fs-base); font-weight: 700;
+     line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+
+p, ul, ol { margin: 0; }
+li { line-height: var(--lh-body); letter-spacing: var(--tr-normal); }
+
+b, strong { font-weight: 600; }
+
+/* Numbers in sentences sit DOWN into the line. */
+.prose,
+.dek,
+.standfirst {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "onum" 1, "pnum" 1;
+}
+
+/* Numbers in data columns STAND UP and align on the decimal. */
+.figure,
+.fig,
+.dateline,
+.source,
+.c-table td,
+.c-table th,
+.roster,
+time {
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "lnum" 1, "zero" 1;
+}
+
+/* SMALL CAPS, HONESTLY. font-variant-caps: small-caps is forbidden. */
+.label {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+  max-width: var(--measure-label);
+}
+
+.dateline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+}
+
+.source {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+  align-self: end;
+  overflow-wrap: anywhere;
+}
+
+.prose {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  max-width: var(--measure-prose);
+}
+.prose > * + * { margin-block-start: var(--s-sm); }
+
+.dek {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  max-width: var(--measure-dek);
+}
+
+/* Links — ACCENT USE 5 of 5 */
+.prose a, .c-note a, main p a, li a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-thickness var(--dur-fast) var(--ease);
+}
+/* Both the word and its rule move to blue. Thickening alone was a
+   change you had to be looking for; the colour is the one that
+   reads at a glance, and the 2px keeps it legible for anyone who
+   cannot see the hue shift. */
+.prose a:hover, .prose a:focus-visible,
+.c-note a:hover, .c-note a:focus-visible,
+main p a:hover, main p a:focus-visible,
+li a:hover, li a:focus-visible {
+  text-decoration-thickness: 2px;
+  color: var(--hover);
+  text-decoration-color: var(--hover);
+}
+
+/* Long strings must never force a scrollbar. */
+.roster, .c-tags, .c-door__mail, .c-contact__list a, .source { overflow-wrap: anywhere; }
+
+
+/* ============================================================
+   4. LAYOUT
+   ============================================================ */
+
+.shell {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+.shell--narrow { max-width: var(--wrap-narrow); }
+
+/* --- Section rhythm -------------------------------------- */
+.section { padding-block-start: var(--space-section); }
+
+.section__rule {                       /* the 2px opener */
+  border-block-start: var(--w-heavy) solid var(--rule-heavy);
+  transform-origin: left;
+}
+
+.section__folio {                      /* knocked out of the rule */
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink-3);
+  background: var(--paper);            /* knocks a gap out of the line */
+  padding-inline: 0.75rem;
+  margin-block-start: -0.62em;
+  margin-inline-start: -0.75rem;
+  display: inline-block;
+}
+/* Inside a tinted full-bleed band the folio must knock out that ground. */
+.c-roster-band .section__folio { background: var(--paper-2); }
+
+.section > .shell > h2,
+.section > .shell > .section__open > h2,
+.section__head { margin-block-start: var(--s-md); }
+
+/* --- The section opening as one unbreakable unit -----------
+   A section opens with the 2px rule, the folio knocked into it,
+   then the heading. On paper those three were being split: the
+   folio printed alone at the foot of a page with its heading
+   overleaf, on four of the sixteen openings measured across
+   three real Chrome printouts.
+
+   break-after: avoid on the folio does not fix it. It works in
+   isolation, but h2 also carries break-after: avoid so the
+   chain runs folio -> h2 -> whatever follows, and when that is
+   a tall block Chrome gives up and breaks at the weakest point,
+   which is exactly between folio and heading. Bounding the unit
+   to these three short lines is what holds.
+
+   On screen this div does nothing: .shell is a plain block, and
+   the folio's negative margin still meets the rule because they
+   are still adjacent siblings inside it. */
+
+/* --- RAIL + COLUMN — the governing pattern ---------------- */
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-xs);
+}
+.row > * { min-width: 0; }
+
+@media (min-width: 60rem) {
+  .row { grid-template-columns: var(--rail) minmax(0, 1fr); gap: var(--grid-gap); }
+}
+
+.row__rail {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  max-width: var(--measure-label);
+  align-self: start;           /* MUST — sticky silently dies without it */
+  overflow-wrap: anywhere;
+}
+
+/* --- The twelve-column overlay: the front-page lede only -- */
+.g12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+.g12 > * { min-width: 0; }
+@media (max-width: 59.999rem) { .g12 { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* ============================================================
+   5. COMPONENTS
+   ============================================================ */
+
+/* --- 5.1 Skip link — first focusable element on every page - */
+.c-skip {
+  position: absolute;
+  inset-inline-start: var(--space-gutter);
+  inset-block-start: 0;
+  transform: translateY(-120%);
+  z-index: 100;
+  /* --accent puts white on #E1502B: 3.90, under AA. The deep accent is the
+     one meant to carry text, and gives 5.51. A control that only appears
+     for keyboard users is exactly the one that must not fail them. */
+  background: var(--accent-deep);
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  text-decoration: none;
+  padding: var(--s-2xs) var(--s-sm);
+  transition: transform var(--dur) var(--ease-out);
+}
+.c-skip:focus-visible {
+  transform: translateY(0);
+  outline: var(--ring-w) solid var(--focus-alt);
+  outline-offset: var(--ring-offset);
+}
+
+/* --- 5.2 Site header — folio strip + masthead. NOT sticky. - */
+.c-head__folio {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2xs);
+  min-height: var(--field-half);        /* 36px = 0.5 field */
+  align-items: center;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink-3);
+  border-block-end: var(--w-hair) solid var(--rule-hair);
+}
+.c-head__bar {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: var(--s-2xs) var(--s-md);
+  min-height: var(--field);             /* 72px = 1 field */
+  padding-block: var(--s-2xs);
+  border-block-end: var(--w-heavy) solid var(--rule-heavy);
+}
+.c-head__mark {
+  margin-inline-end: auto;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink);
+  text-decoration: none;
+}
+/* The masthead and the mailto are the two links outside the §5.5
+   selector list, so they each restate the hover themselves. The
+   dot after the wordmark stays vermilion: it is the accent mark,
+   not a link affordance. */
+.c-head__mark:hover, .c-head__mark:focus-visible { color: var(--hover); }
+.c-head__mark::after {                  /* ACCENT USE 1 of 5 */
+  content: ""; display: inline-block;
+  inline-size: 0.42em; block-size: 0.42em;
+  margin-inline-start: 0.45em;
+  background: var(--accent);
+}
+
+.c-nav__list {
+  display: flex; flex-wrap: wrap; gap: var(--s-sm) var(--s-md);
+  list-style: none; margin: 0; padding: 0;
+}
+.c-nav a {
+  font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2);
+  text-decoration: none;
+  display: inline-block; padding-block: var(--s-3xs);
+}
+.c-nav a:hover { color: var(--hover); }
+.c-nav a[aria-current="page"] {
+  color: var(--ink); font-weight: 600;
+  box-shadow: inset 0 -2px 0 0 var(--accent);   /* signal, not decoration */
+}
+
+/* --- 5.3 Theme toggle — the ONLY element with a radius ----- */
+.c-theme {
+  display: inline-flex; align-items: center; gap: var(--s-2xs);
+  background: none; border: 0; padding: var(--s-3xs) 0; cursor: pointer;
+  font-family: var(--font-display); font-size: var(--fs-2xs); font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tr-caps); color: var(--ink-3);
+}
+.c-theme:hover { color: var(--hover); }
+.c-theme__track {
+  inline-size: 2.25rem; block-size: 1.125rem;
+  /* --ink-3, not --rule-mid: the track is a UI-component boundary, so it
+     owes 3:1 (SC 1.4.11). --rule-mid is 2.02:1 light / 2.42:1 dark. */
+  border: var(--w-hair) solid var(--ink-3); border-radius: var(--r-1);
+  display: inline-flex; align-items: center; padding: 2px;
+  flex: none;
+}
+.c-theme__knob {
+  inline-size: 0.75rem; block-size: 0.75rem;
+  border-radius: var(--r-pill); background: var(--ink-3);
+  transition: transform var(--dur) var(--ease);
+}
+.c-theme[aria-pressed="true"] .c-theme__knob { transform: translateX(1.125rem); }
+
+/* --- 5.4 Buttons — exactly two. No tertiary, no ghost. ----- */
+.c-actions { display: flex; flex-wrap: wrap; gap: var(--s-xs); }
+
+.c-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-block-size: 2.75rem;                  /* 44px touch target */
+  padding: var(--s-2xs) var(--s-md);
+  border-radius: var(--r-0);                /* zero. always. */
+  box-shadow: var(--shadow-none);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm); font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tr-caps);
+  text-decoration: none; text-align: center;
+  transition: background-color var(--dur) var(--ease),
+              color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+.c-btn--primary {
+  background: var(--accent); color: var(--on-accent);
+  border: var(--w-heavy) solid var(--accent);
+}
+.c-btn--primary:hover {
+  background: var(--hover); border-color: var(--hover); color: var(--on-hover);
+}
+.c-btn--primary:focus-visible {
+  outline: var(--ring-w) solid var(--focus-alt);   /* dark ring on accent ground */
+  outline-offset: var(--ring-offset);
+  box-shadow: 0 0 0 calc(var(--ring-offset) + var(--ring-w) + 2px) var(--focus);
+}
+.c-btn--secondary {
+  background: transparent; color: var(--ink);
+  border: var(--w-heavy) solid var(--rule-heavy);
+}
+.c-btn--secondary:hover { border-color: var(--hover); color: var(--hover); }
+
+/* --- The front-page lede (§4.6 + §6.1) -------------------- */
+.c-lede__head { display: grid; align-content: start; gap: var(--s-sm); }
+.c-lede__portrait { margin-block-start: var(--s-lg); }
+@media (min-width: 60rem) {
+  .c-lede__head     { grid-column: 1 / 8; }
+  .c-lede__portrait { grid-column: 8 / 13; align-self: start; margin-block-start: 0; }
+}
+.c-lede__head h1 { margin-block: var(--s-3xs) 0; }
+.c-lede__head .c-actions { margin-block-start: var(--s-2xs); }
+
+/* --- 5.6 The figures bar ---------------------------------- */
+.c-metrics {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-auto-rows: auto;                   /* 3 implicit rows per cell */
+  row-gap: var(--s-2xs);                  /* the subgrid's row rhythm */
+  list-style: none;
+  margin: var(--s-lg) 0 0;
+  padding: 0;
+}
+/* Explicit counts, not auto-fit: auto-fit overflowed the 7-char figure
+   between 48rem and 80rem. Same breakpoints, specified 1→2→4 result. */
+@media (min-width: 30rem) { .c-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 80rem) { .c-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.c-metric {
+  display: grid;
+  grid-template-rows: subgrid;            /* baselines align across the bar */
+  grid-row: span 3;
+  gap: var(--s-2xs);
+  min-width: 0;
+  min-block-size: calc(var(--field) * 2); /* 144px = 2 field */
+  padding: var(--s-md) var(--grid-gap) var(--s-md) 0;
+  border-inline-start: var(--w-hair) solid var(--rule-hair);
+  padding-inline-start: var(--grid-gap);
+}
+/* The divider apparatus below is dead on screen: §10.7/§10.8 turn these
+   three into real cards with their own border and a uniform padding
+   shorthand, which lands later in this sheet. What used to survive that
+   was the row-start suppression — :first-child and :nth-child(Xn+1) are
+   specificity 0,2,0, so they beat the card's 0,1,0 padding no matter
+   where it sits, and stripped the left padding off the first card in
+   every row (and the top padding off the first card when stacked).
+   The rules are removed rather than overridden: an override would also
+   have to outrank the print sheet, which still wants the broadsheet
+   model and re-declares all of this for itself further down. */
+
+@supports not (grid-template-rows: subgrid) {
+  .c-metric { grid-template-rows: auto 1fr auto; }   /* natural heights, never broken */
+}
+
+.figure {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-figure-xl);
+  font-weight: 800;
+  line-height: var(--lh-solid);
+  letter-spacing: var(--tr-figure);
+  color: var(--ink);
+}
+.figure--long  { font-size: var(--fs-figure); }
+.figure--xlong { font-size: var(--fs-figure-sm); }
+
+/* --- One size per row --------------------------------------
+   The three sizes above are picked by character count, which is
+   right for a figure standing on its own: "84%" can afford to be
+   huge, "22,339%" cannot. It is wrong the moment figures sit in
+   a row that reads across, because 117px, 92px and 58px side by
+   side reads as three different kinds of number rather than
+   three instances of the same kind.
+
+   So where the figures are aligned — the case-note cards and the
+   metric strip — the row takes one size, the one built for the
+   longest string it has to carry.
+
+   Measured, not assumed: the binding case is 22,339% in a three
+   column grid at 960px, the narrowest the three-up layout ever
+   gets. It clears its column by 14% there. A tighter size was
+   tried and rejected: it cleared by exactly 0%, which is not a
+   margin, it is a coincidence. Anything longer than seven
+   characters means measuring this again. */
+.c-note .figure,
+.c-metrics .figure { font-size: var(--fs-figure-sm); }
+
+/* Delta glyph — ACCENT USE 3 of 5, with the pair bars. NOT used on a
+   display .figure: a leading arrow makes a 128px "84%" 379px wide in a
+   293px cell (§3.3 gate). Always aria-hidden; direction stated in words. */
+.delta { color: var(--accent); margin-inline-end: 0.08em; }
+
+/* --- 5.7 Before/after pair — the ONLY place bars exist ----- */
+.c-pair__figs {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25em;
+  margin: var(--s-2xs) 0 0;
+}
+.c-pair__arrow { color: var(--ink-3); font-size: var(--fs-lg); }
+.c-pair__bars { display: grid; gap: var(--s-3xs); margin-block: var(--s-2xs); }
+.c-pair__bar {
+  block-size: var(--bar-h);
+  inline-size: var(--fill);
+  min-inline-size: 2px;
+  background: var(--accent);
+}
+/* The collapse to zero is MOTION, so it lives behind .js like every other
+   §7 rule. Ungated, a JS-off page kept the bars at scaleX(0) forever —
+   `is-in` is only ever added by site.js. Without JS they simply sit at
+   their full --fill width. */
+.js .c-pair__bar {
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-out) calc(var(--i) * var(--stagger));
+}
+.js .is-in .c-pair__bar { transform: scaleX(1); }
+
+/* --- 5.8 The pencil-highlight inline figure — ACCENT USE 4 - */
+.fig {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "lnum" 1, "zero" 1;
+  color: var(--ink);                    /* ink, NOT accent */
+  box-shadow: inset 0 -0.34em 0 0 var(--accent-weak);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;          /* a wrapped fragment keeps the stroke */
+  padding-inline: 0.08em;
+}
+
+/* --- 5.10 The portrait plate ------------------------------ */
+.c-portrait { margin: 0; }
+.c-portrait img {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 18%;
+  background: var(--surface-2);         /* shows through the PNG alpha */
+  border-block-start: var(--w-heavy) solid var(--accent);  /* ACCENT USE 2 of 5 */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .c-portrait img { filter: brightness(0.92) contrast(1.04); }
+}
+:root[data-theme="dark"] .c-portrait img { filter: brightness(0.92) contrast(1.04); }
+
+.c-portrait figcaption {
+  margin-block-start: var(--s-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+}
+
+/* --- 5.12 The results table ------------------------------- */
+.c-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-block-start: var(--s-md); }
+.c-table { inline-size: 100%; border-collapse: collapse; table-layout: auto;
+           font-size: var(--fs-sm); }
+.c-table caption { text-align: start; padding-block-end: var(--s-2xs); }
+
+.c-table thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--surface);
+  font-family: var(--font-display); font-weight: 600;
+  font-size: var(--fs-2xs); text-transform: uppercase;
+  letter-spacing: var(--tr-caps); color: var(--ink-3);
+  text-align: start;
+  padding: var(--s-2xs) var(--s-sm) var(--s-2xs) 0;
+  border-block-end: var(--w-heavy) solid var(--rule-heavy);
+}
+.c-table tbody th[scope="row"],
+.c-table tbody th[scope="rowgroup"] {
+  font-family: var(--font-display); font-weight: 700; color: var(--ink);
+  text-align: start;
+}
+.c-table tbody th, .c-table tbody td {
+  padding: var(--s-xs) var(--s-sm) var(--s-xs) 0;
+  border-block-end: var(--w-hair) solid var(--rule-mid);
+  /* top, not baseline. The client cell carries a .c-markrow, which is a
+     28px flex box; a cell takes its baseline from that box rather than
+     from the text inside it, so the project name sat 11px above the
+     sector and the result on every row carrying a mark. Aligning to the
+     top starts every first line on the same y whatever the cell holds:
+     measured worst-case spread 11px -> 1px, and middle was worse again
+     (23px) because a one-line cell centres against a three-line one. */
+  vertical-align: top;
+}
+/* Only the homepage results table ends in a short date range
+   that wants one line. Positional selectors were tried twice
+   and failed twice: `td:last-child` caught the work register's
+   RESULT prose, and `td:nth-child(4):last-child` caught it again
+   the moment a merged client cell gave a row four cells instead
+   of three. A class on the table that actually has the column is
+   the only version that cannot be broken by a rowspan. */
+.c-table--period td:last-child {
+  font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--ink-3); white-space: nowrap;
+}
+.c-table__lab { display: none; }         /* visible only in stacked mode */
+
+/* ---- STACKED RECORDS below 48rem ---------------------------- */
+@media (max-width: 47.999rem) {
+  .c-table-wrap { overflow-x: visible; }
+  .c-table, .c-table tbody { display: block; }
+
+  .c-table thead {                        /* visually hidden, still in the a11y tree */
+    position: absolute; inline-size: 1px; block-size: 1px;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+
+  .c-table tbody tr {
+    display: grid;
+    /* minmax(0, …) on BOTH tracks. A bare `auto` track is sized by
+       max-content, and the merged-client row contributes a mark, a
+       sub-project name and two label/value pairs to it — enough to
+       blow the row 25px past a 375px card and 85px past a 320px one.
+       Bounding the tracks lets the text wrap instead. */
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+    column-gap: var(--s-sm);
+    row-gap: var(--s-3xs);
+    padding-block: var(--s-sm);
+    border-block-end: var(--w-hair) solid var(--rule-mid);
+  }
+  /* scope="rowgroup" is the merged client cell. In stacked mode
+     there are no columns left to merge across, so it has to take
+     the full width like any other row header — left out, it kept
+     its table width and pushed the page 70px sideways at 375. */
+  .c-table tbody th[scope="row"],
+  .c-table tbody th[scope="rowgroup"] {
+    grid-column: 1 / -1;
+    border: 0; padding: 0 0 var(--s-2xs);
+    font-size: var(--fs-base);
+  }
+  .c-table tbody td {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: subgrid;
+    border: 0; padding: 0;
+  }
+  @supports not (grid-template-columns: subgrid) {
+    .c-table tbody td { display: flex; justify-content: space-between; gap: var(--s-sm); }
+  }
+  .c-table__lab {
+    display: block;
+    font-family: var(--font-display); font-size: var(--fs-2xs); font-weight: 600;
+    text-transform: uppercase; letter-spacing: var(--tr-caps); color: var(--ink-3);
+  }
+  .c-table__val { text-align: end; }
+  .c-table td:last-child { white-space: normal; }
+}
+
+/* --- 5.13 Case note (the card that is not a card) --------- */
+/* Explicit counts: with five notes the first cell of the second row
+   must also lose its divider, which auto-fit makes unknowable. */
+.c-notes {
+  display: grid; grid-template-columns: minmax(0, 1fr);
+  gap: var(--grid-gap);
+  margin-block-start: var(--s-md);
+  list-style: none; padding: 0;
+}
+.c-notes > * { min-width: 0; }
+@media (min-width: 48rem) { .c-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* Three notes per row, expressed as six half-tracks. A card still
+   spans exactly one third — 2 tracks + the gap between them — so
+   the full rows are pixel-identical to repeat(3, 1fr). The half
+   tracks exist only so a trailing row of one or two can start on
+   a half and sit centred; whole columns can only ever push an
+   orphan pair to the right. Keyed on position, so it follows the
+   count rather than naming whichever cases happen to be last. */
+@media (min-width: 60rem) {
+  .c-notes { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .c-notes > * { grid-column: span 2; }
+  .c-notes > :nth-child(3n + 1):nth-last-child(2) { grid-column: 2 / span 2; }
+  .c-notes > :nth-child(3n + 1):last-child        { grid-column: 3 / span 2; }
+}
+/* Inside the notes grid the rail cannot earn a track: 194px of a 365px
+   cell leaves 99px for a 128px figure. It stays a kicker line — the
+   row's own sub-60rem behaviour. */
+.c-notes .row { grid-template-columns: minmax(0, 1fr); gap: var(--s-xs); }
+.c-note .figure { margin-block-start: var(--s-2xs); }
+/* The caption under a figure was on the same 8px step as the gap
+   above it, so the number and its own source line read as one
+   block while the client name above floated free. The display face
+   sets .figure on --lh-solid, which leaves no descender slack to
+   stand in for the gap, so it has to be spent as margin. --s-xs
+   lands within 2px of the metric tiles, which were always looser. */
+.c-note .source { margin-block-start: var(--s-xs); }
+.c-note .prose { margin-block-start: var(--s-sm); }
+.c-note__client { font-size: var(--fs-lg); color: var(--ink); }
+.c-note__idx { color: var(--ink-3); margin-inline-end: 0.5em; }
+.c-note__more { margin-block-start: var(--s-sm); font-size: var(--fs-sm); }
+
+/* --- 5.13a Line the slots up across a row of cards ----------
+   Every card carries the same slots in the same order: kicker,
+   client, figure, source, prose, (tags,) link. But the kicker
+   and the client name each run to one or two lines depending on
+   how long the name is, so the figure — the thing the eye lands
+   on first — started at a different height in every card of the
+   row, and so did everything under it.
+
+   Subgrid hands those slots to the parent's own row tracks, so
+   each slot is sized by the tallest card in the row and all
+   three line up. .row and its inner div become display:contents
+   so the leaf elements are what gets placed; without that the
+   card would only ever align its own two children.
+
+   row-gap stays 0 on purpose: the margin-block-start already on
+   each slot sets the vertical rhythm, and keeping it means this
+   change adds alignment without moving anything else.
+
+   The count differs by page — the work index carries a .c-tags
+   line the homepage does not — so :has() reads it off the card
+   instead of requiring a modifier class in two HTML files.
+
+   .c-metric uses the same mechanism, with the same @supports
+   guard: where subgrid is missing the cards simply fall back to
+   the ragged layout they had before. */
+@supports (grid-template-rows: subgrid) {
+  .c-note {
+    display: grid;
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .c-note:has(.c-tags) { grid-row: span 7; }
+  .c-note > .row, .c-note > .row > div { display: contents; }
+  /* .source carries a global align-self:end, which exists so the caption
+     pins to the bottom of its track inside .c-metric. Here it did the
+     opposite of what is wanted: a one-line source dropped to the bottom
+     of a track sized by a two-line one, leaving it floating away from
+     the figure it captions. The caption belongs to the figure above it. */
+  .c-note .source { align-self: start; }
+}
+
+/* --- 5.13b One client, several sub-projects ------------------
+   Hellobacsi was agency-side work across five of its own
+   properties. Five separate rows repeated the client name five
+   times; one row with a list inside hid the per-property figures
+   from the column they belong to. The client cell is merged down
+   its five rows instead, which is the shape the table already
+   implies — so the register gains a second project column and
+   every ordinary row spans both.
+
+   scope="rowgroup" on the merged cell is what tells a screen
+   reader that "Hellobacsi" heads all five, rather than only the
+   row it happens to sit in. */
+/* Scoped through .c-table tbody on purpose. The base cell rule is
+   `.c-table tbody th, .c-table tbody td` at (0,2,1) and it sets the
+   padding shorthand and vertical-align; a bare .c-rowspan at (0,1,0)
+   loses every one of those declarations, which is how the sub-project
+   names ended up flush against the merged cell's rule with zero gap. */
+.c-table tbody .c-rowspan {
+  vertical-align: top;
+  border-inline-end: var(--w-hair) solid var(--rule-mid);
+  padding-inline-end: var(--s-md);
+}
+.c-table tbody .c-subrow {
+  font-weight: 500;
+  color: var(--ink-2);
+  padding-inline-start: var(--s-md);
+}
+
+/* Stacked mode has no columns to merge across, so the merged cell
+   stops being a cell and becomes a heading over the five records
+   that follow it. */
+@media (max-width: 47.999rem) {
+  .c-table tbody .c-rowspan {
+    border-inline-end: 0;
+    padding-inline-end: 0;
+    padding-block-end: var(--s-2xs);
+  }
+  .c-table tbody .c-subrow { padding-inline-start: 0; }
+}
+
+/* --- 5.14 The Method Note — the --signal-fix block --------- */
+.c-fix {
+  background: var(--paper-2);
+  border: var(--w-hair) solid var(--rule-hair);
+  border-block-start: var(--w-heavy) solid var(--signal-fix);
+  padding: var(--s-lg) var(--grid-gap);
+  margin-block-start: var(--s-md);
+}
+/* The card is as wide as the page. Capping the prose at --measure-prose left
+   484px of dead space beside every paragraph on the homepage; letting it run
+   the full 1073px would put about 110 characters on a line, which is well past
+   where the eye reliably finds the start of the next one.
+
+   So the text fills the card and the measure is kept, by splitting into two
+   columns instead of one long line. `columns: 2 28rem` is a ceiling and a
+   floor together: at most two columns, each at least 28rem, so a wide card
+   gets two columns of roughly 55 characters and a narrow one stays single
+   column on its own. No breakpoint to maintain — it reads the card, not the
+   viewport, which matters because this card is 1139px on the homepage and
+   762px inside a narrow shell on the case studies.
+
+   Deliberately NOT text-align: center. These are four- and five-line
+   paragraphs; centring them gives every line a different start and makes the
+   eye hunt for the next one. Centred prose is for a pull quote, not an
+   argument. */
+.c-fix .prose {
+  max-inline-size: none;
+  /* The floor is the whole design of this rule, and it was measured twice.
+     At 28rem two columns needed ~920px of card, so a card between 700 and 920
+     stayed single column at 92 characters a line — worse than what this
+     replaced. At 20rem it split too eagerly and gave the case-study card two
+     columns of 32 characters, which reads like classifieds.
+
+     22rem is the balance: a single column never passes ~73 characters, and a
+     split column never drops below ~38. There is no floor that avoids both
+     entirely — two comfortable columns need ~890px and one comfortable column
+     tops out at ~720px, so cards between those two widths have to give up
+     something. They give up a little line length rather than a lot. */
+  columns: 2 22rem;
+  column-gap: var(--grid-gap);
+}
+.c-fix .prose > * { break-inside: avoid; }
+
+.c-fix__kicker {
+  font-family: var(--font-display); font-size: var(--fs-2xs); font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tr-caps);
+  color: var(--signal-fix);
+  /* margin-block, not the shorthand: `margin: 0 0 x` also sets the inline
+     margins to 0 and cancelled the auto that centres the column. */
+  margin-block: 0 var(--s-2xs);
+}
+.c-fix__h { margin-block-end: var(--s-sm); }
+.c-fix .prose { margin-block-end: var(--s-md); }
+.c-fix .fig { box-shadow: inset 0 -0.34em 0 0 var(--signal-fix-weak); }
+.c-fix .delta { color: var(--signal-fix); }   /* a ↓ here, never a ↑ */
+
+/* --- 5.15 Mono tag run (there are no pills) --------------- */
+.c-tags {
+  font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--ink-2); line-height: var(--lh-body);
+  overflow-wrap: anywhere;
+}
+
+/* --- 5.16 The domain roster — proof at scale -------------- */
+.c-roster-band {
+  background: var(--paper-2);
+  /* Not --space-section. That token is the gap BETWEEN sections, and it was
+     left here when §10.1 gave .section its own smaller clamp, so the band was
+     padded to 130px while every section around it used 98px. Inside a tinted
+     band the tint already does the separating, so it needs less than a section
+     boundary, not more: about two thirds. */
+  padding-block: clamp(2.25rem, 5.2vw, 4.5rem);
+  /* No margin-block-start. It was correct when .section carried
+     padding-block-START only (§4) and therefore ended flush with its last
+     line — the band had to make its own gap. §10.1 changed .section to
+     padding-block, giving every section a bottom pad, and this margin then
+     stacked on top of it: 228px between the ledger and the band where every
+     other boundary on the page is 98px. Measured, on all eight sections. */
+}
+.c-roster-band .section__rule { border-block-start-color: var(--rule-heavy); }
+.roster {
+  list-style: none; margin: var(--s-md) 0 0; padding: 0;
+  columns: 2; column-width: 13rem; column-gap: var(--grid-gap);
+  font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--ink-2);
+  overflow-wrap: anywhere;
+}
+@media (min-width: 80rem) { .roster { columns: 3; } }
+.roster li { break-inside: avoid; padding-block: 2px; }
+.roster span { color: var(--ink-3); }
+
+/* --- 5.17 The two doors ----------------------------------- */
+.c-doors {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--grid-gap);
+  margin-block-start: var(--s-md);
+}
+.c-doors > * { min-width: 0; }
+@media (min-width: 48rem) { .c-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.c-door { background: var(--paper-2); padding: var(--s-lg) var(--grid-gap);
+          display: grid; align-content: start; gap: var(--s-sm); }
+.c-door .prose { color: var(--ink-2); }
+.c-door .c-btn { justify-self: start; }
+.c-door__mail {
+  font-family: var(--font-mono); font-size: var(--fs-md);
+  color: var(--ink); overflow-wrap: anywhere;
+  text-decoration-line: underline; text-decoration-color: var(--accent-deep);
+  text-decoration-thickness: from-font; text-underline-offset: 0.18em;
+  justify-self: start;
+  min-block-size: 2.75rem; display: inline-flex; align-items: center;
+}
+.c-door__mail:hover, .c-door__mail:focus-visible {
+  color: var(--hover); text-decoration-color: var(--hover);
+}
+
+/* --- 5.18 Contact band — the page relaxes at the end ------ */
+.c-contact { padding-block: calc(var(--space-section) * 1.5); }
+/* The shell is deliberately narrow here and it is centred, so the block
+   sits where it should. What did not line up was inside it: the three
+   other children run the full 760px of the shell while .prose stopped at
+   595 on --measure-prose, leaving one ragged edge in the middle of an
+   otherwise even block. At 760 the line is ~76 characters, which is the
+   top of the comfortable range rather than past it. */
+/* The uncapped measure belongs to the centred narrow block on
+   contact.html, not to every .c-contact on the site: work/index
+   closes with the same component in a FULL shell, where dropping
+   the cap ran one line to 121 characters. */
+.c-contact .prose { margin-block-start: var(--s-md); }
+.c-contact .shell--narrow .prose { max-inline-size: none; }
+/* Letting .prose fill the shell made the block even but pushed the line to
+   78-84 characters. The shell itself is the thing to size, not the
+   paragraph inside it: at 46rem every child shares one width AND the line
+   stays inside the comfortable range. Scoped to this section so the case
+   study heroes keep the wider --wrap-narrow. */
+.c-contact .shell--narrow { max-inline-size: 46rem; }
+.c-contact__list { list-style: none; margin: var(--s-lg) 0 0; padding: 0;
+                   display: grid; gap: var(--s-sm); }
+.c-contact__list a {
+  display: inline-flex; align-items: center;
+  min-block-size: 2.75rem;                       /* 44px touch target */
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* --- 5.19 Colophon (footer) ------------------------------- */
+.c-colophon {
+  border-block-start: var(--w-heavy) solid var(--rule-heavy);
+  padding-block: var(--s-xl) var(--s-2xl);
+}
+/* The colophon block — portrait, education, certifications, build note —
+   was replaced by the three ways to reach him. The certifications it carried
+   are stated on about.html, so nothing left the site. */
+.c-colophon__links {
+  list-style: none; margin: 0 0 var(--s-sm); padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--s-2xs) var(--s-lg);
+  font-size: var(--fs-sm);
+}
+
+/* --- 5.20 Case-study hero (subpage archetype) ------------- */
+.c-case-hero { padding-block: var(--space-section) var(--s-lg);
+               border-block-end: var(--w-heavy) solid var(--rule-heavy); }
+.c-case-hero h1 { font-size: var(--fs-2xl); margin: var(--s-2xs) 0; }
+.c-case-hero .dek { margin-block-start: var(--s-sm); }
+
+.c-crumbs { padding-block-start: var(--s-md); }
+.c-crumbs ol { list-style: none; margin: 0; padding: 0;
+               display: flex; flex-wrap: wrap; gap: var(--s-2xs);
+               font-family: var(--font-mono); font-size: var(--fs-2xs);
+               text-transform: uppercase; letter-spacing: var(--tr-caps);
+               color: var(--ink-3); }
+.c-crumbs li + li::before { content: "/"; margin-inline-end: var(--s-2xs); color: var(--ink-3); }
+
+/* --- 6.2 "What I do" — capability columns ----------------- */
+.c-services { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--grid-gap);
+              margin-block-start: var(--s-lg); }
+.c-services > * { min-width: 0; }
+@media (min-width: 48rem) { .c-services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 60rem) { .c-services { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.c-service h3 { font-size: var(--fs-xs); color: var(--ink); margin: 0 0 var(--s-2xs); }
+.c-service .prose { margin-block-end: var(--s-sm); }
+
+/* --- The career ledger (row/rail skeleton, §4.4 + §5.8) --- */
+.c-ledger { display: grid; gap: var(--s-lg); margin-block-start: var(--s-lg);
+            list-style: none; padding: 0; }
+.c-ledger > li { min-width: 0; }
+.c-ledger .row { padding-block-start: var(--s-lg);
+                 border-block-start: var(--w-hair) solid var(--rule-hair); }
+.c-ledger > li:first-child .row { padding-block-start: 0; border-block-start: 0; }
+.c-ledger h3 { font-size: var(--fs-lg); margin-block-end: var(--s-3xs); }
+/* The card is ~1150px wide and the rail takes ~194 of it, leaving ~870 for
+   the role. Capped at --measure-prose the text used 590 of that and left the
+   rest empty; uncapped it would run to about 91 characters a line.
+
+   Same answer as the method note: fill the width, keep the measure, by
+   splitting. The scope line stays one column — it is three lines of serif
+   introducing the role, and two columns of three lines reads as a mistake.
+   The bullets are independent items, so they column cleanly. */
+/* The column flow belongs to the whole role, not to the bullet list alone.
+   Columning only the bullets left the scope line stopping at the measure
+   while the bullets ran to the full 880px, so the block had two different
+   right edges. Now the content box is the multi-column element: the heading
+   spans every column, and the scope and the bullets share one flow, one
+   measure and one pair of edges. */
+.c-ledger .row > div { columns: 2 22rem; column-gap: var(--grid-gap); }
+
+/* --- Section intros in a full-width shell -------------------
+   A section opening line sits under a display heading and above
+   something full-bleed — a table, a grid of notes, the ledger.
+   Held at one 62ch measure it filled 48% of a 1248px shell and
+   left the other half blank against a rule that ran edge to
+   edge. Same remedy as the ledger above it.
+
+   :not(.shell--narrow) is the whole of the scoping. Inside a
+   narrow shell 62ch IS the column — that is what the modifier
+   exists to do — and columning a case study body would be the
+   opposite of the fix. */
+.section > .shell:not(.shell--narrow) > .prose {
+  /* The cap has to come off the CONTAINER or it caps the whole
+     multicol box: 62ch split in two is a 31ch column, which is
+     worse than the blank it was meant to fix. The measure is
+     kept by the 22rem column floor instead. */
+  max-inline-size: none;
+  columns: 2 22rem;
+  column-gap: var(--grid-gap);
+}
+.c-ledger .row > div > h3,
+.c-ledger .row > div > h4 { column-span: all; }
+
+.c-ledger__scope { font-family: var(--font-serif); font-size: var(--fs-base);
+                   line-height: var(--lh-prose); color: var(--ink-2);
+                   max-width: none; break-inside: avoid; }
+.c-ledger__bullets { margin: var(--s-sm) 0 0; padding-inline-start: 1.15em;
+                     max-width: none; }
+.c-ledger__bullets > li { break-inside: avoid; margin-block-end: var(--s-2xs); }
+.c-ledger__bullets li { font-size: var(--fs-base); }
+.c-ledger__bullets li::marker { color: var(--ink-3); }
+
+
+/* ============================================================
+   6. UTILITIES
+   ============================================================ */
+
+.u-visually-hidden {
+  position: absolute; inline-size: 1px; block-size: 1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  margin: -1px; padding: 0; border: 0;
+}
+.u-stack-sm > * + * { margin-block-start: var(--s-sm); }
+.u-stack-md > * + * { margin-block-start: var(--s-md); }
+.u-wrap-any { overflow-wrap: anywhere; }
+
+/* Vertical rhythm helpers. Every value is on the 4px scale. */
+.u-mt-sm  { margin-block-start: var(--s-sm); }
+.u-mt-md  { margin-block-start: var(--s-md); }
+.u-mt-lg  { margin-block-start: var(--s-lg); }
+.u-mt-2xl { margin-block-start: var(--s-2xl); }
+
+
+/* ============================================================
+   7. MOTION  ·  three effects. Nothing else moves.
+   Without JS, .js is absent and every rule below is inert —
+   the page renders fully. No content depends on scroll.
+   ============================================================ */
+
+.js .reveal {
+  opacity: 0; transform: translateY(8px);
+  transition: opacity var(--dur-slow) var(--ease-out) calc(var(--i) * var(--stagger)),
+              transform var(--dur-slow) var(--ease-out) calc(var(--i) * var(--stagger));
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* The scaleX runs on a pseudo-element, never on .section__rule itself:
+   a scaled-to-zero element reports a zero-area box and IntersectionObserver
+   cannot resolve a threshold against it. Only the paint moves. */
+.js .section__rule { position: relative; border-block-start-color: transparent; }
+.js .section__rule::after {
+  content: ""; position: absolute;
+  inset-block-start: calc(var(--w-heavy) * -1);
+  inset-inline: 0; block-size: var(--w-heavy);
+  background: var(--rule-heavy);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.js .section__rule.is-in::after,
+.js .is-in > .section__rule::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================
+   8. PRINT  ·  a recruiter must get a better document than
+   most résumés. Ink-on-white, no chrome, no orphan figures.
+   ============================================================ */
+
+@media print {
+  @page { margin: 14mm; }
+
+  /* A reader in dark mode must not print near-white ink onto white paper.
+     The list has to cover every selector that sets the dark tokens, at
+     that selector's own specificity, because specificity is decided before
+     source order. Three of these were here already and did their job. The
+     fourth is the one that was missing:
+
+       §1 OS preference   :root:not([data-theme="light"])   0,2,0
+       §8 was             :root                             0,1,0
+
+     :not() carries the specificity of its argument, so the OS-preference
+     block outranked this reset for any page where the visitor had made no
+     explicit choice — the common case. Every colour token stayed dark, and
+     because html/body force #fff/#000 with !important while the elements
+     below them resolve var(--ink) themselves, the result was near-white
+     text on white paper: over two hundred elements per page, effectively
+     an empty printout. Matching the selector shape restores source order
+     as the tie-break, which this reset wins by sitting later. */
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --paper: #fff;   --paper-2: #fff;  --surface: #fff;  --surface-2: #fff;
+    --ink: #000;     --ink-2: #1a1a1a; --ink-3: #444;    --ink-4: #888;
+    --rule-hair: #bbb; --rule-mid: #999; --rule-heavy: #000;
+    --accent: #000;  --accent-deep: #000; --accent-weak: #e6e6e6;
+    --hover: #000;   --on-hover: #fff;
+    --signal-fix: #000; --signal-fix-weak: #ececec;
+    /* The pastel tints arrived with the 2026 redesign, after this block was
+       written, so they were never neutralised: a reader in dark mode printed
+       every tag pill as a near-black lozenge. One flat grey for all six —
+       the hue carries no meaning, it only rotates for variety, and six
+       different greys would imply a distinction that is not there. */
+    --tint-peach: #f1f1f1;  --tint-mint: #f1f1f1;  --tint-sky: #f1f1f1;
+    --tint-lilac: #f1f1f1;  --tint-blush: #f1f1f1; --tint-sand: #f1f1f1;
+    --ink-invert: #fff;  --on-accent: #fff;
+    --space-section: 1.5rem;
+    --space-gutter: 0;
+    --grid-gap: 1rem;
+    --wrap: 100%;    --wrap-narrow: 100%;
+  }
+
+  html, body { background: #fff !important; color: #000 !important; }
+  body { font-size: 10pt; line-height: 1.45; }
+
+  /* Chrome that has no business on paper. */
+  .c-skip, .c-theme, .c-nav, .c-crumbs, .c-note__more { display: none !important; }
+
+  /* Nothing is hidden by motion on paper. */
+  .reveal, .section__rule, .c-pair__bar, .js .reveal, .js .section__rule {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+  .js .section__rule { border-block-start-color: #000 !important; }
+  .js .section__rule::after { display: none; }
+
+  /* Header collapses to a one-line dateline masthead. */
+  .c-head__folio { border-block-end: 0; min-height: 0; font-size: 7.5pt; }
+  .c-head__bar { min-height: 0; padding-block: 2mm 1mm; border-block-end: 1.5pt solid #000; }
+  .c-head__mark { font-size: 11pt; }
+
+  .shell { max-width: 100%; padding-inline: 0; }
+  .section { padding-block-start: 6mm; break-inside: auto; }
+  .section__rule { border-block-start-width: 1.5pt; }
+  .section__folio { background: #fff; font-size: 7.5pt; }
+
+  h1 { font-size: 26pt; }
+  h2 { font-size: 14pt; break-after: avoid; }
+  h3 { font-size: 11.5pt; break-after: avoid; }
+  .dek { font-size: 11pt; max-width: 60ch; }
+  .prose { font-size: 10pt; max-width: 78ch; }
+
+  /* Figures: still the loudest thing, but paper-sized. */
+  .figure        { font-size: 24pt; }
+  .figure--long  { font-size: 20pt; }
+  .figure--xlong { font-size: 15pt; }
+  .c-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+               margin-block-start: 4mm; }
+  .c-metric { min-block-size: 0; break-inside: avoid; }
+  .section__open { break-inside: avoid; }
+  /* Five folios are followed by a block rather than a heading — the
+     method-note aside. Those cannot be wrapped without making a tall
+     block unbreakable, so the block refuses the break before it. */
+  .c-fix, .c-table-wrap, figure { break-before: avoid; }
+
+  /* The .fig wash does not survive a mono printer — underline instead. */
+  .fig { box-shadow: none !important; border-block-end: 1pt solid #000; padding-inline: 0; }
+
+  /* Real table on paper, header repeated on every page. */
+  .c-table-wrap { overflow: visible !important; }
+  .c-table { display: table !important; font-size: 9pt; }
+  .c-table thead { display: table-header-group !important;
+                   position: static !important; clip-path: none !important;
+                   inline-size: auto !important; block-size: auto !important; }
+  .c-table tbody { display: table-row-group !important; }
+  .c-table tbody tr { display: table-row !important; break-inside: avoid; }
+  .c-table tbody th, .c-table tbody td { display: table-cell !important;
+                                         padding: 1.5mm 4mm 1.5mm 0;
+                                         border-block-end: 0.5pt solid #bbb; }
+  .c-table thead th { position: static !important; background: #fff;
+                      border-block-end: 1pt solid #000; padding: 1.5mm 4mm 1.5mm 0; }
+  .c-table__lab { display: none !important; }
+  .c-table__val { text-align: start !important; }
+
+  /* Blocks that must not be cut in half. */
+  .c-note, .c-service, .c-door, .c-fix, .c-ledger > li, .roster li,
+  .c-portrait, figure { break-inside: avoid; }
+
+  /* The paper model for .c-note, .c-service, .c-fix, .c-metric, .roster and
+     .c-contact is set in §10.13, not here. It cannot live in this block: the
+     soft-card layer lands later in the sheet with equal specificity, so
+     anything stated here that the cards also set is overwritten. */
+
+  .c-roster-band { background: #fff; padding-block: 4mm; margin-block-start: 6mm;
+                   break-inside: avoid; }
+  .c-doors { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .c-door { background: #fff; border: 0.5pt solid #bbb; padding: 4mm; }
+  .c-btn { border-width: 1pt !important; background: #fff !important;
+           color: #000 !important; min-block-size: 0; padding: 1.5mm 3mm; }
+
+  .c-contact__list a { min-block-size: 0; font-size: 10pt; }
+
+  .c-portrait img { inline-size: 42mm; aspect-ratio: 4 / 5;
+                    border-block-start: 1pt solid #000; filter: none !important; }
+  .c-colophon { padding-block: 4mm 0; border-block-start: 1pt solid #000; }
+
+  /* Print the destination of every link that leaves the document. */
+  a { color: #000 !important; text-decoration: none; }
+  .prose a, main p a, li a { text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt;
+                           font-family: var(--font-mono); color: #444;
+                           word-break: break-all; }
+  a[href^="#"]::after, a[href^="mailto"]::after, a[href^="tel"]::after { content: ""; }
+}
+
+
+/* ============================================================
+   9. ADDENDUM  ·  .c-dl — the contact definition list
+   Added for contact.html only. content-plan.md (PAGE 10) requires
+   the direct details as a real <dl>; §5 of the design spec has no
+   term/value component, and .c-contact__list is a <ul>. Nothing new
+   is invented here: no token, no colour, no box, no radius, no hue.
+   The shape is the §4.4 rail + column skeleton, so a term/value pair
+   sets on the same two tracks as a ledger row.
+   ============================================================ */
+
+.c-dl { display: grid; margin: var(--s-lg) 0 0; }
+
+.c-dl__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-3xs);
+  padding-block: var(--s-sm);
+  border-block-start: var(--w-hair) solid var(--rule-hair);
+}
+.c-dl__row > * { min-width: 0; }
+.c-dl__row:first-child { border-block-start: 0; padding-block-start: 0; }
+
+@media (min-width: 48rem) {
+  .c-dl__row {
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: var(--grid-gap);
+    align-items: baseline;
+  }
+}
+
+.c-dl dt { align-self: start; }
+
+.c-dl dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-md);
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "lnum" 1, "zero" 1;
+  line-height: var(--lh-body);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* Links here are not matched by the §5.5 selector list, so the accent
+   underline is restated rather than left to the UA default blue. */
+.c-dl dd a {
+  display: inline-flex; align-items: center;
+  min-block-size: 2.75rem;                  /* 44px touch target */
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-thickness var(--dur-fast) var(--ease);
+}
+.c-dl dd a:hover,
+.c-dl dd a:focus-visible {
+  text-decoration-thickness: 2px;
+  color: var(--hover);
+  text-decoration-color: var(--hover);
+}
+
+@media print {
+  .c-dl { margin-block-start: 4mm; }
+  .c-dl__row { padding-block: 1.5mm; border-block-start: 0.5pt solid #bbb;
+               break-inside: avoid; }
+  .c-dl dd { font-size: 10pt; }
+  .c-dl dd a { min-block-size: 0; display: inline; }
+}
+
+/* ============================================================
+   ADDENDUM — about.html: the ledger's fourth heading level
+   ------------------------------------------------------------
+   about.html is the only page that groups the career ledger
+   under "Current" / "Previous" (§5 content plan, H3), which
+   pushes every role title down to h4. §5 defines .c-ledger h3
+   only, so a role title would fall to --fs-base and stop
+   reading as a title beside its Georgia scope line. This
+   restates the ledger's EXISTING h3 treatment one level down.
+   No new token, no new component, no new colour.
+   ============================================================ */
+.c-ledger h4 {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tight);
+  margin-block-end: var(--s-3xs);
+}
+
+@media print {
+  .c-ledger h4 { font-size: 11.5pt; break-after: avoid; }
+}
+
+/* ------------------------------------------------------------
+   about.html: the intro headshot is capped at a 320px rendered
+   width, per the content plan's build note for this page. It
+   reuses .c-portrait / .c-lede__portrait unchanged — this is a
+   width cap on the existing component, not a second portrait.
+   It aligns to the end of its track so the column edge still
+   lines up with the shell. Below 60rem .c-lede__portrait is a
+   full-width block, so the cap simply stops it growing.
+   ------------------------------------------------------------ */
+.c-lede__portrait--narrow { max-inline-size: 20rem; }
+@media (min-width: 60rem) {
+  .c-lede__portrait--narrow { justify-self: end; }
+}
+
+
+/* ============================================================
+   ADDED: project screenshots and project marks
+   `.fig` and `.figure` in this system mean NUMERIC figures, so
+   these deliberately use different names to avoid collision.
+   ============================================================ */
+
+/* --- .c-shot — an evidence screenshot ---------------------- */
+.c-shot {
+  margin: var(--space-gutter) 0 0;
+  padding: 0;
+  border: 1px solid var(--rule-hair);
+  background: var(--surface-2);
+}
+.c-shot > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-block-end: 1px solid var(--rule-hair);
+}
+.c-shot__cap {
+  display: block;
+  padding: 0.625rem 0.875rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+.c-shot__cap b { color: var(--ink-2); font-weight: 600; }
+
+/* Screenshots are UI captures: a hairline keeps a white dashboard
+   from bleeding into a light page ground, and dims it slightly in
+   dark mode so it does not glare. */
+:root[data-theme="dark"] .c-shot > img,
+:root:not([data-theme="light"]) .c-shot > img { filter: brightness(0.92); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .c-shot > img { filter: none; }
+}
+
+/* --- .c-mark — a project monogram -------------------------- */
+/* The fallback when no real mark exists: a neutral typographic
+   mark built from the project initials. Most clients now carry
+   their own logo via .c-mark--img below; this is what Permate,
+   Tomorrow's Nutrition and Ferrovit use, because Andrew's
+   portfolio deck has no mark for them either. The two variants
+   share tile geometry so a mixed row still lines up. */
+.c-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--mark-size, 2.75rem);
+  block-size: var(--mark-size, 2.75rem);
+  flex: 0 0 auto;
+  border: 1px solid var(--rule-mid);
+  background: var(--surface);
+  color: var(--accent-deep);
+  font-family: var(--font-display);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  user-select: none;
+}
+.c-mark--lg { --mark-size: 3.5rem; font-size: var(--fs-xs); }
+
+.c-markrow { display: flex; align-items: center; gap: 0.75rem; }
+/* Centring works where the label is one or two lines — the client
+   table. In a case-note card the heading runs to three or four, so
+   centring parks the mark beside line two and reads as an accident
+   rather than a choice. Stacked, it is stable at any heading length:
+   the same reasoning, and the same treatment, as .c-case-hero below. */
+.c-note__client .c-markrow { display: block; }
+/* Role titles run to four lines on a phone. The mark is about one line
+   tall, so it does not need the stacking the case-note cards use — it
+   just has to stop centring itself against the whole block and sit on
+   the first line, where the eye reads the employer. */
+.c-ledger h3 .c-markrow, .c-ledger h4 .c-markrow { align-items: start; }
+/* display:block on the row alone is not enough: the mark is an atomic
+   inline, so it stays on the first line and the heading just wraps
+   around it. It has to be block-level itself to take its own line. */
+.c-note__client .c-markrow > .c-mark { display: flex; margin-block-end: var(--s-xs); }
+
+@media print {
+  .c-shot { break-inside: avoid; border-color: #000; }
+  .c-shot > img { filter: none !important; }
+  .c-mark { border-color: #000; color: #000; }
+}
+
+
+/* ============================================================
+   Numeric alignment after the single-stack font change.
+   --font-mono is no longer monospace, so anything that showed
+   numbers in a column and relied on fixed-width digits now asks
+   for tabular figures explicitly. system-ui, SF, Segoe UI and
+   Roboto all ship them; if a fallback lacks them the text still
+   renders, just proportionally spaced.
+   ============================================================ */
+.c-table th,
+.c-table td,
+.c-table__val,
+.dateline,
+.source,
+.row__rail,
+.section__folio,
+.c-note__idx,
+.roster,
+.c-shot__cap {
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+}
+
+
+/* --- .c-mark--img — a real logo in the mark slot ------------
+   Used where a real client mark exists instead of the typographic
+   monogram. The tile geometry is identical so rows stay aligned;
+   only the contents differ.
+
+   The plate is a FIXED light value in both themes, not
+   var(--surface). A logo carries its own brand colours and cannot
+   be recoloured, and --surface resolves to #171B26 in dark mode,
+   which swallows every dark mark in the set: Cleanipedia's navy
+   disc, Bridgestone's black B, the Unilever U, The Eye Observer's
+   navy hands. A light plate is the only value that works for all
+   of them at once. Dark mode gets a slightly warmer, dimmer plate
+   so a grid of logo tiles does not glare against the dark ground.
+                                                               */
+.c-mark--img { padding: 0; background: #FFFFFF; overflow: hidden; }
+:root[data-theme="dark"] .c-mark--img,
+:root:not([data-theme="light"]) .c-mark--img { background: #EFECE4; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .c-mark--img { background: #FFFFFF; }
+}
+
+/* --- .c-mark--sm — the mark at table-row scale -------------- */
+.c-mark--sm { --mark-size: 1.75rem; font-size: 0.5625rem; letter-spacing: 0.04em; }
+/* --- .c-mark--xs — the mark inside a roster chip -------------
+   The chip is already a small pill of text, so the mark has to
+   sit on the text baseline rather than stand beside it as its
+   own block. Sized from the chip's own font so it tracks the
+   label instead of a root value. */
+/* --mark-size resolves against the mark's OWN font-size, so an em
+   value here is multiplied by the 0.45em set on the same rule and
+   a 16px chip mark came out at 7px. rem, like every other size on
+   this element. */
+.c-mark--xs { --mark-size: 1.15rem; font-size: 0.5rem; letter-spacing: 0.02em; }
+.roster--marked > li { display: inline-flex; align-items: center; gap: 0.45em; }
+.roster--marked .c-mark--xs { flex: 0 0 auto; }
+
+/* A monogram written as [data-mark] instead of as a text node.
+   Inside a table row header the literal letters would join the cell's
+   text content, so the header reads "PM Permate Global" to anything
+   that takes text rather than the accessibility tree: copy-paste, a
+   scraper, an answer engine. aria-hidden fixes screen readers only.
+   Generated content is painted but never enters textContent. */
+.c-mark[data-mark]::before { content: attr(data-mark); }
+.c-mark--img > img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  display: block;
+  /* A logo needs breathing room the two-letter monogram does not: the
+     glyph runs edge to edge in its own artwork. */
+  padding: 8%;
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   10. SOFT-CARD LAYER  ·  the 2026 redesign
+   ------------------------------------------------------------
+   Everything above this line describes a broadsheet: flat plane,
+   1px rules, square corners. This section restyles those same
+   components as rounded plates floating on a near-white page,
+   which is what the reference design is made of.
+
+   Appended rather than merged, so the broadsheet stays readable
+   underneath and the change stays reversible. The original is
+   kept whole at site.broadsheet-backup.css.
+
+   Load-bearing idea: a card is (surface + radius + hairline +
+   two-layer shadow). Everything below is one variation on that
+   single object, which is why they sit together as a set.
+   ============================================================ */
+
+body { background: var(--paper); }
+
+/* --- 10.1 The card primitive ------------------------------- */
+.u-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+}
+
+/* --- 10.2 Header: a floating pill ---------------------------
+   The broadsheet header was a full-bleed bar with a rule under
+   it. Detaching it from the page edge is what makes the content
+   read as scrolling underneath rather than starting below it. */
+.c-head {
+  position: sticky;
+  inset-block-start: 0.75rem;
+  z-index: 40;
+  inline-size: min(100% - 1.5rem, var(--wrap));
+  margin-inline: auto;
+  margin-block-start: 0.75rem;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  -webkit-backdrop-filter: saturate(1.6) blur(14px);
+  backdrop-filter: saturate(1.6) blur(14px);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-sm);
+}
+.c-head__bar { padding-inline: clamp(0.9rem, 2.2vw, 1.5rem); padding-block: 0.6rem; border-block-end: 0; }
+.c-head__folio { display: none; }
+
+.c-nav__list { gap: clamp(0.35rem, 1.4vw, 0.9rem); }
+.c-nav a {
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--r-pill);
+  border-block-end: 0;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.c-nav a:hover { background: var(--paper-2); }
+.c-nav a[aria-current="page"] { background: var(--ink); color: var(--ink-invert); border-block-end: 0; }
+/* The current-page pill is inverted, so it cannot take the hover
+   colour as TEXT — white on blue is the readable way round, and
+   without this the one tab you are already on is the one tab that
+   does not answer the pointer. */
+.c-nav a[aria-current="page"]:hover { background: var(--hover); color: var(--on-hover); }
+
+/* --- 10.3 Sections: air instead of rules -------------------- */
+/* Two adjacent sections each contributed 98px at a 1224px viewport, so the
+   white space between one section's last line and the next section's first
+   was 196px — better than a fifth of the screen, empty. Reduced to about
+   130px at that width, which still separates but no longer strands.
+   One token, one line: every section on all fourteen pages follows it. */
+.section { padding-block: clamp(2.75rem, 5.3vw, 4.75rem); }
+
+/* One section opts out of that rhythm. #results on the homepage
+   ends with a link out to the full register, and opens under the
+   hero's own heavy rule, so both of its gaps were already being
+   held apart by something else: 202px below the hero and 135px
+   above "What I do", against a 64px token doing the work twice.
+   Zeroing it here leaves 138px and 71px. The token is untouched,
+   so the other thirty-odd sections keep the rhythm; this is a
+   single opt-out, spelled on the element. */
+.section--flush { padding-block: 0; }
+.section__rule { display: none; }
+.section__folio {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: var(--paper-2);
+  color: var(--ink-3);
+  border: 1px solid var(--rule-hair);
+}
+
+/* --- 10.4 The pill tag ·  NEW -------------------------------
+   The reference labels each feature block with a small tinted
+   pill. One class plus six tint modifiers, so a section can be
+   colour-coded without inventing a component each time.      */
+.c-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.32rem 0.72rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  background: var(--tint-sky);
+  color: var(--ink-2);
+}
+.c-tag--peach { background: var(--tint-peach); }
+.c-tag--mint  { background: var(--tint-mint);  }
+.c-tag--sky   { background: var(--tint-sky);   }
+.c-tag--lilac { background: var(--tint-lilac); }
+.c-tag--blush { background: var(--tint-blush); }
+.c-tag--sand  { background: var(--tint-sand);  }
+
+/* --- 10.5 The gradient word ·  NEW --------------------------
+   One word of a headline, italic, filled with the accent sweep.
+   background-clip:text carries no fallback colour of its own, so
+   a real colour is set first and only cleared where the clip is
+   actually supported. Otherwise the word vanishes. */
+.u-grad { font-style: italic; color: var(--accent); }
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .u-grad {
+    background: var(--grad-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* --- 10.6 Buttons: pills ----------------------------------- */
+.c-btn {
+  border-radius: var(--r-pill);
+  padding: 0.7rem 1.25rem;
+  border-width: 1px;
+  transition: transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur-fast) var(--ease),
+              background var(--dur-fast) var(--ease);
+}
+.c-btn--primary { background: var(--ink); color: var(--ink-invert); border-color: var(--ink); box-shadow: var(--sh-sm); }
+.c-btn--primary:hover { box-shadow: var(--sh-md); transform: translateY(-1px); }
+.c-btn--secondary { background: var(--surface); color: var(--ink); border-color: var(--rule-mid); box-shadow: var(--sh-sm); }
+.c-btn--secondary:hover { background: var(--paper-2); transform: translateY(-1px); }
+
+/* --- 10.7 Cards: notes, ledger rows, services, contact ------ */
+.c-note, .c-service, .c-contact, .c-fix {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.c-ledger > li {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  padding: clamp(1.1rem, 2.6vw, 1.75rem);
+  margin-block-end: var(--s-sm);
+}
+
+/* --- 10.8 Figures as stat plates ---------------------------- */
+.c-metric {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  padding: clamp(1.1rem, 2.4vw, 1.6rem);
+}
+
+/* --- 10.9 Tables in a rounded well -------------------------- */
+.c-table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  padding: clamp(0.5rem, 1.6vw, 1rem);
+}
+.c-table thead th { background: transparent; }
+
+/* --- 10.10 Screenshots -------------------------------------- */
+.c-shot {
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-sm);
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+/* --- 10.11 Marks -------------------------------------------- */
+.c-mark { border-radius: var(--r-sm); border-color: var(--rule-hair); }
+.c-mark--img { border-radius: var(--r-sm); }
+
+/* --- 10.12 Roster as chips ---------------------------------- */
+.roster { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.roster li {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-sm);
+  padding: 0.45rem 0.85rem;
+  font-size: var(--fs-2xs);
+}
+
+/* --- 10.13 Print: flatten it all back out -------------------
+   §8 states the paper model, but it is written above this layer,
+   and the cascade settles ties by source order. Everything the
+   soft-card layer sets at the same specificity therefore won on
+   paper: a 1px box, a filled surface and ~20px of padding
+   derived from the print viewport around every block, where §8
+   asked for a hairline rule and a broadsheet column.
+
+   So this is where the paper model actually lives. It is stated
+   once, here, rather than duplicated in §8 — duplication would
+   only reintroduce the same tie, one edit later. §11–§16 come
+   after this block and keep their own print rules, which is why
+   the boxed headline metrics of §16 still override what is set
+   here for .c-metric. */
+@media print {
+  .c-head { position: static; border: 0; box-shadow: none; background: none;
+            -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+  .u-card, .c-note, .c-service, .c-contact, .c-fix, .c-metric,
+  .c-ledger > li, .c-table-wrap, .c-shot, .roster li, .c-btn {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Strip the card, then restate what the page wanted instead. */
+  .u-card, .c-note, .c-service, .c-contact, .c-fix, .c-metric,
+  .c-ledger > li, .c-table-wrap {
+    background: none; border: 0; padding: 0;
+  }
+  .c-note, .c-service { border-block-start: 0.5pt solid #bbb;
+                        padding-block-start: 3mm; }
+  .c-ledger > li { margin-block-end: 0; }
+  .c-fix { border-block-start: 1.5pt solid #000; padding: 4mm 0 0; }
+  .c-contact { padding-block: 6mm; }
+  /* §16 draws a box around these, so they need room inside it. */
+  .c-metric { padding: 2mm 4mm; }
+
+  /* §10.12 turned the roster into a flex row of chips, which silently
+     cancels the three-column text list §8 asks for — the columns
+     property does nothing on a flex container. */
+  .roster { display: block; columns: 3; font-size: 8pt; }
+  .roster li { background: none; border: 0; padding: 0 0 0.6mm;
+               font-size: inherit; break-inside: avoid; }
+
+  .c-shot { border-color: #000; }
+  .c-mark { border-color: #000; color: #000; }
+  /* The cream logo plate exists so a grid of tiles does not glare against
+     a dark screen. There is no dark ground on paper, and keeping it would
+     make the same page print differently depending on the reader's OS.
+     !important because the rule it answers is 0,3,0. */
+  .c-mark--img { background: #fff !important; }
+  .u-grad { color: #000 !important; background: none !important; }
+}
+
+/* ============================================================
+   11. THE HERO  ·  NEW
+   ------------------------------------------------------------
+   Centred, sitting in a soft iridescent wash, with real figures
+   floating around it on tilted plates.
+
+   The reference floats lifestyle photography here. Andrew has
+   almost none, and inventing some would be decoration standing
+   in for evidence. His numbers are the thing worth looking at,
+   so the numbers are what float.
+   ============================================================ */
+/* The bottom value was 8vw because that is what .section used when this was
+   written. .section is now 5.3vw, so the hero was leaving 163px below it
+   where every other boundary is 130. The top keeps its own larger value:
+   that one is the gap under the header, not a section boundary. */
+/* No block padding of its own. The header above is a floating pill that
+   carries its own margin, and the section below carries its own top padding,
+   so the hero was adding a second helping at both ends — 136px of nothing
+   between the panel and the first result. */
+/* Two different jobs, two different values.
+
+   Top is the gap under the floating header pill, not a section boundary, so
+   it is small — at 0 the badge sat flush against the header, measured at
+   exactly 0px of air.
+
+   Bottom is a section boundary and matches .section exactly, so hero -> results
+   reads the same as every other boundary on the page. It was briefly set to 0;
+   that halved this one gap and made the hero sit closer to the page than any
+   other section did. */
+.c-hero { position: relative; overflow: clip;
+          padding-block: clamp(1.25rem, 2.5vw, 2.5rem)
+                         clamp(2.75rem, 5.3vw, 4.75rem); }
+
+/* The wash is a separate painted layer rather than a background
+   on the section: it has to be able to bleed past the shell and
+   be hidden from assistive tech without taking the content with it. */
+.c-hero__wash {
+  position: absolute;
+  inset-block-start: -22%;
+  inset-inline: -12%;
+  block-size: 130%;
+  background: var(--grad-wash);
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 0;
+}
+.c-hero > .shell { position: relative; z-index: 1; }
+
+.c-hero__head { max-inline-size: 54rem; margin-inline: auto; text-align: center; }
+
+.c-hero h1 {
+  margin-block-start: var(--s-sm);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.c-hero__dek {
+  margin-block-start: var(--s-sm);
+  margin-inline: auto;
+  max-inline-size: var(--measure-dek);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+.c-actions--center { justify-content: center; }
+
+/* --- The floating figure plates -----------------------------
+   Absolutely positioned on wide screens, where there is room in
+   the margins. Below 1100px there is no margin to float into,
+   so they stop being decoration and become a plain scrolling
+   row — the numbers still get read, they just stop orbiting. */
+.c-hero__floats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-start: clamp(2rem, 5vw, 3.5rem);
+}
+.c-float {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-float);
+  padding: 0.85rem 1.1rem;
+  text-align: start;
+  min-inline-size: 8.5rem;
+}
+.c-float b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-figure);
+  color: var(--ink);
+}
+.c-float span {
+  display: block;
+  margin-block-start: 0.2rem;
+  font-size: var(--fs-3xs);
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+@media (min-width: 1100px) {
+  .c-hero__floats {
+    position: absolute;
+    inset: 0;
+    display: block;
+    margin: 0;
+    pointer-events: none;
+  }
+  .c-float { position: absolute; }
+  .c-float:nth-child(1) { inset-block-start: 14%; inset-inline-start: 1%;  rotate: -6deg;  }
+  /* 43%, not 54%. At 54% this plate landed 196x60px over the portrait —
+     16.4% of the image, and the part it covered was the top of the head.
+     The other three plates clear the image entirely; this is the value
+     that makes this one do the same, with room to spare: the tightest
+     clearance across 1000-1920px is 5px at 46%, 24px at 43%. */
+  .c-float:nth-child(2) { inset-block-start: 43%; inset-inline-start: 4%;  rotate:  4.5deg;}
+  .c-float:nth-child(3) { inset-block-start: 11%; inset-inline-end:   1%;  rotate:  6deg;  }
+  .c-float:nth-child(4) { inset-block-start: 52%; inset-inline-end:   4%;  rotate: -4.5deg;}
+}
+
+/* --- The card under the hero, as in the reference ----------- */
+.c-hero__panel {
+  margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-xl);
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+}
+@media (min-width: 820px) { .c-hero__panel { grid-template-columns: 15rem 1fr; } }
+.c-hero__panel .c-portrait img { border-radius: var(--r-lg); }
+.c-hero__panel figcaption { text-align: start; }
+
+@media print {
+  .c-hero__wash, .c-hero__floats { display: none; }
+  .c-hero__panel { box-shadow: none; border-radius: 0; padding: 0; }
+}
+
+/* --- 11.1 Case-study hero ----------------------------------
+   The mark used to sit beside the h1 on a centred flex row. That
+   worked when the heading was one or two lines. At the display
+   size this design uses, these headings run to four, and a
+   vertically centred 56px mark ends up floating in the middle of
+   the left margin with nothing to align to.
+
+   Stacking it above the heading is stable at any heading length,
+   and it matches how the reference introduces a block: badge or
+   icon first, then the statement. */
+.c-case-hero .c-markrow {
+  display: block;
+}
+.c-case-hero .c-markrow > .c-mark {
+  /* Bigger than the inline mark: standing alone above a display
+     heading, 56px reads as a stray favicon rather than a mark. */
+  --mark-size: 4.5rem;
+  margin-block-end: var(--s-sm);
+  box-shadow: var(--sh-sm);
+}
+.c-case-hero h1 {
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.c-case-hero .dateline,
+.c-case-hero .dek { max-inline-size: var(--measure-prose); }
+
+/* --- 13.1 The one hero that carries body copy ---------------
+   work/index.html is the only .c-case-hero with .prose in it:
+   the eight case studies open with a mark, a dateline and a dek
+   and nothing else. At 1224px those two paragraphs stacked in a
+   single 62ch measure left more than half the header empty
+   while the heavy rule beneath them ran the full width — the
+   same mismatch the ledger and the method note had.
+
+   Same remedy as those: flow the body copy into columns and
+   span everything that is not body copy across all of them. The
+   22rem floor is the figure the other two settled on — below it
+   a column stops being a column and starts being a stutter — so
+   the header folds back to one measure on a phone.
+
+   :has() scopes it, and :not(.shell--narrow) keeps it off the
+   narrow shell. That second half was learned the hard way: a
+   52rem shell split in two is a 364px column, roughly 40ch,
+   while every .prose in the sections below it on the same page
+   runs the full 62ch measure in one column. The header read as
+   a different page from the rest. Two columns need a full shell
+   to be worth having; the narrow subpages get one measure, the
+   same as their own sections. */
+.c-case-hero:not(.shell--narrow):has(> .prose) {
+  columns: 2 22rem;
+  column-gap: var(--grid-gap);
+}
+.c-case-hero:not(.shell--narrow):has(> .prose) > :not(.prose) { column-span: all; }
+/* A paragraph split across the column break reads as two
+   fragments with no relation to each other. */
+.c-case-hero > .prose { break-inside: avoid; }
+/* Chrome truncates a leading margin at the top of a column but
+   keeps it in the first one, so two paragraphs carrying the same
+   .u-mt-md started 24px apart. The gap is moved onto the element
+   above the columns, where it is outside the flow and applies
+   once. Only in the columned case: in one measure the paragraphs
+   keep their own margins. */
+.c-case-hero:not(.shell--narrow):has(> .prose) > .prose { margin-block-start: 0; }
+.c-case-hero:not(.shell--narrow):has(> .prose) > :not(.prose):has(+ .prose) {
+  margin-block-end: var(--s-md);
+}
+
+/* --- 11.2 The header on small screens -----------------------
+   The pill is sticky, so on a phone its height is spent for the
+   whole session, not just at the top. Wrapped across three rows
+   it was 160px of an 812px viewport — a fifth of the screen,
+   permanently. Tightened here, and it stops being sticky below
+   the breakpoint so a long read gets the space back. */
+@media (max-width: 640px) {
+  .c-head {
+    position: static;
+    inline-size: min(100% - 1rem, var(--wrap));
+    border-radius: var(--r-lg);
+  }
+  .c-head__bar { padding-block: 0.45rem; padding-inline: 0.75rem; }
+  .c-nav__list { gap: 0.15rem; }
+  .c-nav a { padding: 0.32rem 0.5rem; font-size: var(--fs-3xs); }
+  .c-theme__text { position: absolute; inline-size: 1px; block-size: 1px;
+                   overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+/* ============================================================
+   12. PASTEL FEATURE BLOCKS  ·  NEW
+   ------------------------------------------------------------
+   The reference's main repeating unit: a tinted panel holding a
+   white card, beside a column of tag + headline + copy, the two
+   swapping sides down the page.
+
+   The tint is passed as --feat-tint on the block rather than
+   hard-coded per modifier, so the panel and its matching tag
+   cannot drift apart — one value drives both.
+
+   A deliberate constraint: the white card inside the panel holds
+   a REAL figure with its source, never a decorative mock. The
+   panel is the only thing here that is decoration.
+   ============================================================ */
+.c-feats {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+.c-feat {
+  --feat-tint: var(--tint-sky);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.c-feat--peach { --feat-tint: var(--tint-peach); }
+.c-feat--mint  { --feat-tint: var(--tint-mint);  }
+.c-feat--sky   { --feat-tint: var(--tint-sky);   }
+.c-feat--lilac { --feat-tint: var(--tint-lilac); }
+.c-feat--blush { --feat-tint: var(--tint-blush); }
+.c-feat--sand  { --feat-tint: var(--tint-sand);  }
+
+@media (min-width: 900px) {
+  .c-feat { grid-template-columns: 1fr 1fr; }
+  /* Alternate which side the panel sits on. Only the panel moves;
+     the body column stays in source order, so the reading order
+     is unchanged for anything that ignores CSS. */
+  .c-feat:nth-child(even) > .c-feat__panel { order: 2; }
+}
+
+.c-feat__panel {
+  background: var(--feat-tint);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  place-items: center;
+  min-block-size: 14rem;
+}
+
+.c-feat__card {
+  inline-size: 100%;
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-lg);
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+}
+.c-feat__card b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-figure);
+  color: var(--ink);
+}
+.c-feat__card p {
+  margin-block-start: 0.35rem;
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.c-feat__card .source { margin-block-start: 0.6rem; }
+
+/* A stacked mini-ledger for cards that carry rows instead of one
+   headline figure — the paid-media and stack blocks. */
+.c-feat__rows { display: grid; gap: 0.55rem; }
+
+/* --- The stack panel as marks -------------------------------
+   Chips rather than a bare row of logos: a mark on its own asks
+   the reader to recognise n8n's glyph, and the ones who do not
+   are exactly the readers this page has to reach. The name is
+   the content; the mark is recognition for those who have it.
+
+   The marks are inlined SVG with fill:currentColor, so they take
+   the theme's ink in light and dark and print as black, which an
+   <img> could never do. SQL has no mark because SQL has no logo
+   — it is a standard, not a product. */
+.c-stack { display: grid; gap: 0.9rem; }
+.c-stack__row { display: grid; gap: 0.4rem; }
+.c-stack__label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  color: var(--ink-3);
+}
+.c-stack__items {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.c-stack__items > li {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  padding: 0.34rem 0.7rem;
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.c-stack__mark {
+  inline-size: 1.15em; block-size: 1.15em;
+  flex: 0 0 auto;
+  color: var(--ink);
+}
+.c-feat__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block-end: 0.55rem;
+  border-block-end: 1px solid var(--rule-hair);
+  font-size: var(--fs-sm);
+}
+.c-feat__row:last-child { border-block-end: 0; padding-block-end: 0; }
+.c-feat__row span { color: var(--ink-3); }
+/* These inherited .c-feat__card b, which is --fs-2xl: the size a
+   card uses when ONE figure is the whole card. In a four-row
+   ledger it ran to 52px against a 15px label — a 3.4x jump that
+   read as four headlines rather than a list. --fs-xl keeps them
+   figures without shouting, and tabular digits make the right
+   edge of the column line up, which is the point of a ledger. */
+.c-feat__row b {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: var(--tr-tight);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  font-variant-numeric: tabular-nums;
+}
+
+.c-feat__body > h3 {
+  margin-block-start: var(--s-xs, 0.5rem);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.c-feat__body > .prose { margin-block-start: var(--s-sm); }
+.c-feat__body > .c-tags { margin-block-start: var(--s-sm); }
+
+@media print {
+  .c-feat { grid-template-columns: 1fr; }
+  .c-feat__panel { background: none; padding: 0; min-block-size: 0; border-radius: 0; }
+  .c-feat__card { box-shadow: none; border-radius: 0; }
+}
+
+
+/* ============================================================
+   13. INNER PAGES  ·  one hero treatment, thirteen pages
+   ------------------------------------------------------------
+   The homepage got a bespoke hero. The other thirteen pages use
+   two existing shapes between them — .c-lede (about) and
+   .c-case-hero (work index plus the eight case studies) — with
+   contact and 404 carrying a bare heading.
+
+   Rather than rewrite thirteen heroes by hand, the shared parts
+   are done here: the same soft wash behind the top of the page,
+   the eyebrow promoted to a badge pill, and a display-scale h1.
+   Only about.html needed its markup touched, because its hero is
+   two columns and had to become a card.
+   ============================================================ */
+
+.c-lede,
+.c-case-hero {
+  position: relative;
+  /* The wash below bleeds to -20% inline, which is wider than the
+     viewport and was adding ~240px of horizontal scroll on the two
+     full-width heroes. Clip contains it. overflow-x alone is not
+     enough: the spec computes the other axis to auto, which would
+     cut the badge's shadow and could trap a focus ring. */
+  overflow: clip;
+}
+
+/* The wash. Painted on a pseudo-element so it can bleed past the
+   shell without the shell needing overflow rules, and so it never
+   lands in the accessibility tree. */
+.c-lede::before,
+.c-case-hero::before {
+  content: "";
+  position: absolute;
+  inset-block-start: -8rem;
+  inset-inline: -20%;
+  block-size: 26rem;
+  background: var(--grad-wash);
+  filter: blur(22px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* --- The eyebrow, promoted to a badge -----------------------
+   .dateline on the about page and .label on a case hero do the
+   same job: a small line above the title saying what this page
+   is. They become the same badge so every page opens the same
+   way as the homepage does. */
+/* contact.html and 404.html have no hero component at all: their
+   eyebrow is a bare .dateline inside the first section. Matching on
+   position rather than on a class is what lets one rule cover all
+   four hero shapes the site uses. */
+#main > .section:first-of-type > .shell > .dateline,
+.c-lede > .shell .dateline,
+.c-case-hero > .dateline,
+.c-case-hero > .label {
+  /* NOT display:inline-block. These sit inside grid containers, and
+     CSS blockifies a grid item's display, so inline-block silently
+     became block and the badge stretched the full column width.
+     fit-content shrink-wraps in every context. */
+  display: block;
+  inline-size: fit-content;
+  justify-self: start;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid var(--rule-hair);
+  box-shadow: var(--sh-sm);
+  color: var(--ink-3);
+  margin-block-end: var(--s-sm);
+}
+
+
+
+/* On a case study .label is the eyebrow and .dateline is the role and
+   period line UNDER the h1 — only the eyebrow should become a badge,
+   so the period line is put back. work/index.html has no .label, and
+   there .dateline is the eyebrow, which is why it is matched above. */
+.c-case-hero > .label ~ .dateline,
+.c-case-hero .c-markrow ~ .dateline {
+  display: block;
+  inline-size: auto;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.c-lede h1 {
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.c-lede .dek {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+/* --- Portraits become plates -------------------------------- */
+.c-portrait img {
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-md);
+}
+
+/* --- about.html: the stack tiles ---------------------------- */
+/* Five capability lists in a grid. Tinting them in rotation ties
+   this page to the feature blocks on the homepage and services,
+   without restructuring anything. The cycle is prime-free on
+   purpose: 5 tiles, 5 tints, so no two ever repeat. */
+.c-services > .c-service:nth-child(5n + 1) { background: var(--tint-lilac); }
+.c-services > .c-service:nth-child(5n + 2) { background: var(--tint-mint);  }
+.c-services > .c-service:nth-child(5n + 3) { background: var(--tint-sky);   }
+.c-services > .c-service:nth-child(5n + 4) { background: var(--tint-peach); }
+.c-services > .c-service:nth-child(5n + 5) { background: var(--tint-sand);  }
+.c-services > .c-service { border-color: transparent; box-shadow: none; }
+
+/* --- contact.html and 404.html ------------------------------
+   No hero component, just a heading. Give the heading the same
+   display scale so they do not read as a different site. */
+.c-dl { }
+#main > .section:first-of-type h1 {
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+
+/* --- The colophon ------------------------------------------- */
+.c-colophon {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* --- Breadcrumbs -------------------------------------------- */
+.c-crumbs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--r-pill);
+  background: var(--paper-2);
+  border: 1px solid var(--rule-hair);
+}
+
+@media print {
+  .c-lede::before, .c-case-hero::before { display: none; }
+  .c-lede > .shell .dateline, .c-case-hero > .label,
+  .c-crumbs, .c-colophon {
+    background: none; border: 0; box-shadow: none; border-radius: 0;
+  }
+  .c-services > .c-service { background: none !important; }
+  .c-portrait img { box-shadow: none; border-radius: 0; }
+}
+
+/* ============================================================
+   14. LOGO CLOUD  ·  NEW
+   ------------------------------------------------------------
+   Client marks scattered around a centred statement, as in the
+   reference. Two things make it behave:
+
+   1. The scatter is absolutely positioned only where there is
+      room for it. Below the breakpoint it becomes an ordinary
+      wrapped row — a scatter in a 375px column is just overlap.
+   2. Position, scale and rotation are read from custom
+      properties set per item, so one rule drives 27 marks and a
+      mark can be nudged in the HTML where you can see which one
+      it is.
+   ============================================================ */
+.c-cloud {
+  position: relative;
+  margin-block-end: clamp(2rem, 5vw, 3.5rem);
+}
+
+.c-cloud__mid {
+  position: relative;
+  z-index: 1;
+  max-inline-size: 38rem;
+  margin-inline: auto;
+  text-align: center;
+  padding-block: clamp(1rem, 3vw, 2rem);
+}
+.c-cloud__h {
+  margin-block-start: var(--s-sm);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-display);
+  text-wrap: balance;
+}
+.c-cloud__dek {
+  margin-block-start: var(--s-sm);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+/* --- Small screens: a plain wrapped row --------------------- */
+.c-cloud__scatter {
+  list-style: none;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.c-cloud__item {
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0.3rem;
+  background: #FFFFFF;
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-sm);
+  box-shadow: var(--sh-sm);
+}
+:root[data-theme="dark"] .c-cloud__item,
+:root:not([data-theme="light"]) .c-cloud__item { background: #EFECE4; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .c-cloud__item { background: #FFFFFF; }
+}
+.c-cloud__item > img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Wide screens: the scatter ------------------------------ */
+@media (min-width: 1000px) {
+  .c-cloud { min-block-size: 40rem; display: grid; place-items: center; }
+  .c-cloud__scatter {
+    position: absolute;
+    inset: 0;
+    display: block;
+    margin: 0;
+    pointer-events: none;
+  }
+  .c-cloud__item {
+    position: absolute;
+    inset-inline-start: var(--x);
+    inset-block-start: var(--y);
+    inline-size: 3.25rem;
+    block-size: 3.25rem;
+    scale: var(--s, 1);
+    rotate: var(--r, 0deg);
+    box-shadow: var(--sh-float);
+  }
+}
+
+@media print { .c-cloud__scatter { display: none; } }
+
+/* ============================================================
+   15. CHARTS  ·  NEW
+   ------------------------------------------------------------
+   Two inline SVG charts, no library and no script. Colour roles
+   are declared here rather than as raw hex in the markup so the
+   light/dark pair swaps in one place.
+
+   Palette: the blue sequential ramp, validated against this
+   site's own card surfaces (#FFFFFF light, #171B26 dark) rather
+   than the skill's defaults --
+     ordinal 2-step, light  #86b6ef -> #2a78d6   ALL CHECKS PASS
+     ordinal 2-step, dark   #184f95 -> #3987e5   ALL CHECKS PASS
+     single series, light   #2a78d6              ALL CHECKS PASS
+     single series, dark    #3987e5              ALL CHECKS PASS
+   Blue, not the site's warm accent: the accent already means
+   "link / focus" here, and a chart that borrows it would read as
+   interactive.
+   ============================================================ */
+.c-chart {
+  --viz-before: #86b6ef;
+  --viz-after:  #2a78d6;
+  --viz-dot:    #2a78d6;
+  --viz-grid:   var(--rule-hair);
+  --viz-surface: var(--surface);
+
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-sm);
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) .c-chart {
+    --viz-before: #184f95;
+    --viz-after:  #3987e5;
+    --viz-dot:    #3987e5;
+  }
+}
+:root[data-theme="dark"] .c-chart {
+  --viz-before: #184f95;
+  --viz-after:  #3987e5;
+  --viz-dot:    #3987e5;
+}
+
+.c-chart__pair {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+@media (min-width: 720px) { .c-chart__pair { grid-template-columns: 1fr 1fr; } }
+
+.c-chart h3 {   /* was h4: it sits directly under the section h2, so h4
+                   skipped a level for anyone navigating by heading. */
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tr-caps);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-block-end: 0.35rem;
+}
+.c-chart svg { inline-size: 100%; block-size: auto; display: block; }
+
+/* Text in a chart wears text tokens, never the series colour. */
+.c-chart .viz-label { fill: var(--ink-3); font-size: 11px; font-family: var(--font-ui); letter-spacing: 0.04em; }
+.c-chart .viz-value { fill: var(--ink);   font-size: 13px; font-family: var(--font-display); font-weight: 700; }
+.c-chart .viz-note  { fill: var(--ink-3); font-size: 10.5px; font-family: var(--font-ui); }
+.c-chart .viz-axis  { stroke: var(--viz-grid); stroke-width: 1; }
+
+.c-chart__read {
+  margin-block-start: var(--s-sm);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+
+@media print {
+  .c-chart { box-shadow: none; border-radius: 0; break-inside: avoid; }
+}
+
+/* ============================================================
+   16. CASE STUDY HEADLINE FIGURES
+   ------------------------------------------------------------
+   The eight case studies are argued documents: prose, tables,
+   screenshots, source lines, a section on what went wrong. They
+   are deliberately NOT converted to the alternating pastel
+   feature pattern used on the homepage and services page —
+   that pattern is for short marketing blocks, and forcing a
+   reasoned argument into it would cost the site the one thing
+   it is best at.
+
+   What does map cleanly is the "headline figures" band at the
+   top of each case. That really is an at-a-glance summary, so
+   it gets the tinted-plate treatment and nothing else does.
+   ============================================================ */
+.c-metrics {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.c-metrics > .c-metric {
+  border-color: transparent;
+  box-shadow: none;
+}
+/* Four tints in rotation. Four, not six: every case carries three
+   or four figures, so a longer cycle would never complete and the
+   first tile of one page would not match the first of the next. */
+.c-metrics > .c-metric:nth-child(4n + 1) { background: var(--tint-sky);   }
+.c-metrics > .c-metric:nth-child(4n + 2) { background: var(--tint-mint);  }
+.c-metrics > .c-metric:nth-child(4n + 3) { background: var(--tint-peach); }
+.c-metrics > .c-metric:nth-child(4n + 4) { background: var(--tint-lilac); }
+
+.c-metrics > .c-metric > .figure {
+  letter-spacing: var(--tr-figure);
+  /* Proportional figures here, not tabular: these are standalone
+     display numbers, and equal-width digits make a short one look
+     loose. tabular-nums stays where numbers align in a column. */
+  font-variant-numeric: proportional-nums;
+}
+.c-metrics > .c-metric > .label {
+  /* Raised with .c-note .source above, so the figure-to-caption gap
+     reads the same wherever a number carries a caption. */
+  margin-block-start: 0.5rem;
+  color: var(--ink-2);
+}
+.c-metrics > .c-metric > .source { margin-block-start: 0.5rem; }
+
+@media print {
+  .c-metrics > .c-metric { background: none !important; border: 1px solid #000; }
+}

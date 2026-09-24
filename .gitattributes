@@ -1,0 +1,15 @@
+# Git on Windows checks files out with CRLF by default. Every source file in
+# this repo is LF, GitHub Pages serves LF, and a checkout that flipped all
+# ninety files to CRLF would show the whole site as modified on the next
+# machine that touched it. Store LF, check out LF, everywhere.
+#
+# text=auto still lets git sniff binaries, so the PNGs, the PDFs and the .ico
+# are left alone.
+* text=auto eol=lf
+
+# Belt and braces for the ones that must never be touched.
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.ico  binary
+*.svg  text eol=lf

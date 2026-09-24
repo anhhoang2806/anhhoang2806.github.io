@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — Andrew Hoang (Hoang Tuan Anh)
+
+  Every <loc> below byte-matches the <link rel="canonical"> on that page.
+  A sitemap URL that disagrees with the page's own canonical is a conflicting
+  signal and is one of the most common findings in a static-site audit.
+
+  Deliberate omissions:
+    - 404.html is not listed. It is noindex and must never appear in a sitemap.
+    - _source/ is not listed. It is not published.
+    - No <changefreq> and no <priority>. Google ignores both; including them
+      only signals that a template was copied.
+    - No <lastmod>. It is omitted rather than stamped with a date that was not
+      verified. Add a real <lastmod> to an individual <url> only when that
+      page's content actually changes — never bump all of them at once.
+
+  The resume PDF is listed on purpose: it is an indexable, corroborating
+  document that Google will index, and it backs up the dates and figures on
+  the HTML pages.
+
+  When a page is added or removed, update this file AND llms.txt together.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/about.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/services.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/inapps-technology.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/assets/andrew-hoang-resume.pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://REPLACE-WITH-YOUR-DOMAIN/assets/andrew-hoang-portfolio.pdf</loc>
+  </url>
+
+</urlset>

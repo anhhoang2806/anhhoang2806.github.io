@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Permate — Andrew Hoang</title>
+<meta name="description" content="A marketplace launched from zero: 200 partners and 500 publishers in three months, and organic clicks up 22,339% off a near-zero base.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Permate — Andrew Hoang">
+<meta property="og:description" content="A marketplace launched from zero: 200 partners and 500 publishers in three months, and organic clicks up 22,339% off a near-zero base.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-13T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-13T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Permate — Andrew Hoang">
+<meta name="twitter:description" content="A marketplace launched from zero: 200 partners and 500 publishers in three months, and organic clicks up 22,339% off a near-zero base.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html",
+      "name": "Permate — Andrew Hoang",
+      "description": "A marketplace launched from zero: 200 partners and 500 publishers in three months, and organic clicks up 22,339% off a near-zero base.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#webpage" },
+      "headline": "Permate: a marketplace launched into organic from zero",
+      "description": "How Andrew Hoang launched Permate, a two-sided affiliate marketplace, into organic search from no footprint at all: 200 partners and 500 publishers onboarded within three months, with top ranking for \"tiếp thị liên kết\" as the stated launch KPI, and organic clicks up 22,339% and impressions up 195,464% comparing the last six months with the previous six.",
+      "articleSection": "Case Study",
+      "keywords": "affiliate marketing, two-sided marketplace, marketplace liquidity, Vietnam SEO, organic launch from zero, tiếp thị liên kết, Permate Global",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@type": "Organization", "name": "Permate Global", "alternateName": "Permate" },
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Permate Global",
+          "alternateName": "Permate"
+        }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/permate.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Permate" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       BREADCRUMB  ·  matches the BreadcrumbList JSON-LD exactly
+       ========================================================== -->
+  <nav class="c-crumbs" aria-label="Breadcrumb">
+    <div class="shell shell--narrow">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Work</a></li>
+        <li>Permate</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       CASE HERO  ·  the only h1 on the page
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 04</p>
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/permate.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1 id="case-h">Permate: a marketplace launched into organic from zero</h1>
+    </div>
+    <p class="dateline">Aug 2024 – Jul 2025 · Affiliate · Consulting engagement</p>
+    <p class="dek">Consulting engagement. An affiliate marketing platform with no organic footprint, needing both sides of a two-sided marketplace to fill up fast.</p>
+
+    <p class="label u-mt-lg">At a glance</p>
+    <ul class="c-ledger__bullets">
+      <li><b>Engagement</b> — consulting, Aug 2024 – Jul 2025</li>
+      <li><b>Sector</b> — affiliate marketing, two-sided marketplace</li>
+      <li><b>Market</b> — Vietnam</li>
+      <li><b>Objective</b> — organic visibility, plus partner and publisher acquisition</li>
+    </ul>
+  </header>
+
+  <!-- ==========================================================
+       HEADLINE FIGURES  ·  three cells, full shell so the 128px
+       figures keep their air. Every cell carries a source line.
+       ========================================================== -->
+  <section class="section" aria-labelledby="figures-h">
+    <div class="shell">
+      <h2 class="label" id="figures-h">Headline figures</h2>
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure">200</p>
+          <p class="label">Partners onboarded</p>
+          <p class="source">Permate · within 3 months of launch</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">500</p>
+          <p class="label">Publishers onboarded</p>
+          <p class="source">Permate · within 3 months of launch</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--xlong">22,339%</p>
+          <p class="label">Organic click growth</p>
+          <p class="source">Permate Global · L6M vs P6M</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       01 — THE SITUATION
+       ========================================================== -->
+  <section class="section" id="situation" aria-labelledby="situation-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — The situation</p>
+      <h2 id="situation-h" class="section__head">What was the situation at Permate?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Permate is an affiliate marketing platform. A two-sided marketplace has a hard launch problem: partners will not join without publishers, and publishers will not join without partners. Neither side moves until the other one does.</p>
+        <p>Organic search is one of the few channels that can work on both sides at once, because the people searching for how affiliate marketing works are the supply, and the brands searching for how to run an affiliate programme are the demand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE CONSTRAINT
+       ========================================================== -->
+  <section class="section" id="constraint" aria-labelledby="constraint-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The constraint</p>
+      <h2 id="constraint-h" class="section__head">What was the constraint at launch?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>No organic footprint at all at the start. That cuts both ways, and I want to be straight about it before I quote any percentage on this page.</p>
+        <p>Starting from near zero means the growth rates are enormous and much less meaningful than they look. It also means there was nothing to inherit — no authority, no ranking history, no existing pages doing quiet work in the background. Every result had to be built.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — WHAT I DID
+       ========================================================== -->
+  <section class="section" id="method" aria-labelledby="method-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — What I did</p>
+      <h2 id="method-h" class="section__head">What did I do?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>The organic strategy targeted the head terms that define the category in Vietnamese, with <span lang="vi">&ldquo;tiếp thị liên kết&rdquo;</span> — affiliate marketing — as the primary target. That term is the entry point for both sides of the marketplace, which makes it worth more than its search volume suggests.</p>
+        <p>Alongside the ranking work, the KPI that actually mattered was marketplace liquidity: onboarding partners on one side and publishers on the other, fast enough that neither side found an empty marketplace when they arrived.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — WHAT IT PRODUCED  ·  the measured result, in a real
+       table, plus the --signal-fix caveat block. That caveat is
+       the only umber block on this page.
+       ========================================================== -->
+  <section class="section" id="result" aria-labelledby="result-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — What it produced</p>
+      <h2 id="result-h" class="section__head">What did it produce?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Permate onboarded <b class="fig">200</b> partners and <b class="fig">500</b> publishers within three months of launch, and grew organic clicks <b class="fig">+22,339%</b> and organic impressions <b class="fig">+195,464%</b> comparing the last six months with the previous six. Top ranking for <span lang="vi">&ldquo;tiếp thị liên kết&rdquo;</span> was the stated launch KPI.</p>
+
+      <!-- Same markup at every width; below 48rem it reflows to stacked
+           records. The explicit ARIA roles are what keep it a table in
+           the a11y tree once display changes. -->
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="result-cap">
+        <table class="c-table" role="table" aria-labelledby="result-cap">
+          <caption id="result-cap" class="label">Permate results, by metric</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Metric</th>
+              <th role="columnheader" scope="col">Result</th>
+              <th role="columnheader" scope="col">Comparison</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Partners onboarded</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">200</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Comparison</span><span class="c-table__val">Within 3 months of launch</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Publishers onboarded</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">500</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Comparison</span><span class="c-table__val">Within 3 months of launch</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Ranking, <span lang="vi">&ldquo;tiếp thị liên kết&rdquo;</span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Top ranking (stated KPI)</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Comparison</span><span class="c-table__val">KPI at launch</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Organic clicks</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+22,339%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Comparison</span><span class="c-table__val">Last 6 months vs previous 6</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Organic impressions</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+195,464%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Comparison</span><span class="c-table__val">Last 6 months vs previous 6</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">Permate · final 6 months vs the previous 6</p>
+
+      <!-- The evidence for the two percentage rows above: the same
+           six-month window, in absolute clicks and impressions. The
+           shape of the curve is also what the caveat below is about. -->
+      <figure class="c-shot">
+        <img src="../assets/img/work/permate-gsc-performance.png"
+             width="1530" height="492" loading="lazy" decoding="async"
+             alt="Google Search Console performance report for the permate.com property across a six-month window, showing 43.2K total clicks, 542K total impressions, 8% average CTR and 20.8 average position, with the clicks and impressions curve flat near zero through the first months and climbing steeply at the end.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — permate.com over a six-month window: 43.2K total clicks, 542K total impressions, 8% average CTR, average position 20.8. The curve sits flat near zero for the first months, then climbs steeply at the end.</figcaption>
+      </figure>
+
+      <!-- The one --signal-fix block on this page. A caveat is a
+           different KIND of claim, so it is marked as one. -->
+      <aside class="c-fix u-mt-2xl" aria-labelledby="honest-h">
+        <p class="c-fix__kicker">Caveat · the base was near zero</p>
+        <h3 class="c-fix__h" id="honest-h">Read the percentages honestly</h3>
+        <div class="prose">
+          <p>Those last two figures are the largest numbers anywhere on this site and they are the least impressive, because the baseline was close to zero. A move from a handful of clicks to a few thousand produces a number in the tens of thousands of percent. The maths is real; the achievement is smaller than the figure implies.</p>
+          <p>The result I would actually point to is <b class="fig">200</b> partners and <b class="fig">500</b> publishers in three months, because those are counted in whole units and a marketplace with that many participants on both sides is a marketplace that works.</p>
+        </div>
+        <p class="source">Permate · organic clicks and impressions, L6M vs P6M</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" id="differently" aria-labelledby="differently-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — What I would do differently</p>
+      <h2 id="differently-h" class="section__head">What would I do differently?</h2>
+      </div>
+
+      <h3 class="u-mt-lg">I would report absolute clicks next to the percentage from the first month.</h3>
+      <p class="prose u-mt-sm">I did not misreport anything here — the +22,339% is a correct calculation against a near-zero base. But a percentage that large tells a stakeholder almost nothing, and it invites them to expect the same rate again next period. Leading with absolute numbers and showing the percentage as secondary is the honest way to report an early-stage launch.</p>
+
+      <h3 class="u-mt-lg">I would separate the two sides of the marketplace in reporting from day one.</h3>
+      <p class="prose u-mt-sm">Partners and publishers are different audiences with different searches and different reasons to sign up. Reporting them against a single organic number makes it harder to tell which side the content was actually serving, and therefore which side to invest the next month in.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — NEXT
+       ========================================================== -->
+  <section class="section" id="next" aria-labelledby="next-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — Next</p>
+      <h2 id="next-h" class="section__head">What to read next</h2>
+      </div>
+
+      <p class="prose u-mt-md">InApps Technology is the other consulting launch on this site: B2B organic for a mobile app development company, where the only result that counts is a qualified inbound enquiry rather than a traffic line.</p>
+
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="inapps-technology.html">InApps Technology</a>
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+      </p>
+
+      <p class="prose u-mt-lg">Launching something into organic from zero is one of the two engagement shapes I take on. <a href="../services.html">Consulting engagements</a> · <a href="../contact.html">Get in touch</a></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Phibious enterprise SEO — Andrew Hoang</title>
+<meta name="description" content="Bridgestone 30k to 50k organic in three months, Cleanipedia at 16 million visitors against a 14 million KPI, Schneider Electric at 70% top-1.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Phibious enterprise SEO — Andrew Hoang">
+<meta property="og:description" content="Bridgestone 30k to 50k organic in three months, Cleanipedia at 16 million visitors against a 14 million KPI, Schneider Electric at 70% top-1.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-13">
+<meta property="article:modified_time" content="2026-09-13">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Phibious enterprise SEO — Andrew Hoang">
+<meta name="twitter:description" content="Bridgestone 30k to 50k organic in three months, Cleanipedia at 16 million visitors against a 14 million KPI, Schneider Electric at 70% top-1.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html",
+      "name": "Phibious enterprise SEO — Andrew Hoang",
+      "description": "Bridgestone 30k to 50k organic in three months, Cleanipedia at 16 million visitors against a 14 million KPI, Schneider Electric at 70% top-1.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#webpage" },
+      "headline": "Phibious: enterprise SEO, migrations and BigQuery analysis for Bridgestone and Cleanipedia",
+      "description": "Andrew Hoang, SEO Manager at Phibious from April 2023 to December 2024, grew Bridgestone organic traffic from 30,000 to 50,000 in three months, maintained Cleanipedia at 1.5 million monthly visits against a 14 million annual KPI delivered at 16 million, and ranked Schneider Electric at 70% top-1.",
+      "articleSection": "Case Study",
+      "keywords": "enterprise SEO, site migrations, technical SEO, BigQuery, Google Cloud, Bridgestone, Cleanipedia, Unilever, Schneider Electric, Phibious",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious" },
+      "mentions": [
+        { "@type": "Organization", "name": "Bridgestone" },
+        { "@type": "Organization", "name": "Cleanipedia" },
+        { "@type": "Organization", "name": "Unilever" },
+        { "@type": "Organization", "name": "Schneider Electric" },
+        { "@type": "Organization", "name": "Threexfive", "alternateName": "Dep365" },
+        { "@type": "SoftwareApplication", "name": "BigQuery", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Google Cloud", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Strapi", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Adobe CMS", "applicationCategory": "BusinessApplication" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/phibious-enterprise-seo.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Phibious" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       BREADCRUMB — matches the BreadcrumbList in the graph above
+       ========================================================== -->
+  <nav class="c-crumbs" aria-label="Breadcrumb">
+    <div class="shell shell--narrow">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Work</a></li>
+        <li>Phibious</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       CASE HERO  ·  §5.20 archetype. One h1 on the page.
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 03</p>
+    <!-- The mark is the client's own logo, lifted from Andrew's portfolio
+         deck (see _source/client-logos.md for provenance and the grid
+         mapping). Decorative, so aria-hidden and alt="": the client is
+         already named in full by the h1 beside it, and a logo in the
+         accessibility tree would just read the name twice.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/phibious.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>Phibious: enterprise SEO for Bridgestone, Cleanipedia and Schneider Electric</h1>
+    </div>
+    <p class="dateline">Apr 2023 – Dec 2024 · Enterprise / Agency · SEO Manager</p>
+    <p class="dek">SEO Manager. I led SEO and content strategy for enterprise clients, focused on technical SEO, AI-assisted content and strategic site migrations, working directly with product and development teams rather than around them.</p>
+
+    <div class="row u-mt-lg">
+      <p class="row__rail">At a glance</p>
+      <div class="u-stack-sm">
+        <p class="c-tags">Role — SEO Manager, agency side</p>
+        <p class="c-tags">Accounts covered here — Bridgestone · Cleanipedia (Unilever) · Schneider Electric · Threexfive (Dep365)</p>
+        <p class="c-tags">Focus — technical SEO · AI-assisted content · site migrations</p>
+        <p class="c-tags">Stack — BigQuery · Google Cloud · Colorful CMS · Strapi · Adobe CMS</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       FIGURES BAR  ·  three cells on a case page. Full shell:
+       a 128px figure cannot be set inside the narrow measure.
+       Every cell carries its source line. No cell without one.
+       ========================================================== -->
+  <section class="section" aria-labelledby="figures-h">
+    <div class="shell">
+      <h2 id="figures-h" class="label">Headline figures from the Phibious accounts</h2>
+      <ul class="c-metrics">
+        <!-- Widest 128px figure sits in cell 1: it is the only cell with no
+             inline-start padding, so it is the only one with the room. -->
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure">70%</p>
+          <p class="label">Schneider Electric target keywords in position 1</p>
+          <p class="source">Schneider Electric · Phibious, Apr 2023 – Dec 2024</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">16M</p>
+          <p class="label">Cleanipedia visitors against a 14M annual KPI</p>
+          <p class="source">Cleanipedia (Unilever) · 2023</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--long">1.5x</p>
+          <p class="label">Faster site performance after the Threexfive migration</p>
+          <p class="source">Threexfive (Dep365) · post-migration</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       01 — THE SITUATION
+       ========================================================== -->
+  <section class="section" id="situation" aria-labelledby="what-was-the-situation-at-phibious">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — The situation</p>
+      <h2 id="what-was-the-situation-at-phibious" class="section__head">What was the situation at Phibious?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>At Phibious I was SEO Manager on the agency side from April 2023 to December 2024, working across enterprise accounts: Bridgestone, Cleanipedia (Unilever), Schneider Electric and Threexfive (Dep365).</p>
+        <p>Multinational brands with large sites, real engineering teams, and CMS platforms I did not control — Colorful, Strapi and Adobe across different accounts.</p>
+        <p>Enterprise SEO at this scale is mostly not keyword work. It is migrations, platform constraints, and getting a change through a release process that was not designed with search in mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE CONSTRAINT  ·  the agency reality
+       ========================================================== -->
+  <section class="section" id="constraint" aria-labelledby="what-was-the-constraint-on-these-accounts">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The constraint</p>
+      <h2 id="what-was-the-constraint-on-these-accounts" class="section__head">What was the constraint on these accounts?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Three constraints repeated across every Phibious account, and none of them were keyword problems.</p>
+        <p>The first is that I could not ship. Every technical change went through the client&rsquo;s product and development teams, on their roadmap. That means a recommendation is only as good as the case made for it, and vague recommendations do not get built.</p>
+        <p>The second is scale. At a million-plus monthly visits, an error does not stay small. A template-level mistake is a site-wide mistake within one deploy.</p>
+        <p>The third is that some of these accounts were defensive. Holding <b class="fig">1.5M</b> monthly visits is a different job from growing <b class="fig">30k</b>, and it is judged more harshly, because nobody congratulates you for a flat line.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — WHAT I DID  ·  one h3 per account, not blurred together
+       ========================================================== -->
+  <section class="section" id="accounts" aria-labelledby="what-did-i-do-on-each-account">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The accounts</p>
+      <h2 id="what-did-i-do-on-each-account" class="section__head">What did I do on each account?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Each Phibious account had its own objective, so the work is set out per account rather than as one programme.</p>
+
+      <h3 id="bridgestone" class="u-mt-2xl">Bridgestone — 30k to 50k organic in three months</h3>
+      <div class="prose u-mt-sm">
+        <p>At Bridgestone I grew organic traffic from <b class="fig">30,000</b> to <b class="fig">50,000</b> in three months. The account brief was a content strategy aligned to the site&rsquo;s goals, with technical issues holding back performance addressed in parallel, aimed at conversion rate growth and brand awareness in the target audience — with a stated objective of a 100% increase in KPIs.</p>
+      </div>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/bridgestone-technical-audit.png" width="653" height="345" loading="lazy" decoding="async" alt="Technical SEO audit tracker for Bridgestone: a numbered issue register with Type and Frequency columns listing XML sitemaps missing or erroring in Google Search Console, sitemaps not reflecting valid URLs, error pages not returning 404, internal links pointing to 4XX or 5XX, multiple URLs returning the same content, wrongly canonicalised pages, important pages more than 4 clicks from the homepage, orphan pages, title tags over 60 characters, short titles and duplicate titles, each set to a monthly or bi-weekly check.">
+        <figcaption class="c-shot__cap"><b>Technical SEO audit tracker</b> — the numbered issue register behind the technical work, with Type and Frequency columns: XML sitemaps missing or erroring in GSC, sitemaps not reflecting valid URLs, error pages not returning 404, internal links pointing to 4XX/5XX, multiple URLs returning the same content, wrongly canonicalised pages, important pages more than 4 clicks from the homepage, orphan pages, title tags over 60 characters, short titles and duplicate titles — each set to a monthly or bi-weekly check.</figcaption>
+      </figure>
+
+      <div class="c-pair u-mt-md">
+        <p class="label" id="bridgestone-pair-lab">Bridgestone organic traffic per month, before and after</p>
+        <p class="c-pair__figs">
+          <span class="figure figure--long">30k</span>
+          <span class="c-pair__arrow" aria-hidden="true">→</span>
+          <span class="figure figure--long">50k</span>
+        </p>
+        <span class="c-pair__bars" aria-hidden="true">
+          <span class="c-pair__bar" style="--fill:60%;--i:0"></span>
+          <span class="c-pair__bar" style="--fill:100%;--i:1"></span>
+        </span>
+        <p class="source">Bridgestone · 3 months</p>
+      </div>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/bridgestone-gsc-performance.png" width="1600" height="478" loading="lazy" decoding="async" alt="Google Search Console performance report for Bridgestone: 442K total clicks and 6.93M total impressions, average CTR 6.4%, average position 9.5, with the clicks and impressions lines rising across the range 10/29/22 to 1/6/24.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — Bridgestone: total clicks 442K and total impressions 6.93M, average CTR 6.4%, average position 9.5, rising from 10/29/22 to 1/6/24.</figcaption>
+      </figure>
+
+      <h3 id="cleanipedia" class="u-mt-2xl">Cleanipedia — 16 million visitors against a 14 million KPI</h3>
+      <div class="prose u-mt-sm">
+        <p>Cleanipedia is Unilever&rsquo;s cleaning advice property. The 2023 KPI for website traffic was <b class="fig">14 million</b> visitors for the year. We finished at <b class="fig">16 million</b>.</p>
+        <p>At its peak the site ran at about <b class="fig">1.5M</b> visits a month, and the 2023 total was <b class="fig">16 million</b> visitors against the <b class="fig">14 million</b> target. Those two do not multiply into each other &mdash; 1.5M every month would be 18M &mdash; because 1.5M is the high-water mark rather than the year&rsquo;s average, which was nearer 1.33M a month. The core objective here was content quality — making sure the content was delivered to the customer in the best form — rather than chasing new keyword territory.</p>
+        <p>Beating a 14 million annual target by 2 million is the clearest example on this site of working to a number somebody else set, in public, with a deadline.</p>
+      </div>
+      <p class="source u-mt-sm">Cleanipedia (Unilever) · 2023 annual KPI and outturn</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/cleanipedia-gsc-performance.png" width="1600" height="491" loading="lazy" decoding="async" alt="Google Search Console performance report for Cleanipedia: 16.3M total clicks and 253M total impressions, average CTR 6.4%, average position 9.5.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — Cleanipedia: total clicks 16.3M and total impressions 253M, average CTR 6.4%, average position 9.5.</figcaption>
+      </figure>
+
+      <h3 id="schneider-electric" class="u-mt-2xl">Schneider Electric — 70% of target keywords in position 1</h3>
+      <div class="prose u-mt-sm">
+        <p>I ranked Schneider Electric at <b class="fig">70%</b> top-1, <b class="fig">20%</b> top-5 and <b class="fig">10%</b> top-10.</p>
+        <p>Read that distribution rather than the headline. Seventy percent in position one, with the remainder still inside the top ten, means the visibility is not stacked on a couple of lucky terms — it holds across the set.</p>
+      </div>
+      <p class="source u-mt-sm">Schneider Electric (se.com) · Phibious, Apr 2023 – Dec 2024</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/schneider-gsc-performance.png" width="1600" height="487" loading="lazy" decoding="async" alt="Google Search Console performance report for Schneider Electric (se.com): 609K total clicks and 7.15M total impressions, average CTR 8.5%, average position 10.4.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — Schneider Electric (se.com): total clicks 609K and total impressions 7.15M, average CTR 8.5%, average position 10.4.</figcaption>
+      </figure>
+
+      <h3 id="threexfive-dep365" class="u-mt-2xl">Threexfive (Dep365) — site performance improved 1.5x after migration</h3>
+      <div class="prose u-mt-sm">
+        <p>I improved Threexfive (Dep365) site performance <b class="fig">1.5x</b> post-migration. Migrations are where enterprise SEO is usually lost, so coming out of one measurably better than going in is the outcome I was after.</p>
+      </div>
+      <p class="source u-mt-sm">Threexfive (Dep365) · post-migration</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/dep365-gsc-performance.png" width="1597" height="482" loading="lazy" decoding="async" alt="Google Search Console performance report for Dep365: 129K total clicks and 4.88M total impressions, average CTR 2.6%, average position 13.4.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — Dep365: total clicks 129K and total impressions 4.88M, average CTR 2.6%, average position 13.4.</figcaption>
+      </figure>
+
+      <h3 id="bigquery-and-google-cloud" class="u-mt-2xl">Analysis in BigQuery and Google Cloud</h3>
+      <div class="prose u-mt-sm">
+        <p>I ran advanced analysis in BigQuery and Google Cloud across these accounts, and managed the Colorful, Strapi and Adobe CMS platforms they ran on. At enterprise data volumes the analytics UI stops being sufficient, and the questions worth asking are the ones you have to write SQL for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — MEASURED RESULTS  ·  a real table, one fact per cell
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-were-the-measured-results">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — Measured results</p>
+      <h2 id="what-were-the-measured-results" class="section__head">What were the measured results?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Andrew Hoang, SEO Manager at Phibious from April 2023 to December 2024, grew Bridgestone&rsquo;s organic traffic from 30,000 to 50,000 monthly visits in three months and maintained Cleanipedia at 1.5 million monthly visits.</p>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="phibious-results-cap">
+        <table class="c-table" role="table" aria-labelledby="phibious-results-cap">
+          <!-- Trimmed to fit .label's 26ch measure, per the design spec's
+               "copy is trimmed, the component is not redesigned" rule. The
+               measurement source and window are columns, not caption text. -->
+          <caption id="phibious-results-cap" class="label">Measured outcomes from Andrew Hoang&rsquo;s enterprise SEO work at Phibious, by account</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Account</th>
+              <th role="columnheader" scope="col">Metric</th>
+              <th role="columnheader" scope="col">Result</th>
+              <th role="columnheader" scope="col">Source of truth</th>
+              <th role="columnheader" scope="col">Timeframe</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Bridgestone</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Metric</span><span class="c-table__val">Organic traffic</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">30,000 → 50,000 / month</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Source of truth</span><span class="c-table__val">Analytics reporting</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">3 months</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Cleanipedia (Unilever)</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Metric</span><span class="c-table__val">Annual visitors against KPI</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">16M against a 14M KPI</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Source of truth</span><span class="c-table__val">Analytics reporting</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">2023</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Cleanipedia (Unilever)</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Metric</span><span class="c-table__val">Monthly visits</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Maintained at 1.5M</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Source of truth</span><span class="c-table__val">Analytics reporting</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">Apr 2023 – Dec 2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Schneider Electric</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Metric</span><span class="c-table__val">Target keyword distribution</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">70% top-1, 20% top-5, 10% top-10</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Source of truth</span><span class="c-table__val">Rank tracking</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">Apr 2023 – Dec 2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Threexfive (Dep365)</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Metric</span><span class="c-table__val">Site performance</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Site performance improved 1.5x post-migration</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Source of truth</span><span class="c-table__val">Site performance measurement</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Timeframe</span><span class="c-table__val">Apr 2023 – Dec 2024</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — HOW IT WAS MEASURED  ·  the section most portfolios skip
+       ========================================================== -->
+  <section class="section" id="measurement" aria-labelledby="how-were-the-results-measured">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — How it was measured</p>
+      <h2 id="how-were-the-results-measured" class="section__head">How were the results measured?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Every Phibious figure on this page traces to one of two documents — my résumé record of the engagement and my portfolio deck — and each row in the table above carries the window it covers. Where the exact reporting platform is not recorded, the table says &ldquo;analytics reporting&rdquo; rather than naming a tool I cannot verify.</p>
+        <p>Two of the numbers are different kinds of claim. Bridgestone&rsquo;s 30,000 to 50,000 is growth over three months. Cleanipedia&rsquo;s 1.5 million monthly visits is a peak figure held rather than moved, and the 16 million is an annual total measured against a target Unilever set before the year started. They are different units on different windows, which is why the page states both rather than deriving one from the other.</p>
+        <p>Schneider Electric&rsquo;s 70% / 20% / 10% is a distribution across a defined set of target keywords, not across every keyword the domain ranks for. Read that way it is a visibility claim with a denominator, which is the only kind worth making.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — IN HINDSIGHT
+       ========================================================== -->
+  <section class="section" id="hindsight" aria-labelledby="what-would-i-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — In hindsight</p>
+      <h2 id="what-would-i-do-differently" class="section__head">What would I do differently?</h2>
+      </div>
+
+      <h3 id="business-kpi-not-traffic-kpi" class="u-mt-lg">I would argue harder for a business KPI instead of a traffic KPI</h3>
+      <div class="prose u-mt-sm">
+        <p>Cleanipedia&rsquo;s 2023 target was 14 million visitors and we delivered 16 million. It was a good year. But visitors is a proxy, and I could not tell you from that number what those two million extra visits were worth to Unilever. On an account with that much leverage I would now push for a target tied to a commercial outcome, even if it is harder to hit and harder to look good against.</p>
+      </div>
+
+      <h3 id="build-the-technical-case-first" class="u-mt-2xl">I would build the technical case in the client&rsquo;s own terms before asking for the build</h3>
+      <div class="prose u-mt-sm">
+        <p>Every fix on these accounts had to clear someone else&rsquo;s roadmap. The recommendations that got built fastest were the ones where I had already quantified the cost of not doing them. I would make that the default for every request rather than the exception for the big ones.</p>
+      </div>
+
+      <h3 id="per-template-baselines-before-migration" class="u-mt-2xl">I would set per-template performance baselines before a migration, not after</h3>
+      <div class="prose u-mt-sm">
+        <p>Threexfive came out at 1.5x the previous performance figure, which is the right direction. My source records that as &ldquo;site performance improved 1.5x&rdquo; without naming the metric, so I am not going to restate it as a speed claim: a score rising 1.5x and a load time falling by a third are different results. But post-migration measurement tells you what happened, not what specifically caused it. Baselining each template beforehand makes the recovery diagnosable instead of just observable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — NEXT  ·  two doors, kept to one line each
+       ========================================================== -->
+  <section class="section c-contact" id="next" aria-labelledby="next-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — Next</p>
+      <h2 id="next-h" class="section__head">Next</h2>
+      </div>
+
+      <p class="prose">Permate is the opposite problem: a marketplace launched into organic from zero rather than an enterprise site held at scale. If you are hiring, the roles are listed on the <a href="../about.html">about page</a>. If you have an account that needs this kind of work, see <a href="../services.html">what I take on</a> or <a href="../contact.html">get in touch</a>.</p>
+
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="permate.html">Permate <span aria-hidden="true">→</span></a>
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

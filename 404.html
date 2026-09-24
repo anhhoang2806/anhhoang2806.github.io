@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Identical to every other page EXCEPT that
+     this one does NOT add the `js` class. Reason: the `js` class arms the
+     motion rules in §7 of site.css, which hold .section__rule transparent
+     until site.js adds .is-in — and site.js is deliberately not loaded here
+     (see the build note below the </head>). No class, no motion rules, the
+     rules paint immediately. localStorage throws in private mode, so the
+     read sits in try/catch. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+
+<title>Page not found — Andrew Hoang</title>
+<meta name="description" content="That page does not exist. Here is the way back.">
+<meta name="author" content="Andrew Hoang">
+
+<!-- The ONLY page on the site that is noindex. seo-plan.md: noindex, follow;
+     no canonical, no OG/Twitter block, no JSON-LD. A 404 has no canonical
+     URL to declare — it is served at whatever URL was requested. -->
+<meta name="robots" content="noindex, follow">
+
+<meta name="theme-color" content="#FAFAFC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1219" media="(prefers-color-scheme: dark)">
+<!-- Icon, inlined as a data: URI for exactly the reason the CSS below is
+     inlined: this page renders at whatever URL was requested, so a relative
+     href would 404 one level deep, and an absolute "/" href 404s on a
+     project site. A data: URI is correct at any depth, and costs no request. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%2314161A'/%3E%3Crect%20y='54.72'%20width='64'%20height='9.28'%20fill='%23C8341C'/%3E%3Cpath%20fill='%23FBFAF7'%20fill-rule='evenodd'%20d='M32%207.36L56.64%2049.6L7.36%2049.6ZM32%2023.27L39.89%2036.8L24.11%2036.8ZM20.19%2043.52L43.81%2043.52L47.36%2049.6L16.64%2049.6Z'/%3E%3C/svg%3E">
+
+<!-- ============================================================
+     WHY THIS PAGE'S CSS IS INLINE AND site.css IS NOT LINKED
+     ------------------------------------------------------------
+     GitHub Pages serves 404.html from the repo root but renders it at the
+     URL the visitor actually requested. A miss at /<repo>/work/does-not-exist
+     makes the browser resolve every relative URL in this document against
+     /<repo>/work/ — so a stylesheet link to assets/css/site.css would request
+     /<repo>/work/assets/css/site.css and 404, and the visitor would get an
+     unstyled page on top of a missing one. An absolute path would fix it and
+     is forbidden: a project site serves from a subpath, so a leading "/" 404s
+     everywhere else.
+
+     Fix: inline this page's CSS. The page is
+     then correct at any depth, with zero requests of any kind. The block
+     below is a verbatim SUBSET of assets/css/site.css — same selectors, same
+     declarations, same order — trimmed to the components this page actually
+     uses. Nothing is redefined and no token is added. When site.css changes,
+     diff this block against it.
+
+     The same reasoning removes site.js (its src would 404 one level deep) and
+     the 64px colophon portrait (its src would 404 one level deep; it is
+     decorative, alt="" aria-hidden). The theme toggle's logic is inlined at
+     the end of the body instead — inlining is not a second JS file.
+
+     The remaining limit, stated plainly and accepted: one level deep, the
+     relative links in the nav and the list of destinations resolve against
+     work/ rather than the root. There is no relative form that survives an
+     unknown depth, and JavaScript path-rewriting is explicitly rejected —
+     it fails with JS off and is a worse failure mode than the one it fixes.
+     Home is the link that degrades gracefully: one level deep it lands on
+     the work index, which is a real page and the second destination offered.
+     ============================================================ -->
+<style>
+/* ============================================================
+   1. TOKENS  ·  verbatim from site.css. Light is canonical on
+   bare :root; dark is redefined twice so the manual toggle wins
+   in both directions. No colour is defined only inside a media
+   or attribute block.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  --paper:        #FAFAFC;
+  --paper-2:      #F3F4F8;
+  --surface:      #FFFFFF;
+  --surface-2:    #F0F1F5;
+
+  --ink:          #141B2D;
+  --ink-2:        #3C4459;
+  --ink-3:        #646B7D;   /* was #6B7386: under AA on tinted grounds */
+  --ink-4:        #A2A8B8;  /* DECORATIVE ONLY — never text */
+  --ink-invert:   #FAFAFC;
+
+  --rule-hair:    #ECEDF2;
+  --rule-mid:     #D8DBE4;
+  --rule-heavy:   #141B2D;
+  --w-hair:       1px;
+  --w-heavy:      2px;
+
+  --accent:       #E1502B;
+  --accent-deep:  #BE3A18;
+  --accent-weak:  #FDECE5;
+  --on-accent:    #FFFFFF;
+
+  /* The interaction colour. Kept byte-identical to site.css: this
+     page inlines its CSS because a 404 is served from any depth,
+     so the two copies have to be edited together. */
+  --hover:        #1D4ED8;
+  --on-hover:     #FFFFFF;
+
+  --signal-fix:      #7A5214;
+  --signal-fix-weak: #F2E8D2;
+
+  --focus:        var(--hover);
+  --focus-alt:    #141B2D;
+  --selection-bg: #FDECE5;
+  --selection-fg: #141B2D;
+
+  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-ui:      system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-serif:   system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+  --font-mono:    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+                  "Helvetica Neue", sans-serif;
+
+  --fs-3xs:       0.6875rem;
+  --fs-2xs:       clamp(0.75rem,   0.730rem + 0.09vw, 0.8125rem);
+  --fs-xs:        clamp(0.8125rem, 0.790rem + 0.11vw, 0.875rem);
+  --fs-sm:        clamp(0.875rem,  0.850rem + 0.13vw, 0.9375rem);
+  --fs-base:      clamp(1rem,      0.960rem + 0.19vw, 1.125rem);
+  --fs-md:        clamp(1.125rem,  1.060rem + 0.31vw, 1.3125rem);
+  --fs-lg:        clamp(1.3125rem, 1.190rem + 0.59vw, 1.625rem);
+  --fs-xl:        clamp(1.625rem,  1.410rem + 1.06vw, 2.25rem);
+  --fs-2xl:       clamp(2rem,      1.600rem + 2.00vw, 3.25rem);
+  --fs-3xl:       clamp(2.5rem,    1.660rem + 4.20vw, 5.25rem);
+  --fs-figure-sm: clamp(1.875rem,  1.300rem + 2.90vw, 3.75rem);
+  --fs-figure:    clamp(2.75rem,   1.750rem + 5.00vw, 6rem);
+  --fs-figure-xl: clamp(3.25rem,   1.900rem + 6.75vw, 8rem);
+
+  --lh-solid:  0.82;
+  --lh-tight:  0.95;
+  --lh-snug:   1.12;
+  --lh-body:   1.55;
+  --lh-prose:  1.68;
+  --lh-label:  1.25;
+
+  --tr-figure:    -0.045em;
+  --tr-display:   -0.032em;
+  --tr-tight:     -0.014em;
+  --tr-normal:     0em;
+  --tr-caps:       0.10em;
+  --tr-caps-wide:  0.17em;
+
+  --measure-prose: 62ch;
+  --measure-dek:   46ch;
+  --measure-label: 26ch;
+
+  --s-3xs: 0.25rem;  --s-2xs: 0.5rem;   --s-xs: 0.75rem;
+  --s-sm:  1rem;     --s-md:  1.5rem;   --s-lg: 2rem;
+  --s-xl:  3rem;     --s-2xl: 4rem;     --s-3xl: 6rem;
+  --s-4xl: 8rem;     --s-5xl: 10rem;
+
+  --field:         72px;
+  --field-half:    36px;
+  --space-section: clamp(4.5rem, 3.214rem + 6.43vw, 9rem);
+  --space-gutter:  clamp(1.25rem, 0.9rem + 1.7vw, 2.5rem);
+
+  --wrap:        78rem;
+  --wrap-narrow: 52rem;
+  --rail:        clamp(6.75rem, 13.5vw, 13.5rem);
+  --grid-gap:    clamp(1rem, 0.6rem + 1.9vw, 2.25rem);
+  --cols:        12;
+
+  --r-0:    0;
+  --r-1:    2px;
+  --r-pill: 999px;
+
+  --shadow-none: none;
+  --scrim-end:   linear-gradient(to right, rgba(251,250,247,0), rgba(251,250,247,1));
+
+  --dur-fast: 140ms;
+  --dur:      240ms;
+  --dur-slow: 480ms;
+  --stagger:  60ms;
+  --ease:     cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0.6, 0.3, 1);
+
+  --fill:   100%;
+  --bar-h:  3px;
+  --ring-w: 2px;
+  --ring-offset: 3px;
+  --i: 0;
+}
+
+/* --- DARK: system preference, unless light was chosen -------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --paper:        #0F1219;
+    --paper-2:      #161A24;
+    --surface:      #171B26;
+    --surface-2:    #1F2431;
+
+    --ink:          #EEF0F6;
+    --ink-2:        #C3C8D6;
+    --ink-3:        #8E96A8;
+    --ink-4:        #5E6678;
+    --ink-invert:   #0F1219;
+
+    --rule-hair:    #242936;
+    --rule-mid:     #39404F;
+    --rule-heavy:   #EEF0F6;
+
+    --accent:       #FF7A52;
+    --accent-deep:  #FF9D7A;
+    --accent-weak:  #33190F;
+    --on-accent:    #1A0C05;
+
+    --hover:        #8AB4FF;
+    --on-hover:     #0B1220;
+
+    --signal-fix:      #E8B15F;
+    --signal-fix-weak: #33270F;
+
+    --focus:        var(--hover);
+    --focus-alt:    #1A0C05;
+    --selection-bg: #4A2418;
+    --selection-fg: #EEF0F6;
+
+    --scrim-end:    linear-gradient(to right, rgba(25,23,18,0), rgba(25,23,18,1));
+  }
+}
+
+/* --- DARK: explicit manual choice ---------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper:        #0F1219;
+  --paper-2:      #161A24;
+  --surface:      #171B26;
+  --surface-2:    #1F2431;
+
+  --ink:          #EEF0F6;
+  --ink-2:        #C3C8D6;
+  --ink-3:        #8E96A8;
+  --ink-4:        #5E6678;
+  --ink-invert:   #0F1219;
+
+  --rule-hair:    #242936;
+  --rule-mid:     #39404F;
+  --rule-heavy:   #EEF0F6;
+
+  --accent:       #FF7A52;
+  --accent-deep:  #FF9D7A;
+  --accent-weak:  #33190F;
+  --on-accent:    #1A0C05;
+
+  --hover:        #8AB4FF;
+  --on-hover:     #0B1220;
+
+  --signal-fix:      #E8B15F;
+  --signal-fix-weak: #33270F;
+
+  --focus:        var(--hover);
+  --focus-alt:    #1A0C05;
+  --selection-bg: #4A2418;
+  --selection-fg: #EEF0F6;
+
+  --scrim-end:    linear-gradient(to right, rgba(25,23,18,0), rgba(25,23,18,1));
+}
+
+/* --- Reduced motion: neutralise the timing tokens themselves -- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur:      1ms;
+    --dur-slow: 1ms;
+    --stagger:  0ms;
+  }
+}
+
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-block-start: var(--s-lg);
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-family: var(--font-ui);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { max-width: 100%; height: auto; }
+
+::selection { background: var(--selection-bg); color: var(--selection-fg); }
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--ring-w) solid var(--focus);
+  outline-offset: var(--ring-offset);
+}
+
+main:focus { outline: none; }
+
+
+/* ============================================================
+   3. BASE
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+h1 { font-size: var(--fs-3xl); font-weight: 800;
+     line-height: var(--lh-tight); letter-spacing: var(--tr-display); }
+h2 { font-size: var(--fs-xl);  font-weight: 700;
+     line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+h3 { font-size: var(--fs-lg);  font-weight: 700;
+     line-height: var(--lh-snug); letter-spacing: var(--tr-tight); }
+
+p, ul, ol { margin: 0; }
+li { line-height: var(--lh-body); letter-spacing: var(--tr-normal); }
+
+b, strong { font-weight: 600; }
+
+/* Numbers in sentences sit DOWN into the line. */
+.prose,
+.dek {
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "onum" 1, "pnum" 1;
+}
+
+/* Numbers in data columns STAND UP and align on the decimal. */
+.dateline,
+.source {
+  font-variant-numeric: lining-nums tabular-nums slashed-zero;
+  font-feature-settings: "tnum" 1, "lnum" 1, "zero" 1;
+}
+
+.dateline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+}
+
+.source {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  color: var(--ink-3);
+  align-self: end;
+  overflow-wrap: anywhere;
+}
+
+.prose {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  max-width: var(--measure-prose);
+}
+.prose > * + * { margin-block-start: var(--s-sm); }
+
+.dek {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  line-height: var(--lh-prose);
+  color: var(--ink-2);
+  max-width: var(--measure-dek);
+}
+
+/* Links — ACCENT USE 5 of 5 */
+.prose a, main p a, li a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-thickness var(--dur-fast) var(--ease);
+}
+.prose a:hover, .prose a:focus-visible,
+main p a:hover, main p a:focus-visible,
+li a:hover, li a:focus-visible {
+  text-decoration-thickness: 2px;
+  color: var(--hover);
+  text-decoration-color: var(--hover);
+}
+
+/* Long strings must never force a scrollbar. */
+.c-tags, .source { overflow-wrap: anywhere; }
+
+
+/* ============================================================
+   4. LAYOUT
+   ============================================================ */
+
+.shell {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--space-gutter);
+}
+.shell--narrow { max-width: var(--wrap-narrow); }
+
+.section { padding-block-start: var(--space-section); }
+
+.section__rule {
+  border-block-start: var(--w-heavy) solid var(--rule-heavy);
+  transform-origin: left;
+}
+
+.section__folio {
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink-3);
+  background: var(--paper);
+  padding-inline: 0.75rem;
+  margin-block-start: -0.62em;
+  margin-inline-start: -0.75rem;
+  display: inline-block;
+}
+
+.section > .shell > h2,
+.section > .shell > .section__open > h2,
+.section__head { margin-block-start: var(--s-md); }
+
+/* --- RAIL + COLUMN — the governing pattern ---------------- */
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-xs);
+}
+.row > * { min-width: 0; }
+
+@media (min-width: 60rem) {
+  .row { grid-template-columns: var(--rail) minmax(0, 1fr); gap: var(--grid-gap); }
+}
+
+.row__rail {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  line-height: var(--lh-label);
+  max-width: var(--measure-label);
+  align-self: start;
+  overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   5. COMPONENTS
+   ============================================================ */
+
+/* --- 5.1 Skip link — first focusable element on every page - */
+.c-skip {
+  position: absolute;
+  inset-inline-start: var(--space-gutter);
+  inset-block-start: 0;
+  transform: translateY(-120%);
+  z-index: 100;
+  background: var(--accent-deep);   /* --accent gives 3.90 against white */
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps);
+  text-decoration: none;
+  padding: var(--s-2xs) var(--s-sm);
+  transition: transform var(--dur) var(--ease-out);
+}
+.c-skip:focus-visible {
+  transform: translateY(0);
+  outline: var(--ring-w) solid var(--focus-alt);
+  outline-offset: var(--ring-offset);
+}
+
+/* --- 5.2 Site header — folio strip + masthead. NOT sticky. - */
+.c-head__folio {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2xs);
+  min-height: var(--field-half);
+  align-items: center;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink-3);
+  border-block-end: var(--w-hair) solid var(--rule-hair);
+}
+.c-head__bar {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: var(--s-2xs) var(--s-md);
+  min-height: var(--field);
+  padding-block: var(--s-2xs);
+  border-block-end: var(--w-heavy) solid var(--rule-heavy);
+}
+.c-head__mark {
+  margin-inline-end: auto;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-wide);
+  color: var(--ink);
+  text-decoration: none;
+}
+.c-head__mark:hover, .c-head__mark:focus-visible { color: var(--hover); }
+.c-head__mark::after {                  /* ACCENT USE 1 of 5 */
+  content: ""; display: inline-block;
+  inline-size: 0.42em; block-size: 0.42em;
+  margin-inline-start: 0.45em;
+  background: var(--accent);
+}
+
+.c-nav__list {
+  display: flex; flex-wrap: wrap; gap: var(--s-sm) var(--s-md);
+  list-style: none; margin: 0; padding: 0;
+}
+.c-nav a {
+  font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2);
+  text-decoration: none;
+  display: inline-block; padding-block: var(--s-3xs);
+}
+.c-nav a:hover { color: var(--hover); }
+
+/* --- 5.3 Theme toggle — the ONLY element with a radius ----- */
+.c-theme {
+  display: inline-flex; align-items: center; gap: var(--s-2xs);
+  background: none; border: 0; padding: var(--s-3xs) 0; cursor: pointer;
+  font-family: var(--font-display); font-size: var(--fs-2xs); font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tr-caps); color: var(--ink-3);
+}
+.c-theme:hover { color: var(--hover); }
+.c-theme__track {
+  inline-size: 2.25rem; block-size: 1.125rem;
+  border: var(--w-hair) solid var(--rule-mid); border-radius: var(--r-1);
+  display: inline-flex; align-items: center; padding: 2px;
+  flex: none;
+}
+.c-theme__knob {
+  inline-size: 0.75rem; block-size: 0.75rem;
+  border-radius: var(--r-pill); background: var(--ink-3);
+  transition: transform var(--dur) var(--ease);
+}
+.c-theme[aria-pressed="true"] .c-theme__knob { transform: translateX(1.125rem); }
+
+/* --- 5.4 Buttons — exactly two. No tertiary, no ghost. ----- */
+.c-actions { display: flex; flex-wrap: wrap; gap: var(--s-xs); }
+
+.c-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-block-size: 2.75rem;                  /* 44px touch target */
+  padding: var(--s-2xs) var(--s-md);
+  border-radius: var(--r-0);
+  box-shadow: var(--shadow-none);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm); font-weight: 600;
+  text-transform: uppercase; letter-spacing: var(--tr-caps);
+  text-decoration: none; text-align: center;
+  transition: background-color var(--dur) var(--ease),
+              color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+/* The redesign moved the primary button off the accent and onto the ink
+   ground (site.css §10.6); this page never got that change, so its one CTA
+   was still white on #E1502B — 3.90, under AA — and was also the only
+   orange primary button left on the site. Both faults, one fix. */
+.c-btn--primary {
+  background: var(--ink); color: var(--ink-invert);
+  border: var(--w-heavy) solid var(--ink);
+}
+.c-btn--primary:hover {
+  background: var(--hover); border-color: var(--hover); color: var(--on-hover);
+}
+.c-btn--primary:focus-visible {
+  outline: var(--ring-w) solid var(--focus-alt);
+  outline-offset: var(--ring-offset);
+  box-shadow: 0 0 0 calc(var(--ring-offset) + var(--ring-w) + 2px) var(--focus);
+}
+
+/* --- 5.15 Mono tag run (there are no pills) --------------- */
+.c-tags {
+  font-family: var(--font-mono); font-size: var(--fs-xs);
+  color: var(--ink-2); line-height: var(--lh-body);
+  overflow-wrap: anywhere;
+}
+
+/* --- 5.19 Colophon (footer) ------------------------------- */
+.c-colophon {
+  border-block-start: var(--w-heavy) solid var(--rule-heavy);
+  padding-block: var(--s-xl) var(--s-2xl);
+}
+/* Mirrors site.css. 404.html inlines its own stylesheet, so every rule the
+   shared footer needs has to be repeated here by hand. */
+.c-colophon__links {
+  list-style: none; margin: 0 0 var(--s-sm); padding: 0;
+  display: flex; flex-wrap: wrap; gap: var(--s-2xs) var(--s-lg);
+  font-size: var(--fs-sm);
+}
+.c-colophon .prose { margin-block-end: var(--s-sm); }
+.c-colophon .c-tags { margin-block-end: var(--s-md); }
+.c-colophon .source + .source { margin-block-start: var(--s-3xs); }
+
+/* --- The rail/column list skeleton (§4.4 + §5.8) ---------- */
+.c-ledger { display: grid; gap: var(--s-lg); margin-block-start: var(--s-lg);
+            list-style: none; padding: 0; }
+.c-ledger > li { min-width: 0; }
+.c-ledger .row { padding-block-start: var(--s-lg);
+                 border-block-start: var(--w-hair) solid var(--rule-hair); }
+.c-ledger > li:first-child .row { padding-block-start: 0; border-block-start: 0; }
+.c-ledger h3 { font-size: var(--fs-lg); margin-block-end: var(--s-3xs); }
+.c-ledger__scope { font-family: var(--font-serif); font-size: var(--fs-base);
+                   line-height: var(--lh-prose); color: var(--ink-2);
+                   max-width: var(--measure-prose); }
+.c-note__idx { color: var(--ink-3); margin-inline-end: 0.5em; }
+
+
+/* ============================================================
+   6. UTILITIES
+   ============================================================ */
+
+.u-stack-sm > * + * { margin-block-start: var(--s-sm); }
+
+.u-mt-md  { margin-block-start: var(--s-md); }
+.u-mt-lg  { margin-block-start: var(--s-lg); }
+
+
+/* ============================================================
+   7. MOTION — intentionally absent on this page.
+   site.js is not loaded here, so nothing would ever add .is-in.
+   The `js` class is never set (see the head script), which keeps
+   every §7 rule in site.css inert by design. Rules paint on load.
+   ============================================================ */
+
+
+/* ============================================================
+   8. PRINT  ·  same contract as every other page.
+   ============================================================ */
+
+@media print {
+  @page { margin: 14mm; }
+
+  /* Must match every selector that sets the dark tokens AT ITS OWN
+     specificity. :root:not([data-theme="light"]) is 0,2,0 and outranked a
+     bare :root, so printing from an OS in dark mode kept every dark value. */
+  :root,
+  :root:not([data-theme="light"]),
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --paper: #fff;   --paper-2: #fff;  --surface: #fff;  --surface-2: #fff;
+    --ink: #000;     --ink-2: #1a1a1a; --ink-3: #444;    --ink-4: #888;
+    --rule-hair: #bbb; --rule-mid: #999; --rule-heavy: #000;
+    --accent: #000;  --accent-deep: #000; --accent-weak: #e6e6e6;
+    --hover: #000;   --on-hover: #fff;
+    --signal-fix: #000; --signal-fix-weak: #ececec;
+    --space-section: 1.5rem;
+    --space-gutter: 0;
+    --grid-gap: 1rem;
+    --wrap: 100%;    --wrap-narrow: 100%;
+  }
+
+  html, body { background: #fff !important; color: #000 !important; }
+  body { font-size: 10pt; line-height: 1.45; }
+
+  .c-skip, .c-theme, .c-nav { display: none !important; }
+
+  .c-head__folio { border-block-end: 0; min-height: 0; font-size: 7.5pt; }
+  .c-head__bar { min-height: 0; padding-block: 2mm 1mm; border-block-end: 1.5pt solid #000; }
+  .c-head__mark { font-size: 11pt; }
+
+  .shell { max-width: 100%; padding-inline: 0; }
+  .section { padding-block-start: 6mm; break-inside: auto; }
+  .section__rule { border-block-start-width: 1.5pt; }
+  .section__folio { background: #fff; font-size: 7.5pt; }
+
+  h1 { font-size: 26pt; }
+  h2 { font-size: 14pt; break-after: avoid; }
+  h3 { font-size: 11.5pt; break-after: avoid; }
+  .dek { font-size: 11pt; max-width: 60ch; }
+  .prose { font-size: 10pt; max-width: 78ch; }
+
+  .c-ledger > li { break-inside: avoid; }
+
+  .c-btn { border-width: 1pt !important; background: #fff !important;
+           color: #000 !important; min-block-size: 0; padding: 1.5mm 3mm; }
+
+  .c-colophon { padding-block: 4mm 0; border-block-start: 1pt solid #000; }
+
+  /* Print the destination of every link that leaves the document. */
+  a { color: #000 !important; text-decoration: none; }
+  .prose a, main p a, li a { text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt;
+                           font-family: var(--font-mono); color: #444;
+                           word-break: break-all; }
+  a[href^="#"]::after, a[href^="mailto"]::after, a[href^="tel"]::after { content: ""; }
+}
+
+/* --- Soft-card layer, matching assets/css/site.css section 10 ----
+   Kept in sync by hand because this page inlines its styles rather
+   than linking the stylesheet: a 404 can be served from any URL
+   depth, where a relative link to site.css would not resolve. If
+   the shared sheet's tokens change, change them here too.        */
+body { background: var(--paper); }
+
+.c-head {
+  position: sticky;
+  inset-block-start: 0.75rem;
+  z-index: 40;
+  inline-size: min(100% - 1.5rem, var(--wrap));
+  margin-inline: auto;
+  margin-block-start: 0.75rem;
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  -webkit-backdrop-filter: saturate(1.6) blur(14px);
+  backdrop-filter: saturate(1.6) blur(14px);
+  border: 1px solid var(--rule-hair);
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.05);
+}
+.c-head__bar { padding-inline: clamp(0.9rem, 2.2vw, 1.5rem); padding-block: 0.6rem; border-block-end: 0; }
+.c-head__folio { display: none; }
+.c-nav a { padding: 0.4rem 0.7rem; border-radius: 999px; border-block-end: 0; }
+.c-nav a[aria-current="page"] { background: var(--ink); color: var(--ink-invert); }
+
+.section__rule { display: none; }
+.section__folio {
+  display: block;
+  inline-size: fit-content;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule-hair);
+  color: var(--ink-3);
+}
+
+#main > .section:first-of-type .dateline {
+  display: block;
+  inline-size: fit-content;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border: 1px solid var(--rule-hair);
+  box-shadow: 0 1px 2px rgba(16,24,40,.05);
+  color: var(--ink-3);
+  margin-block-end: 1rem;
+}
+#main > .section:first-of-type h1 { letter-spacing: -0.032em; text-wrap: balance; }
+
+.c-ledger > li {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.05);
+  padding: clamp(1.1rem, 2.6vw, 1.75rem);
+  margin-block-end: 1rem;
+}
+.c-btn { border-radius: 999px; padding: 0.7rem 1.25rem; }
+.c-colophon {
+  background: var(--surface);
+  border: 1px solid var(--rule-hair);
+  border-radius: 24px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.c-crumbs {
+  display: inline-flex; flex-wrap: wrap; gap: 0.35rem;
+  padding: 0.3rem 0.75rem; border-radius: 999px;
+  background: var(--paper-2); border: 1px solid var(--rule-hair);
+}
+
+@media print {
+  .c-head { position: static; border: 0; box-shadow: none; }
+  .c-ledger > li, .c-colophon, .c-btn, .c-crumbs,
+  #main > .section:first-of-type .dateline, .section__folio {
+    box-shadow: none !important; border-radius: 0 !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead, identical to every other
+     page. No aria-current: a 404 is not a nav destination.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work/index.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       00 — THE LEDE
+       ========================================================== -->
+  <section class="section" aria-labelledby="lede-h">
+    <div class="shell shell--narrow u-stack-sm">
+      <p class="dateline">Error 404 · Ho Chi Minh City · 13 September 2026</p>
+      <h1 id="lede-h">That page does not exist</h1>
+      <p class="dek">A broken link, a moved page, or a typo. Nothing on your end to fix.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       01 — WHERE TO GO NEXT
+       Four destinations, in the order a lost visitor wants them.
+       Reuses the §4.4 rail + column row through the existing
+       .c-ledger list skeleton — no new component, no new token.
+       ========================================================== -->
+  <section class="section" id="destinations" aria-labelledby="destinations-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — Where to go next</p>
+      <h2 id="destinations-h" class="section__head">Where to go next</h2>
+      </div>
+
+      <ul class="c-ledger">
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">01</span> Start here</p>
+            <div>
+              <h3><a href="index.html">Home</a></h3>
+              <p class="c-ledger__scope">The profile: current roles, the selected-results table and the case notes behind it.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">02</span> The evidence</p>
+            <div>
+              <h3><a href="work/index.html">Work</a></h3>
+              <p class="c-ledger__scope">Eight case studies and the full results table, each figure with the source it came from.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">03</span> The history</p>
+            <div>
+              <h3><a href="about.html">About</a></h3>
+              <p class="c-ledger__scope">The career ledger at full depth, the stack and the certifications.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">04</span> The way in</p>
+            <div>
+              <h3><a href="contact.html">Contact</a></h3>
+              <p class="c-ledger__scope">Email, phone and LinkedIn. Email is the fastest of the three.</p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — REPORT IT  ·  one action, and it is a mailto, so it
+       resolves correctly no matter what depth this page is
+       served at.
+       ========================================================== -->
+  <section class="section" id="report" aria-labelledby="report-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — Report it</p>
+      <h2 id="report-h" class="section__head">If the link was mine</h2>
+      </div>
+
+      <p class="prose u-mt-md">If you followed a link from somewhere else on this site, that is my error — tell me where you came from and I will fix it.</p>
+
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="mailto:tuananhhoang2811@gmail.com?subject=Broken%20link">Email me about the broken link</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+
+     The 64px portrait is the one element omitted from the shared
+     colophon on this page: its relative src cannot resolve at an
+     unknown depth, and it is purely decorative (alt="", aria-hidden
+     on every other page). Omitting it keeps the promise of zero
+     failed requests; nothing in the accessibility tree changes.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<!-- The theme toggle, inlined rather than loaded from assets/js/site.js —
+     that src would 404 one level deep and leave a dead button. This is the
+     theme half of site.js, verbatim; the scroll-reveal half is not needed
+     because this page has no .reveal elements and never sets the `js` class.
+     With JavaScript off the button is inert and the theme simply follows the
+     OS, exactly as on every other page. localStorage throws in private mode,
+     so the write is guarded. -->
+<script>
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var btn = document.querySelector(".c-theme");
+  if (!btn) return;
+
+  function currentTheme() {
+    var chosen = root.getAttribute("data-theme");
+    if (chosen === "dark" || chosen === "light") return chosen;
+    return window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  function paintToggle(mode) {
+    var dark = mode === "dark";
+    btn.setAttribute("aria-pressed", dark ? "true" : "false");
+    btn.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    var text = btn.querySelector(".c-theme__text");
+    if (text) text.textContent = dark ? "Light" : "Dark";
+  }
+
+  paintToggle(currentTheme());
+
+  btn.addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("ah-theme", next); } catch (e) {}
+    paintToggle(next);
+  });
+})();
+</script>
+</body>
+</html>

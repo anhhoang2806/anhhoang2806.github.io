@@ -1,0 +1,12 @@
+# robots.txt — STAGING. The whole site is closed to crawlers on purpose.
+#
+# This is a deliberate pre-launch state, not a mistake. Andrew Hoang's site is
+# deployed so it can be reviewed on a real URL before anyone outside sees it.
+# Every page also carries <meta name="robots" content="noindex, nofollow">.
+#
+# TO GO PUBLIC: run ./go-live.sh from the project root. That restores the real
+# robots.txt (kept at _source/robots.production.txt) and flips every page back
+# to index, follow. Then submit the sitemap in Google Search Console.
+
+User-agent: *
+Disallow: /

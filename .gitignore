@@ -1,0 +1,66 @@
+# ============================================================
+# THE IMPORTANT LINE IS THE FIRST ONE. READ THE COMMENT.
+# ============================================================
+#
+# _source/ holds the raw resume and portfolio extracts, the content plan
+# (including its unresolved "GAPS — ANDREW MUST SUPPLY" section), the SEO
+# plan and the deployment research. It is working material. It is not for
+# publication.
+#
+# This site ships a .nojekyll file, which disables Jekyll on GitHub Pages.
+# Jekyll is the thing that normally hides folders whose names start with an
+# underscore. With .nojekyll present, anything committed under _source/ would
+# be served publicly at https://your-domain/_source/resume.txt and read by
+# anyone with the URL.
+#
+# So: _source/ never enters the repository. robots.txt also disallows it as a
+# second layer, but Disallow only asks crawlers politely — it does not stop
+# access. Keeping the folder out of git is the actual protection.
+#
+# If you ever need those files on another machine, copy them across directly
+# or keep them in a separate PRIVATE repository. Do not remove the line below.
+
+_source/
+
+
+# --- macOS / Windows / editor junk -----------------------------------------
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# --- Anything you are drafting but have not decided to publish --------------
+*.draft.html
+*.draft.md
+/drafts/
+/notes/
+/scratch/
+
+# --- Superseded stylesheets ------------------------------------------------
+# GitHub Pages serves every file in the repo as a public URL; it has no idea
+# which ones the pages actually link to. An old stylesheet left in assets/css/
+# is 56KB of dead weight anyone can download. Keep old versions outside the
+# repo — ../_archive/site-css/ is where the Broadsheet one went.
+*-backup.css
+*.old.css
+
+# --- Never commit secrets ---------------------------------------------------
+# The site has no build step and no server, so there should be nothing here.
+# These exist so that a stray file from a tutorial or a form-backend key never
+# lands in a public repo by accident.
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+
+# --- Tooling state that must never ship -------------------------------------
+.omc/
+.claude/

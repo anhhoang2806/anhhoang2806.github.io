@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Tomorrow&rsquo;s Nutrition — Andrew Hoang</title>
+<meta name="description" content="Organic search on a supplements brand: 22.3K clicks and 741K impressions over about 16 months, at an average position of 11.1 — with the headroom named.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Tomorrow&rsquo;s Nutrition — Andrew Hoang">
+<meta property="og:description" content="Organic search on a supplements brand: 22.3K clicks and 741K impressions over about 16 months, at an average position of 11.1 — with the headroom named.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-14T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tomorrow&rsquo;s Nutrition — Andrew Hoang">
+<meta name="twitter:description" content="Organic search on a supplements brand: 22.3K clicks and 741K impressions over about 16 months, at an average position of 11.1 — with the headroom named.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html",
+      "name": "Tomorrow's Nutrition — Andrew Hoang",
+      "description": "Organic search on a health supplements brand: 22,300 clicks and 741,000 impressions over about 16 months, at an average position of 11.1.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#webpage" },
+      "headline": "Tomorrow's Nutrition: 22,300 organic clicks on a supplements brand, and an average position that says the job is unfinished",
+      "description": "Google Search Console for Tomorrow's Nutrition across about 16 months, 22 December 2023 to 21 April 2025: 22,300 clicks, 741,000 impressions, 3% average CTR and average position 11.1. The product brand Sunfiber outpulls the company brand roughly 5 to 1 on clicks. The click curve steps up from around November 2024, but no period-over-period comparison was pulled, so no percentage lift is claimed.",
+      "articleSection": "Case Study",
+      "keywords": "organic search, Google Search Console, product brand versus company brand, health supplements SEO, Sunfiber, Tomorrow's Nutrition, average position, branded query mix",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@type": "Organization", "name": "Tomorrow's Nutrition" },
+      "mentions": [
+        { "@type": "Organization", "name": "Tomorrow's Nutrition" },
+        { "@type": "Brand", "name": "Sunfiber" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/tomorrow-nutrition.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Tomorrow's Nutrition" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <nav class="c-crumbs shell shell--narrow" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Work</a></li>
+      <!-- The nav's Work link already carries aria-current="page"; the terminal
+           crumb stays a plain span so only one element announces as current. -->
+      <li><span>Tomorrow&rsquo;s Nutrition</span></li>
+    </ol>
+  </nav>
+
+  <!-- ==========================================================
+       00 — CASE HERO  ·  the only h1 on the page
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 07</p>
+    <!-- The monogram is a neutral typographic mark, not a client logo, and it
+         is decorative: aria-hidden, and the client name is in the h1 itself.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/tomorrow-nutrition.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>Tomorrow&rsquo;s Nutrition: 22,300 organic clicks on a supplements brand, and an average position that says the job is unfinished</h1>
+    </div>
+    <p class="dateline">Measured Dec 2023 – Apr 2025 · Freelance · Health &amp; supplements · Organic search</p>
+    <p class="dek">A health supplements brand whose product name does more search work than its company name. This page reports what Google Search Console shows across about 16 months, and is straight about what it does not show.</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — AT A GLANCE  ·  three figure cells, full-measure shell.
+       The figures bar sits in the wide .shell, not shell--narrow:
+       at 4-up a 128px figure does not fit a 52rem column.
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-the-search-console-data-shows">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — At a glance</p>
+      <h2 id="what-the-search-console-data-shows" class="section__head">What does the Tomorrow&rsquo;s Nutrition organic search data show?</h2>
+      </div>
+      <p class="prose u-mt-sm">Across about 16 months, from 22 December 2023 to 21 April 2025, Tomorrow&rsquo;s Nutrition recorded <b class="fig">22,300</b> organic clicks from <b class="fig">741,000</b> impressions, at an average CTR of <b class="fig">3%</b> and an average position of <b class="fig">11.1</b>. That is real volume for a small supplements brand. It is also a position that leaves most of those impressions unconverted, and this page treats that as the finding rather than hiding it under the click total.</p>
+
+      <!-- Every cell carries its source line. A cell without one cannot ship. -->
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure figure--long">22.3K</p>
+          <p class="label">Organic clicks</p>
+          <p class="source">Tomorrow&rsquo;s Nutrition · Google Search Console · 22 Dec 2023 – 21 Apr 2025</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure figure--long">741K</p>
+          <p class="label">Organic impressions</p>
+          <p class="source">Tomorrow&rsquo;s Nutrition · Google Search Console · 22 Dec 2023 – 21 Apr 2025</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--long">11.1</p>
+          <p class="label">Average position, across the same window</p>
+          <p class="source">Tomorrow&rsquo;s Nutrition · Google Search Console · 22 Dec 2023 – 21 Apr 2025</p>
+        </li>
+      </ul>
+
+      <p class="c-tags u-mt-md">Sector: health and supplements · Product brand: Sunfiber · Channel: organic search · Window: 22 December 2023 – 21 April 2025, about 16 months · Source: Google Search Console</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE ACCOUNT
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-the-account-is">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The account</p>
+      <h2 id="what-the-account-is" class="section__head">What is the Tomorrow&rsquo;s Nutrition account?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Tomorrow&rsquo;s Nutrition is a health and supplements brand. Its flagship product brand is Sunfiber, and the site sells and explains that product.</p>
+        <p>This is organic search work. Everything on this page comes out of Google Search Console, which reports what people typed, what Google showed them, and what they clicked. It reports nothing about advertising, and there is no advertising in these figures.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — THE QUERY MIX  ·  the six top queries in a real table
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-the-query-mix-says">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The query mix</p>
+      <h2 id="what-the-query-mix-says" class="section__head">What does the query mix say?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>The six queries below are the top of the account by clicks. Four of them are the product brand in one spelling or another, and two of them are the company brand.</p>
+        <p>Sunfiber variants account for <b class="fig">7,066</b> clicks. Company-brand queries account for <b class="fig">1,453</b>. The product brand outpulls the company brand roughly <b class="fig">5 to 1</b>.</p>
+      </div>
+
+      <!-- Same markup at every width; below 48rem it reflows to stacked
+           records. The explicit ARIA roles are what keep it a table in
+           the a11y tree once display changes. -->
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="queries-cap">
+        <table class="c-table" role="table" aria-labelledby="queries-cap">
+          <caption id="queries-cap" class="label">Tomorrow&rsquo;s Nutrition top queries by clicks, with the impressions behind each</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Query</th>
+              <th role="columnheader" scope="col">Clicks</th>
+              <th role="columnheader" scope="col">Impressions</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">sunfiber</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">3,902</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">98,282</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">sun fiber</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">1,899</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">34,933</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">tomorrow&rsquo;s nutrition</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">805</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">2,299</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">sunfiber powder</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">716</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">12,797</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">tomorrow&rsquo;s nutrition sunfiber</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">648</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">2,839</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">sunfiber gi</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Clicks</span><span class="c-table__val">549</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">4,626</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">Tomorrow&rsquo;s Nutrition · Google Search Console · top queries by clicks, 22 Dec 2023 – 21 Apr 2025</p>
+
+      <h3 class="u-mt-lg">People search the product, not the company</h3>
+      <div class="prose u-mt-sm">
+        <p>That split is a strategy conclusion, not a curiosity. If the demand arrives under the product name, the product is what the site should be organised around: the strongest pages, the internal links and the structured data should all point at Sunfiber as the entity, with Tomorrow&rsquo;s Nutrition described as the brand behind it rather than the other way round.</p>
+        <p>It also sets the ceiling honestly. Almost everything at the top of this account is somebody who already knows the name. Non-brand demand is the growth that has not been built yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — THE HEADROOM
+       ========================================================== -->
+  <section class="section" aria-labelledby="where-the-headroom-is">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — The headroom</p>
+      <h2 id="where-the-headroom-is" class="section__head">Where is the headroom?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>An average position of <b class="fig">11.1</b> across <b class="fig">741,000</b> impressions means the site sits mostly at the bottom of page one or the top of page two. Google is already showing these pages to people. It is showing them a rank or two below where the clicks are.</p>
+        <p>That is worth saying plainly: this is an unfinished job, not a finished one. The demand exists, the impressions are being served, and the site is not yet ranked well enough to take its share of them. The work that follows from that is ordinary and specific — improving the pages that already rank in the eight-to-fifteen band rather than chasing new terms, since a page at 11 has already proved Google considers it relevant.</p>
+      </div>
+
+      <h3 class="u-mt-lg">One product, two spellings, two jobs</h3>
+      <div class="prose u-mt-sm">
+        <p>&ldquo;sunfiber&rdquo; as one word drew <b class="fig">3,902</b> clicks from <b class="fig">98,282</b> impressions. &ldquo;sun fiber&rdquo; as two words drew <b class="fig">1,899</b> clicks from <b class="fig">34,933</b> impressions. Same product, same intent, different spelling — and the two-word version is not a typo to be ignored. Across the six queries in the table above it carries over a fifth of the branded impressions.</p>
+        <p>The implication is that the spelling needs deciding rather than leaving to chance. One page owns the canonical spelling and carries the product entity; the two-word spelling is handled as an alternate name on that same page rather than by a second page competing with it. Two pages chasing one intent split the signal and neither wins.</p>
+      </div>
+      <p class="source u-mt-sm">Tomorrow&rsquo;s Nutrition · Google Search Console · average position 11.1 across 741,000 impressions</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — WHAT CHANGED
+       ========================================================== -->
+  <section class="section" id="limits" aria-labelledby="what-changed-and-what-i-cannot-prove">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — What changed</p>
+      <h2 id="what-changed-and-what-i-cannot-prove" class="section__head">What changed, and what I cannot prove?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>The click curve steps up from roughly November 2024. Before that point clicks track well below impressions; after it the two lines converge and both rise. The impressions were largely already there, so what moved is click-through and position on demand that already existed, not new demand.</p>
+        <p>I can see that step-change in the curve. I did not pull a period-over-period comparison, so I cannot put a percentage on it, and I am not going to. A dated before-and-after would turn this from a volume snapshot into a demonstrated result, and until that comparison is pulled the honest claim is the one above: the shape of the curve changed, by an amount this page does not state.</p>
+      </div>
+      <p class="source u-mt-sm">Tomorrow&rsquo;s Nutrition · Google Search Console · clicks and impressions over 22 Dec 2023 – 21 Apr 2025</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" id="differently" aria-labelledby="what-i-would-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — What I would do differently</p>
+      <h2 id="what-i-would-do-differently" class="section__head">What would I do differently?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>The weakness on this account is measurement, not strategy. I can describe what the account looks like across 16 months. I cannot show what it looked like before, so every claim on this page has to stay a description.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would have pulled the period comparison at the time</h3>
+      <div class="prose u-mt-sm">
+        <p>The step-change from around November 2024 is visible in the curve, and that is all I have. Two fixed windows exported while the work was running would have cost minutes and would have settled the question for good. Because I did not do that, section 05 has to say the shape changed and refuse to say by how much, which is the weakest sentence on the page and an avoidable one.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would have fixed one window and reported it once</h3>
+      <div class="prose u-mt-sm">
+        <p>There are two readings of this property in front of me: <b class="fig">22,300</b> clicks over 22 December 2023 to 21 April 2025, and <b class="fig">21,100</b> clicks over a shorter view ending about a month earlier. Same dataset, two cut-offs. That is how one result ends up being read as two, and the fix is to pick the window before pulling anything and state it beside every figure.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would have reported brand and non-brand separately</h3>
+      <div class="prose u-mt-sm">
+        <p>All six of the top queries are brand: four spellings of the product, two of the company. A single clicks total on an account shaped like that mostly counts people who already knew the name. Split into two lines, brand and non-brand, the total stops flattering the work and starts saying whether anything is reaching people who have not heard of Sunfiber.</p>
+      </div>
+      <p class="source u-mt-sm">Tomorrow&rsquo;s Nutrition · Google Search Console · 22 Dec 2023 – 21 Apr 2025 · top queries by clicks</p>
+    </div>
+  </section>
+
+    <!-- ==========================================================
+       07 — NEXT
+       ========================================================== -->
+  <section class="section c-contact" aria-labelledby="next">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — Next</p>
+      <h2 id="next" class="section__head">Next</h2>
+      </div>
+      <p class="prose">Every case study on this site is written the same way: the situation, the constraint, the mechanism, the measured result, and what the number does not say.</p>
+      <p class="prose u-mt-sm"><a href="uppercut-digital.html">Previous case study: Uppercut Digital, thirteen Australian ad accounts and the one that does not work</a></p>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+        <a class="c-btn c-btn--primary" href="../services.html">Work with me</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

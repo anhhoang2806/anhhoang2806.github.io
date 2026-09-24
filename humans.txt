@@ -1,0 +1,28 @@
+/* TEAM */
+
+  Owner, author, subject: Andrew Hoang (Hoang Tuan Anh)
+  Role: SEO · AEO / GEO · ASO
+  Contact: tuananhhoang2811 [at] gmail.com
+  LinkedIn: linkedin.com/in/tuananhhoang2811
+  From: Ho Chi Minh City, Vietnam
+
+
+/* SITE */
+
+  Language: English
+  Doctype: HTML5
+  Standards: WCAG 2.2 AA
+  Components: None. Hand-written HTML, CSS and vanilla JavaScript.
+  Build step: None.
+  Typefaces: The system font stack. No web fonts.
+  Third-party requests at runtime: Zero.
+  Hosting: GitHub Pages
+
+
+/* NOTES */
+
+  Every figure on this site is work Andrew Hoang did or led, published with
+  the client, the comparison window and the source document attached. Where a
+  percentage is large because the starting base was small, the page says so.
+
+  Icons are inline SVG. Nothing is hotlinked. Nothing is tracked.

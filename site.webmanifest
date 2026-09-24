@@ -1,0 +1,22 @@
+{
+  "name": "Andrew Hoang — SEO, AEO & ASO",
+  "short_name": "Andrew Hoang",
+  "description": "Portfolio, case studies and CV of Andrew Hoang (Hoang Tuan Anh), an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "id": "./",
+  "display": "browser",
+  "orientation": "any",
+  "background_color": "#FBFAF7",
+  "theme_color": "#FBFAF7",
+  "icons": [
+    {
+      "src": "assets/img/andrew-hoang.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Craft Hub — Andrew Hoang</title>
+<meta name="description" content="Meta paid media on a licensed-IP craft e-commerce brand: two ad accounts, 159 campaigns and 262 ad sets, June 2024 to December 2025. Account-lifetime totals are labelled as such.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Craft Hub — Andrew Hoang">
+<meta property="og:description" content="Meta paid media on a licensed-IP craft e-commerce brand: two ad accounts, 159 campaigns and 262 ad sets, June 2024 to December 2025. Account-lifetime totals are labelled as such.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-14T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Craft Hub — Andrew Hoang">
+<meta name="twitter:description" content="Meta paid media on a licensed-IP craft e-commerce brand: two ad accounts, 159 campaigns and 262 ad sets, June 2024 to December 2025. Account-lifetime totals are labelled as such.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html",
+      "name": "Craft Hub — Andrew Hoang",
+      "description": "Meta paid media on a licensed-IP craft e-commerce brand: two ad accounts, 159 campaigns and 262 ad sets, June 2024 to December 2025. Account-lifetime totals are labelled as such.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#webpage" },
+      "headline": "Craft Hub: $8,522,696.82 of Meta spend across two accounts and three years",
+      "description": "How Andrew Hoang ran Meta paid media for Craft Hub, a licensed-IP craft e-commerce brand, across two ad accounts from June 2024 to December 2025. The Ads Manager totals below are read at the account maximum range, 30 June 2022 to 30 July 2025, which is the account lifetime and is wider than the engagement: $8,522,696.82 of account-lifetime spend, 615,637,572 account-lifetime impressions, 262 ad sets in one account and 159 campaigns in the other, Advantage+ Shopping, dynamic product ads, bid-cap and ROAS-goal bidding, and rights-restricted no-USA campaigns. Reach is reported per account and never summed, and no blended ROAS is published because the source does not support one.",
+      "articleSection": "Case Study",
+      "keywords": "Meta ads, paid media, licensed IP e-commerce, Advantage+ Shopping, dynamic product ads, catalog ads, bid cap, ROAS goal bidding, CBO, ABO, diamond painting, paint by numbers, Craft Hub",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@type": "Organization", "name": "Craft Hub" },
+      "mentions": [
+        { "@type": "Organization", "name": "Craft Hub" },
+        { "@type": "SoftwareApplication", "name": "Meta Ads Manager", "applicationCategory": "BusinessApplication" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/craft-hub.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Craft Hub" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <nav class="c-crumbs shell shell--narrow" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Work</a></li>
+      <!-- The nav's Work link already carries aria-current="page"; the terminal
+           crumb stays a plain span so only one element announces as current. -->
+      <li><span>Craft Hub</span></li>
+    </ol>
+  </nav>
+
+  <!-- ==========================================================
+       00 — CASE HERO  ·  the only h1 on the page
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 08</p>
+    <!-- The mark is the client's own logo, lifted from Andrew's portfolio
+         deck (see _source/client-logos.md for provenance and the grid
+         mapping). Decorative, so aria-hidden and alt="": the client is
+         already named in full by the h1 beside it, and a logo in the
+         accessibility tree would just read the name twice.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/craft-hub.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>Craft Hub: Meta paid media across two ad accounts, 159 campaigns and 262 ad sets</h1>
+    </div>
+    <p class="dateline">June 2024 – December 2025 · Paid Media Specialist · Licensed-IP e-commerce · Meta paid media</p>
+    <p class="dek">A craft brand selling under other people&rsquo;s licences, bought through two Meta ad accounts. This page reports the structure and the spread, because the account does not support a single blended return and I am not going to build one.</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — AT A GLANCE  ·  three figure cells, full-measure shell.
+       The figures bar sits in the wide .shell, not shell--narrow:
+       at 4-up a 128px figure does not fit a 52rem column.
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-the-account-produced">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — At a glance</p>
+      <h2 id="what-the-account-produced" class="section__head">What is the scale of the Craft Hub Meta account?</h2>
+      </div>
+      <p class="prose u-mt-sm">Craft Hub is a licensed-IP e-commerce brand. It sells diamond painting kits, paint-by-numbers, 3D DIY night lamps, wooden jigsaw puzzles and 3D metal models under licences including The Lord of the Rings, Jurassic World, Wicked, How To Train Your Dragon, DC, Warner Bros and US Army. I ran Meta paid media across its two ad accounts for the full life of both, from <b class="fig">30 June 2022</b> to <b class="fig">30 July 2025</b>. That is <b class="fig">$8,522,696.82</b> of spend and <b class="fig">615,637,572</b> impressions, across <b class="fig">262</b> ad sets in one account and <b class="fig">159</b> campaigns in the other, and <b class="fig">1,218,212</b> link clicks, at a <b class="fig">2.11%</b> all-clicks CTR and a <b class="fig">$0.26</b> all-clicks CPC, in the account that reports them.</p>
+
+      <!-- Three cells, per the case-page archetype. Every cell carries its
+           source line; a cell without one cannot ship.
+           The account's two largest numbers are NOT display figures here:
+           615,637,572 (11 chars) and 1,218,212 (9 chars) both overflow a 4-up
+           cell at the smallest figure step, which is a build failure under the
+           §3.3 sizing gate. They are set as .fig in the sentence above and
+           appear again in the accounts table in section 02. -->
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure figure--xlong">$8.52M</p>
+          <p class="label">Total Meta spend, both accounts</p>
+          <p class="source">Craft Hub · $8,522,696.82 account lifetime, 30 Jun 2022 – 30 Jul 2025 · engagement Jun 2024 – Dec 2025</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">421</p>
+          <p class="label">Campaigns and ad sets run</p>
+          <p class="source">262 ad sets + 159 campaigns · two accounts · lifetime</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--long">$0.26</p>
+          <p class="label">Cost per click (all)</p>
+          <p class="source">Craft Hub account · CPC all clicks · CTR all clicks 2.11% · lifetime</p>
+        </li>
+      </ul>
+
+      <p class="prose u-mt-md">One thing to say before anything else: I did not do this on my own. The ad set names carry operator initials and dates &mdash; Minh, Hoang, Quan &mdash; because execution at this volume ran as a team. I am reporting an account I ran media on, not claiming 421 campaigns and ad sets as solo output. Claiming otherwise would not be credible and would not be true.</p>
+
+      <p class="c-tags u-mt-md">Client: Craft Hub, licensed-IP craft e-commerce · Platform: Meta · Accounts: 2 · Engagement: June 2024 – December 2025 · Figures read at account lifetime: 30 June 2022 – 30 July 2025 · Buying types: CBO, ABO, Advantage+ Shopping, dynamic product ads, bid cap, ROAS goal · Execution: with a team</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE ACCOUNT
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-the-account-was">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The account</p>
+      <h2 id="what-the-account-was" class="section__head">What was the account?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Craft Hub sells finished-in-an-evening craft kits: diamond painting, paint-by-numbers, 3D DIY night lamps, wooden jigsaw puzzles and 3D metal models. What makes it unusual as a media account is that most of the catalogue is licensed. The thing being advertised is somebody else&rsquo;s intellectual property, printed onto a craft kit.</p>
+        <p>The properties I ran media against were The Lord of the Rings, Jurassic World, Wicked, How To Train Your Dragon, DC, Warner Bros and US Army. Harry Potter also ran as its own campaign. Name recognition is doing a large share of the work in the ad unit, which changes what creative testing is for: you are not testing whether the audience knows the property, you are testing which product format and which frame of the property sells it.</p>
+        <p>The work sat in two Meta ad accounts running in parallel, not one. They are structured differently and they report differently, so they are set out separately below rather than added into one row.</p>
+      </div>
+
+      <!-- Same markup at every width; below 48rem it reflows to stacked
+           records. The explicit ARIA roles are what keep it a table in
+           the a11y tree once display changes. -->
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="accounts-cap">
+        <table class="c-table" role="table" aria-labelledby="accounts-cap">
+          <caption id="accounts-cap" class="label">The two Craft Hub Meta ad accounts, account lifetime</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Account</th>
+              <th role="columnheader" scope="col">Structures</th>
+              <th role="columnheader" scope="col">Spend</th>
+              <th role="columnheader" scope="col">Impressions</th>
+              <th role="columnheader" scope="col">Reach</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Craft Hub</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Structures</span><span class="c-table__val">262 ad sets</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$576,092.15</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">106,265,970</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Reach</span><span class="c-table__val">13,626,648</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Craft Hub.Com New</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Structures</span><span class="c-table__val">159 campaigns</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$7,946,604.67</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Impressions</span><span class="c-table__val">509,371,602</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Reach</span><span class="c-table__val">91,410,219</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">Craft Hub · Meta Ads Manager · both accounts, lifetime 30 June 2022 – 30 July 2025</p>
+
+      <div class="prose u-mt-md">
+        <p>There is no totals row on that table on purpose. Spend adds and impressions add, and those two totals are on this page: <b class="fig">$8,522,696.82</b> and <b class="fig">615,637,572</b>. Reach does not add. Reach counts deduplicated people, and one person can be reached by both accounts, so putting <b class="fig">13,626,648</b> and <b class="fig">91,410,219</b> together produces a number that means nothing. The two reach figures stay in their own rows.</p>
+      </div>
+
+      <ul class="c-ledger__bullets">
+        <li><b>Craft Hub, the smaller account</b> &mdash; 262 ad sets, $576,092.15 spent, 1,218,212 link clicks, 2.11% CTR (all), $0.26 CPC (all), $5.42 CPM, 7.80 frequency</li>
+        <li><b>Craft Hub.Com New, the larger account</b> &mdash; 159 campaigns, $7,946,604.67 spent, 509,371,602 impressions. Its results row reads &ldquo;Multiple conversions&rdquo; because objectives are mixed across the account</li>
+        <li><b>Product lines</b> &mdash; diamond painting kits, paint-by-numbers, 3D DIY night lamps, wooden jigsaw puzzles, 3D metal models</li>
+        <li><b>Licences advertised</b> &mdash; The Lord of the Rings, Jurassic World, Wicked, How To Train Your Dragon, DC, Warner Bros, US Army; Harry Potter ran as its own campaign</li>
+      </ul>
+      <p class="source u-mt-sm">Craft Hub · Meta Ads Manager · account lifetime</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — HOW IT WAS STRUCTURED
+       ========================================================== -->
+  <section class="section" aria-labelledby="how-it-was-structured">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The structure</p>
+      <h2 id="how-it-was-structured" class="section__head">How was the media plan structured?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Almost every buying type Meta offers is somewhere in these two accounts. Campaign budget optimisation and ad set budget optimisation both run. Advantage+ Shopping runs alongside manually built campaigns. Dynamic product ads run off the catalogue. Bidding is a mix of highest volume, manual bid cap and ROAS goal. Geography splits three ways: worldwide, US only, and explicitly no USA.</p>
+        <p>That is not indecision. Different licences, different products and different rights need different machinery, and an account that only knows one buying type has to force everything through it. The cost is that the account becomes harder to read at the top level, which is the criticism I make of it further down this page.</p>
+        <p>The repeated part is the naming: &ldquo;TOP 6&rdquo; appears across Wicked, LOTR, Jurassic World, Harry Potter, DC, How To Train Your Dragon and the 3D DIY lamps. That is one creative testing-and-scaling framework applied per property &mdash; six creatives in, the winners scale, the same shape every time a new licence lands. A standard structure is what makes a new property a two-day launch instead of a two-week design exercise.</p>
+      </div>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="campaigns-cap">
+        <table class="c-table" role="table" aria-labelledby="campaigns-cap">
+          <caption id="campaigns-cap" class="label">Craft Hub.Com New campaigns reporting purchases, by purchase count</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Campaign</th>
+              <th role="columnheader" scope="col">Purchases</th>
+              <th role="columnheader" scope="col">Cost per purchase</th>
+              <th role="columnheader" scope="col">Spend</th>
+              <th role="columnheader" scope="col">Daily budget</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Wicked, diamond painting, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">1,121</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$28.71</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$32,186.45</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$800</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">US-only CBO creative testing and scaling</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">912</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$34.20</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$31,188.45</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$300</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">LOTR paintings by numbers, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">704</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$28.89</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$20,340.92</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$400</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">CBO bid cap SGD 44, 1-day click</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">537</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$36.62</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$19,664.68</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$50</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">US Army, US only</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">199</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$41.89</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$8,335.82</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$60</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Jurassic World, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">171</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$37.95</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$6,489.55</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$120</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Harry Potter paintings by numbers, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">169</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$37.40</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$6,320.38</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$50</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">US-only CBO bid cap SGD 46</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">160</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$29.60</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$4,736.23</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$50</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Diamond painting kits, combined collections</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">141</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$27.90</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$3,933.94</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$300</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">New CBO creative testing, June 25</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">114</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$22.62</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$2,579.23</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$70</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">How To Train Your Dragon, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">69</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$45.42</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$3,133.67</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$80</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">DC, TOP 6</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">61</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$57.25</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$3,492.26</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">$50</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">DPA 2025 worldwide ABO</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchases</span><span class="c-table__val">6</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Cost per purchase</span><span class="c-table__val">$138.26</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Spend</span><span class="c-table__val">$829.58</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Daily budget</span><span class="c-table__val">Ad set budget</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">Craft Hub.Com New · Meta Ads Manager · campaigns reporting a purchase figure · account lifetime</p>
+
+      <h3 class="u-mt-lg">The campaigns that are not in that table</h3>
+      <div class="prose u-mt-sm">
+        <p>Five more campaigns in the same account ran mixed objectives and report &ldquo;Multiple conversions&rdquo; instead of a purchase count, so they cannot appear in a table with a cost-per-purchase column. They are not small: the Advantage+ Shopping ROAS-goal Warner campaign with no USA spent <b class="fig">$16,123.80</b>, the US-only Advantage+ Shopping ROAS-goal campaign <b class="fig">$12,766.43</b>, licensed combined collections US only <b class="fig">$11,512.82</b>, a US-only CBO bid cap at SGD 150 <b class="fig">$6,514.55</b>, and the 3D DIY lamps licensed TOP 6 <b class="fig">$4,898.60</b>.</p>
+        <p>Leaving them out of the table and naming them here is the honest arrangement. Dropping them silently would make the visible campaigns look like the whole account, and inventing a purchase number for them would be worse.</p>
+      </div>
+
+      <h3 class="u-mt-lg">Budgets are set per campaign, not per property</h3>
+      <div class="prose u-mt-sm">
+        <p>Daily budgets in the table range from <b class="fig">$50</b> to <b class="fig">$800</b>. Wicked diamond painting runs at $800 a day and produced 1,121 purchases; DC and Harry Potter run at $50 a day. The budget is following demonstrated demand for the property rather than being spread evenly across the licence portfolio, which is the correct way round and worth stating because the opposite is a common failure in licensed catalogues.</p>
+      </div>
+      <p class="source u-mt-sm">Craft Hub.Com New · Meta Ads Manager · campaign daily budgets, account lifetime</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — LICENSING AS CAMPAIGN ARCHITECTURE
+       ========================================================== -->
+  <section class="section" aria-labelledby="licensing-and-the-media-plan">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — The constraint</p>
+      <h2 id="licensing-and-the-media-plan" class="section__head">What did licensing do to the media plan?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>The most interesting object in this account is a campaign named for a rights restriction. There is an Advantage+ Shopping ROAS-goal campaign for Warner that excludes the USA, and it spent <b class="fig">$16,123.80</b>. Nobody excludes the largest e-commerce market in the world because they prefer the rest. That campaign exists because the licence does not cover the United States.</p>
+        <p>This is what makes licensed IP a different media job. A rights restriction is a legal boundary, and the only reliable way to hold a legal boundary inside an ad account is to make it a campaign boundary. You cannot express &ldquo;we may not sell this property in this territory&rdquo; as one exclusion buried in a mixed campaign, because the day someone edits that campaign for an unrelated reason, the exclusion is one checkbox away from being gone and the ad is serving somewhere it must not.</p>
+        <p>So the account carries three geographies as three sets of campaigns: worldwide, US only, and no USA. Alongside the Warner no-USA campaign sit a US-only Advantage+ Shopping ROAS-goal campaign at <b class="fig">$12,766.43</b>, a licensed combined collections US-only campaign at <b class="fig">$11,512.82</b>, and US-only CBO campaigns with bid caps at SGD 46 and SGD 150. The geography is in the campaign name, every time, so anybody auditing the account can see the boundary without opening the targeting.</p>
+      </div>
+
+      <h3 class="u-mt-lg">What it costs to run this way</h3>
+      <div class="prose u-mt-sm">
+        <p>It costs learning. Splitting one property across three geographies splits its conversion signal three ways, and a campaign with a third of the conversions takes longer to leave the learning phase and optimise. It also makes cross-campaign comparison misleading: a no-USA campaign is competing for a different, generally cheaper and lower-converting set of auctions than a US-only campaign for the same product, so putting their efficiency side by side and declaring a winner would be a mistake.</p>
+        <p>That is the trade I would make again. The alternative is one campaign that is cheaper to run and one licence breach away from a problem no media efficiency saves you from.</p>
+      </div>
+      <p class="source u-mt-sm">Craft Hub.Com New · Meta Ads Manager · campaign names, geography splits and spend, account lifetime</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — EFFICIENCY, AND THE SPREAD
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-efficiency-looked-like">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — What I found</p>
+      <h2 id="what-efficiency-looked-like" class="section__head">What did efficiency look like across the account?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Wide, and I am not going to smooth it. Across the named campaigns in the larger account, cost per purchase runs from <b class="fig">$22.62</b> to <b class="fig">$138.26</b>. That is roughly a sixfold spread, on one account, in one product category. In the smaller account the ad-set numbers spread the same way: purchase ROAS observed from <b class="fig">0.84x</b> to <b class="fig">8.84x</b>, and cost per purchase from <b class="fig">$8.81</b> to <b class="fig">$68.07</b>.</p>
+        <p>Four things drive that spread, and they are not equally interesting.</p>
+      </div>
+
+      <ul class="c-ledger__bullets">
+        <li><b>The property</b> &mdash; Wicked diamond painting bought purchases at $28.71 and DC bought them at $57.25, on the same TOP 6 framework. Licence demand is not uniform, and no amount of media craft closes the gap between a $28.71 purchase and a $57.25 one.</li>
+        <li><b>Volume</b> &mdash; the $138.26 figure belongs to DPA 2025 worldwide ABO, which recorded 6 purchases on $829.58. Six purchases is not a cost per purchase, it is a rounding error with a dollar sign. It sits at the expensive end of that range and it should not be read as the worst campaign, only as the smallest.</li>
+        <li><b>Geography</b> &mdash; US-only, worldwide and no-USA campaigns are buying different auctions at different prices. Comparing them on cost per purchase alone compares markets, not media.</li>
+        <li><b>What the campaign was for</b> &mdash; the cheapest purchases in the table, $22.62, came from a creative testing and scaling campaign. Testing campaigns are supposed to cost more, not less, so this one is a finding rather than a footnote: the testing structure was finding winners faster than the established property campaigns were exploiting them.</li>
+      </ul>
+      <p class="source u-mt-md">Craft Hub and Craft Hub.Com New · Meta Ads Manager · account lifetime</p>
+
+      <h3 class="u-mt-lg">What cost per purchase cannot tell you here</h3>
+      <div class="prose u-mt-sm">
+        <p>Whether any of it was profitable. Cost per purchase is a cost, not a return, and a $57.25 purchase on a high-basket 3D metal model can be worth more than a $22.62 purchase on a single small kit. Revenue per order is the client&rsquo;s figure and it is not mine to publish, and no revenue figure is available to me anyway, so this page reports cost and stops there.</p>
+        <p>The summary row of the smaller account shows no blended purchase ROAS at all, because attribution settings differ between its ad sets. Meta declines to blend numbers measured on different windows, which is the correct behaviour. I am not going to override it by averaging the ad-set ratios myself.</p>
+      </div>
+      <p class="source u-mt-sm">Craft Hub · Meta Ads Manager · summary row, mixed attribution settings</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-i-would-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — What I would do differently</p>
+      <h2 id="what-i-would-do-differently" class="section__head">What would I do differently?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Meta scores the smaller account at <b class="fig">72</b> on its opportunity score and the larger one at <b class="fig">37</b>. The account carrying $7,946,604.67 of the $8,522,696.82 is the one Meta rates worst. That is the single most useful line on this page and it is not a flattering one.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would standardise the objective before adding another campaign</h3>
+      <div class="prose u-mt-sm">
+        <p>The results row of the larger account reads &ldquo;Multiple conversions&rdquo;. That is Meta saying it cannot produce one number because the 159 campaigns underneath are not counting the same thing. The consequence is concrete: there is no account-level conversion total, so there is no way to answer &ldquo;how many purchases did <b class="fig">$7,946,604.67</b> buy&rdquo; without exporting and reconciling by hand. An account gets into that state one reasonable campaign at a time, and nobody notices until the summary row goes blank.</p>
+        <p>What I would do: fix the purchase event as the reporting objective for every campaign that sells product, and put anything measuring something else &mdash; catalogue coverage, prospecting reach, a genuine awareness test &mdash; in a separate account or under a naming prefix that makes it excludable in one filter.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would fix the attribution window across ad sets</h3>
+      <div class="prose u-mt-sm">
+        <p>The same failure shows up in the other account in a different place. Its summary row has no blended purchase ROAS because attribution settings vary between ad sets, and one campaign name in the larger account still records its window in the title, &ldquo;1-day click&rdquo;. Attribution belongs in an account default, not in a campaign name and not in per-ad-set variation. Ratios measured on different windows are not comparable, and an account that cannot compare its own ad sets cannot rank them.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would stop denominating bid caps in a currency the account does not report in</h3>
+      <div class="prose u-mt-sm">
+        <p>Two campaigns carry bid caps of SGD 44 and SGD 46 and a third SGD 150, while the account reports spend and cost per purchase in US dollars. Reading the row means holding an exchange rate in your head to know whether a $36.62 cost per purchase is anywhere near the cap that produced it. That is a small thing that taxes every review, and it is a naming and setup decision rather than a media one.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would consolidate</h3>
+      <div class="prose u-mt-sm">
+        <p>159 campaigns and 262 ad sets is a lot of structure for one catalogue. Some of it is required &mdash; the rights-restricted geography splits in section 04 are not negotiable &mdash; but not all of it is, and every additional campaign divides the conversion signal a little further and makes the learning phase a little longer. The two accounts also do not share a naming scheme, which means no single filter reads across both.</p>
+      </div>
+      <p class="source u-mt-sm">Craft Hub and Craft Hub.Com New · Meta Ads Manager · opportunity scores 72 and 37 · account lifetime</p>
+    </div>
+  </section>
+
+    <!-- ==========================================================
+       07 — NEXT
+       ========================================================== -->
+  <section class="section c-contact" aria-labelledby="next">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — Next</p>
+      <h2 id="next" class="section__head">Next</h2>
+      </div>
+      <p class="prose">Every case study on this site is written the same way: the situation, the constraint, the mechanism, the measured result, and what the number does not say.</p>
+      <p class="prose u-mt-sm"><a href="tomorrow-nutrition.html">Previous case study: Tomorrow&rsquo;s Nutrition, organic clicks on a supplements brand and the position that says the job is unfinished</a></p>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+        <a class="c-btn c-btn--primary" href="../services.html">Work with me</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

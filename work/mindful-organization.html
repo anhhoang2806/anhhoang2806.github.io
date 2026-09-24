@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Mindful Organization — Andrew Hoang</title>
+<meta name="description" content="145% YoY organic sessions, 114% YoY revenue, and Core Web Vitals compliance lifted from 5% to 90% of pages.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Mindful Organization — Andrew Hoang">
+<meta property="og:description" content="145% YoY organic sessions, 114% YoY revenue, and Core Web Vitals compliance lifted from 5% to 90% of pages.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-13T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-13T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mindful Organization — Andrew Hoang">
+<meta name="twitter:description" content="145% YoY organic sessions, 114% YoY revenue, and Core Web Vitals compliance lifted from 5% to 90% of pages.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html",
+      "name": "Mindful Organization: 145% YoY Organic Growth | Andrew Hoang",
+      "description": "Andrew Hoang drove 145% YoY organic sessions, 114% YoY revenue and 79% YoY orders for Mindful Organization and lifted Core Web Vitals from 5% to 90%.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#webpage" },
+      "headline": "Mindful Organization: 145% YoY organic sessions and 114% YoY revenue",
+      "description": "How Andrew Hoang drove 145% YoY organic sessions, 114% YoY sales revenue and 79% YoY order volume at Mindful Organization, lifted Core Web Vitals compliance from 5% to 90% of pages, and engineered content for the AI answer layer.",
+      "articleSection": "Case Study",
+      "keywords": "Answer Engine Optimization, AEO, GEO, query fan-out coverage, semantic density scoring, chunk-level optimization, RAG indexing, AI citation count, Core Web Vitals, Mindful Organization",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization" },
+      "mentions": [
+        { "@type": "SoftwareApplication", "name": "WordPress", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Shopify", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Google Analytics", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Mixpanel", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Zapier", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Mailchimp", "applicationCategory": "BusinessApplication" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/mindful-organization.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://REPLACE-WITH-YOUR-DOMAIN/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mindful Organization"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       BREADCRUMB — matches the BreadcrumbList in the head
+       ========================================================== -->
+  <nav class="c-crumbs" aria-label="Breadcrumb">
+    <div class="shell shell--narrow">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Work</a></li>
+        <li>Mindful Organization</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       CASE HERO  ·  §5.20 archetype, --wrap-narrow
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 02</p>
+    <!-- The mark is the client's own logo, lifted from Andrew's portfolio
+         deck (see _source/client-logos.md for provenance and the grid
+         mapping). Decorative, so aria-hidden and alt="": the client is
+         already named in full by the h1 beside it, and a logo in the
+         accessibility tree would just read the name twice.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/mindful-organization.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1 id="mindful-organization">Mindful Organization: 145% more sessions, 114% more revenue</h1>
+    </div>
+    <p class="dateline">Apr 2024 – Jun 2026 · Wellness · SEO Manager &amp; IT Support</p>
+    <p class="dek">SEO Manager &amp; IT Support. I owned SEO, AEO, conversion and technical site operations across WordPress and Shopify for a wellness community brand — which in practice meant I owned the traffic, the funnel, and the servers underneath both.</p>
+    <p class="source u-mt-md">Mindful Organization · Apr 2024 – Jun 2026</p>
+  </header>
+
+  <!-- ==========================================================
+       THE FIGURES BAR  ·  three cells on a case page, full shell
+       so the 96px figures keep their cell (§3.3, §5.20)
+       ========================================================== -->
+  <div class="shell">
+    <ul class="c-metrics">
+      <li class="c-metric reveal" style="--i:0">
+        <p class="figure figure--long">+145%</p>
+        <p class="label">YoY organic sessions</p>
+        <p class="source">Mindful Organization · Apr 2024 – Jun 2026</p>
+      </li>
+      <li class="c-metric reveal" style="--i:1">
+        <p class="figure figure--long">+114%</p>
+        <p class="label">YoY sales revenue</p>
+        <p class="source">Mindful Organization · Apr 2024 – Jun 2026</p>
+      </li>
+      <li class="c-metric reveal" style="--i:2">
+        <p class="figure">+79%</p>
+        <p class="label">YoY order volume</p>
+        <p class="source">Mindful Organization · Apr 2024 – Jun 2026</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ==========================================================
+       01 — THE SITUATION
+       ========================================================== -->
+  <section class="section" id="situation" aria-labelledby="what-was-the-situation-at-mindful-organization">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — The situation</p>
+      <h2 id="what-was-the-situation-at-mindful-organization" class="section__head">What was the situation at Mindful Organization?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Mindful Organization is a wellness community brand running on WordPress and Shopify, selling to a mindfulness audience. The commercial goal was revenue and orders, not sessions. The organic opportunity was high-value mindfulness keywords with genuine purchase intent behind them.</p>
+        <p>I was the SEO function and the IT function at the same time. That is unusual and it turned out to be the reason the results happened — when I found a technical problem I did not have to file a ticket and wait for it.</p>
+      </div>
+
+      <p class="label u-mt-lg">At a glance</p>
+      <ul class="c-ledger__bullets">
+        <li><b>Role</b> — SEO Manager &amp; IT Support</li>
+        <li><b>Scope</b> — SEO, AEO, conversion optimisation, technical site operations</li>
+        <li><b>Platforms</b> — WordPress, Shopify</li>
+        <li><b>Sector</b> — Wellness and mindfulness, community and e-commerce</li>
+        <li><b>Stack</b> — Google Analytics, Mixpanel, Zapier, Mailchimp, schema and structured data, vector embeddings</li>
+      </ul>
+      <p class="source u-mt-md">Mindful Organization · role and scope</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE CONSTRAINT
+       ========================================================== -->
+  <section class="section" id="constraint" aria-labelledby="what-was-the-constraint">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The constraint</p>
+      <h2 id="what-was-the-constraint" class="section__head">What was the constraint?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Mindful Organization&rsquo;s site could not support the content strategy it already had. Core Web Vitals compliance stood at <b class="fig">5%</b> of pages. Five percent.</p>
+        <p>At that level, publishing more content is not a growth strategy, it is a way to spend money slowly. Every new page lands on the same broken foundation. So the technical floor had to come up before, and then alongside, the content work — not after it.</p>
+        <p>Two platforms made this harder. WordPress and Shopify fail differently, and fixing one does not help the other.</p>
+      </div>
+      <p class="source u-mt-md">Mindful Organization · Core Web Vitals compliance at the start</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — WHAT I DID  ·  four named workstreams
+       ========================================================== -->
+  <section class="section" id="what-i-did" aria-labelledby="what-did-i-do-at-mindful-organization">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — What I did</p>
+      <h2 id="what-did-i-do-at-mindful-organization" class="section__head">What did I do at Mindful Organization?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Four workstreams ran at Mindful Organization between April 2024 and June 2026: raising the technical floor, engineering the content for the AI answer layer, building the funnel underneath the traffic, and automating the capture and the measurement.</p>
+
+      <h3 id="raised-the-technical-floor" class="u-mt-lg">Raised the technical floor</h3>
+      <div class="prose u-mt-sm">
+        <p>Core Web Vitals compliance went from <b class="fig">5%</b> to <b class="fig">90%</b> of pages, and page errors went to near zero. A lab run finished at Lighthouse <b class="fig">94</b> Performance and <b class="fig">100</b> SEO &mdash; LCP <b class="fig">2.6s</b>, TBT <b class="fig">20ms</b>, CLS <b class="fig">0.008</b>. This was ongoing maintenance rather than a one-off sprint: database cleanups, custom-function refinements, plugin and permalink fixes, regular performance audits, and security reviews.</p>
+        <p>I also logged, prioritised and resolved bugs directly with developers, and kept SEO, IT and support documentation current so the work did not evaporate when someone left.</p>
+      </div>
+
+      <!-- The ONLY before/after pair on this page. Same metric, same unit,
+           from ÷ to = 5 ÷ 90 = 5.6%, which clears the 2% floor (§5.7). -->
+      <div class="c-pair u-mt-lg">
+        <p class="label" id="cwv-lab">Core Web Vitals compliance, share of pages, start to end of the engagement</p>
+        <p class="c-pair__figs">
+          <span class="figure figure--long">5%</span>
+          <span class="c-pair__arrow" aria-hidden="true">→</span>
+          <span class="figure figure--long">90%</span>
+        </p>
+        <span class="c-pair__bars" aria-hidden="true">
+          <span class="c-pair__bar" style="--fill:5.6%;--i:0"></span>
+          <span class="c-pair__bar" style="--fill:100%;--i:1"></span>
+        </span>
+        <p class="source">Mindful Organization · Apr 2024 – Jun 2026</p>
+      </div>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/mindful-lighthouse.png" width="492" height="454" loading="lazy" decoding="async"
+             alt="Google Lighthouse report for a Mindful Organization page scoring 94 for Performance, 83 for Accessibility, 82 for Best Practices and 100 for SEO, with First Contentful Paint 2.4 seconds, Largest Contentful Paint 2.6 seconds, Total Blocking Time 20 milliseconds and Cumulative Layout Shift 0.008.">
+        <figcaption class="c-shot__cap"><b>Google Lighthouse</b> — Performance 94, Accessibility 83, Best Practices 82, SEO 100. First Contentful Paint 2.4s, Largest Contentful Paint 2.6s, Total Blocking Time 20ms, Cumulative Layout Shift 0.008. A single-page lab run, not the share-of-pages figure above.</figcaption>
+      </figure>
+
+      <h3 id="engineered-content-for-the-ai-answer-layer" class="u-mt-2xl">Engineered content for the AI answer layer</h3>
+      <div class="prose u-mt-sm">
+        <p>This is the part I would want a technical reader to look at.</p>
+        <p>I built content to be retrieved by answer engines, not only to rank in a list of blue links. Concretely:</p>
+      </div>
+      <ul class="c-ledger__bullets">
+        <li><b>Query fan-out coverage</b> — covering the cluster of related questions an answer engine expands a query into, rather than the single head term.</li>
+        <li><b>Schema and structured data</b> — so the machine can identify what each part of a page actually is.</li>
+        <li><b>Semantic density scoring</b> — measuring whether a passage carries enough distinct meaning to be worth retrieving, rather than measuring word count.</li>
+        <li><b>Deep-dive topical depth</b> — depth per topic rather than breadth across many.</li>
+        <li><b>Chunk-level optimization for RAG indexing</b> — writing so that a page survives being split into chunks. A passage pulled out of context has to still make sense on its own, because that is the unit a retrieval system actually returns.</li>
+      </ul>
+      <p class="prose u-mt-md">I integrated NLP, LLMs, RAG and vector embeddings into both the content and the site architecture, then tracked AI citation count as the outcome measure and grew it. Citation count, not ranking position, is the honest measure of whether an answer layer strategy is working.</p>
+      <p class="c-tags u-mt-md">Query fan-out coverage · schema &amp; structured data · semantic density scoring · deep-dive topical depth · chunk-level optimization for RAG indexing · NLP · LLMs · RAG · vector embeddings · AI citation count</p>
+      <p class="prose u-mt-md">The scope was <b class="fig">1,211</b> of roughly <b class="fig">5,000</b> pages, on an archive going back to 2011. Not the whole estate: the pages chosen were the ones a retrieval system would plausibly be asked for.</p>
+      <p class="prose u-mt-md">On the plain-search side the same work took <b class="fig">#1</b> on Google for &ldquo;meditation&rdquo; (<b class="fig">34K</b> searches a month), &ldquo;how to meditate&rdquo; (<b class="fig">8.6K</b>), &ldquo;free meditation apps&rdquo;, &ldquo;body scan&rdquo; and &ldquo;how to meditate properly&rdquo;.</p>
+      <p class="source u-mt-md">Mindful Organization · AI answer-layer mechanism</p>
+
+      <h3 id="built-the-funnel-underneath-the-traffic" class="u-mt-2xl">Built the funnel underneath the traffic</h3>
+      <p class="prose u-mt-sm">I wrote the GA4 purchase and dataLayer e-commerce tracking in PHP and gtag for paid subscriptions across <b class="fig">six</b> membership levels, connected WordPress and Shopify through their REST APIs, and ran Mixpanel event tracking to find where the funnel was losing people.</p>
+      <p class="prose u-mt-sm">On-page work on the high-value mindfulness terms — titles, meta, headers — feeding conversion-optimised funnels: pop-ups, signup forms, CTAs, and gated e-books and webinars. Subscriptions grew to approximately <b class="fig">60,000</b>.</p>
+      <p class="source u-mt-md">Mindful Organization · subscriptions</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/mindful-keyword-positions.png" width="802" height="332" loading="lazy" decoding="async"
+             alt="Ahrefs keyword position table for Mindful Organization: free meditation apps at position 1 with 1,500 search volume, meditation at position 1 with 34,000 volume and 8,759 traffic, how to meditate at position 1 with 8,600 volume, gratitude at position 3 with 16,000 volume, body scan at position 1, and guided meditation at position 12.">
+        <figcaption class="c-shot__cap"><b>Ahrefs</b> — the high-value mindfulness terms this on-page work targeted: &ldquo;free meditation apps&rdquo; at position 1 (1,500 volume), &ldquo;meditation&rdquo; at position 1 (34,000 volume, 8,759 traffic), &ldquo;how to meditate&rdquo; at position 1 (8,600 volume), &ldquo;gratitude&rdquo; at position 3 (16,000 volume), &ldquo;body scan&rdquo; at position 1, &ldquo;guided meditation&rdquo; at position 12.</figcaption>
+      </figure>
+
+      <h3 id="automated-the-capture-and-the-measurement" class="u-mt-2xl">Automated the capture and the measurement</h3>
+      <p class="prose u-mt-sm">Zapier flows linking Mailchimp to the lead capture, so a signup went where it needed to go without anyone touching it. Google Analytics and Mixpanel event tracking to find where people were dropping off, which is what told me which part of the funnel to work on next.</p>
+      <p class="source u-mt-md">Mindful Organization · automation and analytics stack</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — WHAT IT PRODUCED  ·  the comparable-metrics table
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-were-the-measured-results">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — What it produced</p>
+      <h2 id="what-were-the-measured-results" class="section__head">What were the measured results?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Andrew Hoang, SEO Manager &amp; IT Support at Mindful Organization from April 2024 to June 2026, drove 145% year-over-year organic sessions, 114% year-over-year sales revenue and 79% year-over-year order volume, and lifted Core Web Vitals compliance from 5% to 90% of pages.</p>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/mindful-gsc-performance.png" width="965" height="287" loading="lazy" decoding="async"
+             alt="Google Search Console performance chart for Mindful Organization showing 8.76 million total clicks, 52.9 million total impressions, a 16.6 percent average click-through rate and an average position of 6.3, plotted from 24 December 2022 to 17 April 2024. The window ends in the month the April 2024 engagement began, so it is the inherited baseline rather than a result of the work described below.">
+        <figcaption class="c-shot__cap"><b>Google Search Console</b> — 8.76M total clicks and 52.9M total impressions, 16.6% average CTR, average position 6.3, plotted 12/24/22 to 4/17/24. That window closes in the month the engagement opens — it is the inherited baseline, not the result of the work below.</figcaption>
+      </figure>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="mo-results-cap">
+        <table class="c-table" role="table" aria-labelledby="mo-results-cap">
+          <caption id="mo-results-cap">Measured outcomes at Mindful Organization, April 2024 to June 2026, with the comparison basis and the source document behind every figure.</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Metric</th>
+              <th role="columnheader" scope="col">Result</th>
+              <th role="columnheader" scope="col">Period</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Organic sessions, year over year</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+145%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Sales revenue, year over year</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+114%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Order volume, year over year</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+79%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Core Web Vitals compliance, share of pages</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">5% → 90%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Page errors, after ongoing maintenance</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Near zero</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Subscriptions, level reached</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">~60,000</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="c-shot">
+        <img src="../assets/img/work/mindful-shopify-growth.png" width="765" height="362" loading="lazy" decoding="async"
+             alt="Shopify admin dashboard for Mindful Organization showing 593,276 sessions up 145 percent, total sales up 114 percent and 9,575 orders up 79 percent, each marked with a green up arrow, alongside a 1.3 percent conversion rate marked with a grey down arrow at 34 percent. The 365-day comparison runs 7 June 2024 to 6 June 2025 against 8 June 2023 to 6 June 2024. Four black bars cover the client's absolute revenue figure, the payout balance, the currency axis and the unfulfilled, high-risk and chargeback order counts.">
+        <figcaption class="c-shot__cap"><b>Shopify admin</b> — sessions 593,276, up 145%; total sales up 114%; orders 9,575, up 79%; conversion rate 1.3%, down 34%. Conversion rate is the one figure here that fell, and it is the gap section 07 commits to closing. The 365-day comparison runs Jun 7 2024 – Jun 6 2025 against Jun 8 2023 – Jun 6 2024, one year inside the Apr 2024 – Jun 2026 engagement rather than the whole of it. The black bars are deliberate: absolute revenue, the payout balance, the currency axis and the unfulfilled, high-risk and chargeback counts are redacted as a courtesy to the client, so only the percentage movements are published.</figcaption>
+      </figure>
+
+      <p class="prose u-mt-lg">AI citations went from <b class="fig">768</b> to <b class="fig">12,465</b> across the engagement — a <b class="fig">16x</b> increase, and the outcome the answer-layer work was aimed at. It is a start-and-end pair rather than a tracked series, which is the limitation section 07 returns to. <a href="../services.html">The consulting page</a> describes how I instrument it now.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — HOW IT WAS MEASURED
+       ========================================================== -->
+  <section class="section" id="measurement" aria-labelledby="how-were-the-results-measured">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — How it was measured</p>
+      <h2 id="how-were-the-results-measured" class="section__head">How were the results measured?</h2>
+      </div>
+
+      <div class="prose u-mt-md">
+        <p>Every headline figure on this page is a year-over-year comparison across the Mindful Organization engagement, April 2024 to June 2026, the period I held the SEO Manager &amp; IT Support role.</p>
+        <p>Organic sessions come from the site analytics. I ran Google Analytics and Mixpanel event tracking on the estate, which is also what I used to find where people were dropping out of the funnel. Sales revenue and order volume come from the store&rsquo;s own commerce reporting rather than from an analytics estimate — they are orders the business was actually paid for. Core Web Vitals compliance is a share of pages, not a single lab score: 5% of pages passing at the start, 90% at the end.</p>
+        <p>All three headline numbers are recorded in both source documents behind this site. Organic sessions at 145%, sales revenue at 114% and order volume at 79% appear in the resume and in the 19 September 2026 portfolio deck alike; the 13 September deck carried only two of the three, which is what an earlier version of this note said. Where the two documents disagree about a figure anywhere on this site, both numbers are published with their own source line and never merged or averaged.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — READING THE GAP  ·  the one --signal-fix block on this
+       page. A limitation, not a win. Never --accent.
+       ========================================================== -->
+  <section class="section" id="the-gap">
+    <div class="shell shell--narrow">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — Reading the gap</p>
+
+      <aside class="c-fix" aria-labelledby="what-does-the-gap-between-the-three-numbers-say">
+        <p class="c-fix__kicker">Caveat · what the numbers do not say</p>
+        <h2 class="c-fix__h" id="what-does-the-gap-between-the-three-numbers-say">What does the gap between the three numbers say?</h2>
+        <div class="prose">
+          <p>The gap between those first three numbers is the interesting part. Sessions grew fastest, orders grew slowest, and revenue landed between them.</p>
+          <p>Revenue outgrowing orders means average order value went up, not just volume. Sessions outgrowing orders means there was still conversion left on the table when I finished.</p>
+          <p>Three numbers moving by three different amounts is what real data looks like. A single rounded percentage on all three would be easier to put on a slide and worth much less to anyone deciding whether to hire me.</p>
+        </div>
+        <p class="source">Mindful Organization · sessions +145%, revenue +114%, orders +79%</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" id="differently" aria-labelledby="what-would-i-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — What I would do differently</p>
+      <h2 id="what-would-i-do-differently" class="section__head">What would I do differently at Mindful Organization?</h2>
+      </div>
+
+      <p class="prose u-mt-md">Three things, and all three are about sequencing rather than about the work itself.</p>
+
+      <h3 id="front-load-the-core-web-vitals-work" class="u-mt-lg">I would front-load the Core Web Vitals work instead of running it as ongoing maintenance</h3>
+      <p class="prose u-mt-sm">Going from 5% to 90% as a continuous programme meant content published in the early months landed on pages that were still failing. That content had to earn its position twice. Concentrating the technical fix into a single early push would have made every page published afterwards more valuable from day one.</p>
+
+      <h3 id="instrument-ai-citation-tracking-first" class="u-mt-lg">I would instrument AI citation tracking before doing the answer-layer work, not alongside it</h3>
+      <p class="prose u-mt-sm">Citations went <b class="fig">768 &rarr; 12,465</b>, which is the right measure moving the right way. What I have is a start and an end, not a series — so the growth cannot be attributed to specific changes, chunk-level structure versus schema versus topical depth. Next time the measurement goes in first and is read continuously, so the individual mechanisms can be told apart.</p>
+
+      <h3 id="close-the-conversion-gap" class="u-mt-lg">I would close the conversion gap the session growth revealed</h3>
+      <p class="prose u-mt-sm">Sessions grew 145% and orders grew 79%. That gap is the clearest remaining opportunity in this account and I would put the next quarter of effort into conversion rather than into more traffic.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       08 — NEXT
+       ========================================================== -->
+  <section class="section c-contact" id="next" aria-labelledby="where-next">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">08 — Next</p>
+      <h2 id="where-next" class="section__head">Where next?</h2>
+      </div>
+
+      <p class="prose">The Phibious case study is the enterprise counterpart to this one: Bridgestone, Cleanipedia and Schneider Electric, at a scale where nothing ships without someone else&rsquo;s release process. The <a href="index.html">work index</a> holds every engagement and the full results table, and the <a href="../services.html">consulting page</a> describes the technical SEO and AEO work above as something you can buy.</p>
+
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="phibious-enterprise-seo.html">Phibious enterprise accounts</a>
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

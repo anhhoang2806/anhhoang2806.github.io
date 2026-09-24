@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Uppercut Digital — Andrew Hoang</title>
+<meta name="description" content="Paid media across thirteen Australian ad accounts on Meta and Google Ads: 8.89x blended ROAS at Flowers on Norton St and an 83% lower cost per registration.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Uppercut Digital — Andrew Hoang">
+<meta property="og:description" content="Paid media across thirteen Australian ad accounts on Meta and Google Ads: 8.89x blended ROAS at Flowers on Norton St and an 83% lower cost per registration.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-14T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-14T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Uppercut Digital — Andrew Hoang">
+<meta name="twitter:description" content="Paid media across thirteen Australian ad accounts on Meta and Google Ads: 8.89x blended ROAS at Flowers on Norton St and an 83% lower cost per registration.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html",
+      "name": "Uppercut Digital — Andrew Hoang",
+      "description": "Paid media across thirteen Australian ad accounts on Meta and Google Ads: 8.89x blended ROAS at Flowers on Norton St and an 83% lower cost per registration.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#webpage" },
+      "headline": "Uppercut Digital: thirteen Australian ad accounts, and 8.89x ROAS on the best of them",
+      "description": "How Andrew Hoang runs paid media on thirteen Australian ad accounts at Uppercut Digital across Meta and Google Ads: 8.89x blended purchase ROAS at Flowers on Norton St, 6.69x at bodytonix, an 83% reduction in cost per registration at AFL Kids, and one account returning 1.71x that is not working. Client spend and revenue are withheld deliberately; ratios and counts only.",
+      "articleSection": "Case Study",
+      "keywords": "paid media, Meta ads, Google Ads, purchase ROAS, Advantage+ prospecting, retargeting, Australian marketing agency, Uppercut Digital",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@type": "Organization", "name": "Uppercut Digital" },
+      "mentions": [
+        { "@type": "Organization", "name": "Uppercut Digital" },
+        { "@type": "SoftwareApplication", "name": "Meta Ads Manager", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Google Ads", "applicationCategory": "BusinessApplication" }
+      ],
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/uppercut-digital.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "Uppercut Digital" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <nav class="c-crumbs shell shell--narrow" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Work</a></li>
+      <!-- The nav's Work link already carries aria-current="page"; the terminal
+           crumb stays a plain span so only one element announces as current. -->
+      <li><span>Uppercut Digital</span></li>
+    </ol>
+  </nav>
+
+  <!-- ==========================================================
+       00 — CASE HERO  ·  the only h1 on the page
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 06</p>
+    <!-- The mark is the employer's own logo (see _source/client-logos.md) and it
+         is decorative: aria-hidden, and the employer name is in the h1 itself.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/uppercut-digital.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>Uppercut Digital: thirteen Australian ad accounts, and 8.89x ROAS on the best of them</h1>
+    </div>
+    <p class="dateline">Mar 2026 – Present · Agency paid media · Paid Media Specialist &mdash; concurrent with the ELSA Speak role</p>
+    <p class="dek">I run paid media on thirteen ad accounts for eleven clients at an Australian agency, across Meta and Google Ads. This page reports what the accounts actually returned, including the one that does not work.</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — AT A GLANCE  ·  three figure cells, full-measure shell.
+       The figures bar sits in the wide .shell, not shell--narrow:
+       at 4-up a 128px figure does not fit a 52rem column.
+       ========================================================== -->
+  <section class="section" id="results" aria-labelledby="what-the-work-produced">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — At a glance</p>
+      <h2 id="what-the-work-produced" class="section__head">What does the Uppercut Digital paid media work produce?</h2>
+      </div>
+      <p class="prose u-mt-sm">Andrew Hoang is the Paid Media Specialist at Uppercut Digital, an Australian marketing agency, and manages thirteen ad accounts for eleven clients at the same time across Meta and Google Ads. The strongest of them, Flowers on Norton St, has returned 8.89x blended purchase ROAS across 14 campaigns and 876 purchases. bodytonix has returned 6.69x across 64 campaigns and 4,703 purchases. AFL Kids cut its cost per registration 83% between two runs of the same offer.</p>
+
+      <!-- Every cell carries its source line. A cell without one cannot ship. -->
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure figure--long">8.89x</p>
+          <p class="label">Blended purchase ROAS, account lifetime</p>
+          <p class="source">Flowers on Norton St · Meta · 14 campaigns, lifetime</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">13</p>
+          <p class="label">Ad accounts managed at once</p>
+          <p class="source">Uppercut Digital · Meta and Google Ads</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure">83%</p>
+          <p class="label">Lower cost per registration</p>
+          <p class="source">AFL Kids · Meta · August vs June 2026</p>
+        </li>
+      </ul>
+
+      <p class="c-tags u-mt-md">Role: Paid Media Specialist, current · Employer: Uppercut Digital, Australian marketing agency · Platforms: Meta, Google Ads · Objectives: e-commerce purchases, service enquiries, event registrations</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE ROLE
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-the-role-is">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The role</p>
+      <h2 id="what-the-role-is" class="section__head">What is the job at Uppercut Digital?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Uppercut Digital is an Australian marketing agency. I am its Paid Media Specialist, and I run <b class="fig">13</b> ad accounts for <b class="fig">11</b> clients: ten Meta accounts, plus three Google Ads accounts under a single Uppercut Digital MCC.</p>
+        <p>Agency paid media is not one job repeated thirteen times. The accounts sell different things, to different people, and count different outcomes. A florist counts purchases on an occasion. A law firm counts enquiries. A kids&rsquo; sports programme counts registrations before a school holiday starts.</p>
+      </div>
+
+      <ul class="c-ledger__bullets">
+        <li><b>The ten Meta accounts</b> — ten of the eleven clients, named here: Crox, Flowers on Norton St, bodytonix, EdAtlas, Waste Warriorz, Avicenna Lawyers, The Dental Practice, Smile Specialists Suite, AFL Kids, On The Nose. All Australian.</li>
+        <li><b>Channels</b> — ten Meta ad accounts, plus three Google Ads accounts under one MCC: Avicenna Lawyers, Flowers on Norton St and Crox. Thirteen accounts in total.</li>
+        <li><b>Accounts counting purchases</b> — Flowers on Norton St, bodytonix and On The Nose, each reporting against a purchase event</li>
+        <li><b>Accounts counting enquiries and registrations</b> — Avicenna Lawyers reports conversions, Waste Warriorz reports leads, AFL Kids reports registrations</li>
+      </ul>
+
+      <p class="prose u-mt-md">Waste Warriorz launched in August 2026 with 5 campaigns and has produced one lead so far. That is too early to call a result, and I am not going to call it one. It is on this page only as evidence that launching a new account is part of the job.</p>
+      <p class="source u-mt-sm">Uppercut Digital · Meta Ads Manager and Google Ads · read 14 September 2026</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — FINDING 1: OCCASION BEATS ALWAYS-ON
+       ========================================================== -->
+  <section class="section" aria-labelledby="occasion-beats-always-on">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — What I found</p>
+      <h2 id="occasion-beats-always-on" class="section__head">Why do occasion campaigns beat generic monthly specials?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>At Flowers on Norton St, an Australian florist, every campaign built around a calendar occasion outperformed every campaign built around a generic monthly promotion. The account returns <b class="fig">8.89x</b> blended purchase ROAS across 14 Meta campaigns and 876 purchases, measured across the account&rsquo;s lifetime rather than across my engagement. That blended number hides the real finding, which is the spread underneath it.</p>
+        <p>Mother&rsquo;s Day 2026 returned <b class="fig">18.63x</b> on 115 purchases. Valentine&rsquo;s Day 2026 returned <b class="fig">11.68x</b> on 83 purchases. Graduation 2026 returned <b class="fig">10.52x</b>, and Mother&rsquo;s Day 2025 returned <b class="fig">14.02x</b> &mdash; that one ran before I joined in March 2026, so it sits inside the account&rsquo;s lifetime blend without being my work. All four cleared 10x. The best generic monthly special, June Special 2026, returned <b class="fig">6.04x</b>. Mother&rsquo;s Day 2026 returned about three times what June Special 2026 returned, on the same account, with the same product. Between those two sits one always-on Advantage+ campaign at <b class="fig">8.19x</b>, which is the single largest campaign on the account &mdash; <b class="fig">368</b> of its <b class="fig">876</b> purchases. So the ranking is not occasion versus everything. It is occasion first, always-on Advantage+ carrying the volume underneath it, and generic monthly promotion last.</p>
+        <p>The reason is not creative quality. It is that on an occasion the customer already knows they have to buy flowers and is only choosing where. A monthly special has to create the reason to buy first, and then win the choice. Two jobs instead of one.</p>
+      </div>
+
+      <!-- Same markup at every width; below 48rem it reflows to stacked
+           records. The explicit ARIA roles are what keep it a table in
+           the a11y tree once display changes. -->
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="flowers-cap">
+        <table class="c-table" role="table" aria-labelledby="flowers-cap">
+          <caption id="flowers-cap" class="label">Flowers on Norton St Meta campaigns, by purchase ROAS and campaign type</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Campaign</th>
+              <th role="columnheader" scope="col">Purchase ROAS</th>
+              <th role="columnheader" scope="col">Campaign type</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Mother&rsquo;s Day 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">18.63x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Occasion</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Mother&rsquo;s Day 2025</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">14.02x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Occasion</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Valentine&rsquo;s Day 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">11.68x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Occasion</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Graduation 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">10.52x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Occasion</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Advantage+ always-on</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">8.19x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Always-on</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">June Special 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">6.04x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Monthly special</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">September Selected 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">5.51x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Monthly special</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">July Special 2026</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">0.52x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Campaign type</span><span class="c-table__val">Monthly special</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">Flowers on Norton St · Meta Ads Manager · lifetime · read 14 September 2026</p>      <!-- One series, so no legend box: the heading says what is
+           plotted. The pre-engagement campaign is a hollow dot plus a
+           direct label rather than a second colour, because it is the
+           same measure, not a second series. -->
+      <figure class="c-chart u-mt-lg">
+        <h3>Purchase ROAS by campaign &middot; Flowers on Norton St</h3>
+        <svg viewBox="0 0 520 242" role="img" aria-label="Purchase ROAS by campaign at Flowers on Norton St, against a blended 8.89x.">
+        <title>Purchase ROAS by campaign</title>
+        <g transform="translate(0,12)">
+        <line class="viz-axis" x1="176.0" y1="18" x2="176.0" y2="186"/>
+        <text class="viz-label" x="176.0" y="204" text-anchor="middle">0x</text>
+        <line class="viz-axis" x1="251.0" y1="18" x2="251.0" y2="186"/>
+        <text class="viz-label" x="251.0" y="204" text-anchor="middle">5x</text>
+        <line class="viz-axis" x1="326.0" y1="18" x2="326.0" y2="186"/>
+        <text class="viz-label" x="326.0" y="204" text-anchor="middle">10x</text>
+        <line class="viz-axis" x1="401.0" y1="18" x2="401.0" y2="186"/>
+        <text class="viz-label" x="401.0" y="204" text-anchor="middle">15x</text>
+        <line class="viz-axis" x1="476.0" y1="18" x2="476.0" y2="186"/>
+        <text class="viz-label" x="476.0" y="204" text-anchor="middle">20x</text>
+        <line x1="309.4" y1="12" x2="309.4" y2="186" stroke="var(--ink-4)" stroke-width="1.5"/>
+        <text class="viz-note" x="309.4" y="8" text-anchor="middle">blended 8.89x</text>
+        <text class="viz-label" x="168" y="40" text-anchor="end">Mother's Day 2026</text>
+        <line x1="176.0" y1="36" x2="455.4" y2="36" stroke="var(--viz-dot)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="455.4" cy="36" r="6" fill="var(--viz-dot)" stroke="var(--viz-surface)" stroke-width="2"/>
+        <text class="viz-value" x="467.4" y="41">18.63x</text>
+        <text class="viz-label" x="168" y="74" text-anchor="end">Mother's Day 2025</text>
+        <line x1="176.0" y1="70" x2="386.3" y2="70" stroke="var(--viz-dot)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="386.3" cy="70" r="6" fill="var(--viz-surface)" stroke="var(--viz-surface)" stroke-width="2"/>
+        <circle cx="386.3" cy="70" r="6" fill="none" stroke="var(--viz-dot)" stroke-width="2"/>
+        <text class="viz-value" x="398.3" y="75">14.02x</text>
+        <text class="viz-note" x="440.3" y="75">pre-engagement</text>
+        <text class="viz-label" x="168" y="108" text-anchor="end">Valentine's Day 2026</text>
+        <line x1="176.0" y1="104" x2="351.2" y2="104" stroke="var(--viz-dot)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="351.2" cy="104" r="6" fill="var(--viz-dot)" stroke="var(--viz-surface)" stroke-width="2"/>
+        <text class="viz-value" x="363.2" y="109">11.68x</text>
+        <text class="viz-label" x="168" y="142" text-anchor="end">Graduation 2026</text>
+        <line x1="176.0" y1="138" x2="333.8" y2="138" stroke="var(--viz-dot)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="333.8" cy="138" r="6" fill="var(--viz-dot)" stroke="var(--viz-surface)" stroke-width="2"/>
+        <text class="viz-value" x="345.8" y="143">10.52x</text>
+        <text class="viz-label" x="168" y="176" text-anchor="end">June Special 2026</text>
+        <line x1="176.0" y1="172" x2="266.6" y2="172" stroke="var(--viz-dot)" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="266.6" cy="172" r="6" fill="var(--viz-dot)" stroke="var(--viz-surface)" stroke-width="2"/>
+        <text class="viz-value" x="278.6" y="177">6.04x</text>
+        </g>
+        </svg>
+        <figcaption class="c-chart__read">Every occasion campaign cleared the blended figure; the best generic monthly special did not. That spread is the finding &mdash; the blend averages a <b class="fig">6.04x</b> and an <b class="fig">18.63x</b> into one number that describes neither. Mother&rsquo;s Day 2025 ran before I joined in March 2026 and is shown hollow: it sits in the account&rsquo;s lifetime blend without being my work.</figcaption>
+        <p class="source">Flowers on Norton St &middot; Meta Ads Manager &middot; account lifetime, read 14 September 2026</p>
+      </figure>
+
+
+      <h3 class="u-mt-lg">The bottom row is a failure and it stays in the table</h3>
+      <div class="prose u-mt-sm">
+        <p>July Special 2026 returned <b class="fig">0.52x</b> on a single purchase. It is the one outright failure in the account and it belongs in the same table as Mother&rsquo;s Day, because the table is what the finding rests on. A table that only shows the winners is not evidence of anything.</p>
+        <p>What I do with the finding: occasions get the planning time and the campaign build, and the generic monthly promotion stops being the default filler between them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — FINDING 2: LET THE ALGORITHM PROSPECT
+       ========================================================== -->
+  <section class="section" aria-labelledby="algorithm-prospecting">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — What I found</p>
+      <h2 id="algorithm-prospecting" class="section__head">Does letting the algorithm prospect beat manual targeting?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>At bodytonix, an Australian e-commerce account, automated prospecting beat manual prospecting by a wide margin. The account returns <b class="fig">6.69x</b> blended purchase ROAS across 64 Meta campaigns, 4,703 purchases, 6,592,994 impressions and 538,573 reach.</p>
+        <p>Advantage+ Catalog prospecting returned <b class="fig">7.50x</b> on 520 purchases. Manual top-funnel catalog prospecting returned <b class="fig">3.95x</b>. A manual Advantage+ prospecting campaign returned <b class="fig">3.52x</b>. Same account, same catalog, same period — the difference is who picks the audience.</p>
+        <p>The most efficient campaign in the account is not prospecting at all. Mid-funnel BAU retargeting returned <b class="fig">8.44x</b> on 261 purchases. Bottom-funnel catalog dynamic remarketing returned <b class="fig">6.70x</b>. Warm audiences convert better, which is not a surprise; what matters is that automated prospecting is the thing that keeps filling them.</p>
+      </div>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="bodytonix-cap">
+        <table class="c-table" role="table" aria-labelledby="bodytonix-cap">
+          <caption id="bodytonix-cap" class="label">bodytonix Meta campaigns, by purchase ROAS and how the audience is chosen</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Campaign</th>
+              <th role="columnheader" scope="col">Purchase ROAS</th>
+              <th role="columnheader" scope="col">Audience chosen by</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">Mid-funnel BAU retargeting</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">8.44x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Audience chosen by</span><span class="c-table__val">Retargeting</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Advantage+ Catalog prospecting</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">7.50x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Audience chosen by</span><span class="c-table__val">Algorithm</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Bottom-funnel catalog dynamic remarketing</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">6.70x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Audience chosen by</span><span class="c-table__val">Remarketing</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Manual top-funnel catalog prospecting</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">3.95x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Audience chosen by</span><span class="c-table__val">Manual</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">Manual Advantage+ prospecting</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Purchase ROAS</span><span class="c-table__val">3.52x</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Audience chosen by</span><span class="c-table__val">Manual</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">bodytonix · Meta Ads Manager · lifetime · read 14 September 2026</p>
+
+      <h3 class="u-mt-lg">The decision, and the campaign I switched off</h3>
+      <div class="prose u-mt-sm">
+        <p>I moved budget to the winners and switched the <b class="fig">3.52x</b> manual Advantage+ prospecting campaign off. That is the whole decision. Testing that ends without a campaign being turned off is not testing, it is reporting.</p>
+        <p>Two other things in this account are worth saying out loud. Lifetime frequency is <b class="fig">12.24</b>, and the mid-funnel retargeting campaign ran at <b class="fig">20.84</b> frequency — a warm audience seeing the same ads that many times is efficient right up until it is not, and it needs a creative refresh rather than more budget. And the Black Friday and discount campaigns clustered between <b class="fig">3.82x</b> and <b class="fig">4.09x</b>, below the account average. Discounting bought volume at a worse return than the everyday catalog work did.</p>
+      </div>
+      <p class="source u-mt-sm">bodytonix · Meta Ads Manager · lifetime frequency and campaign ROAS</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — FINDING 3: THE SAME OFFER, RUN TWICE
+       ========================================================== -->
+  <section class="section" aria-labelledby="same-offer-twice">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — What I found</p>
+      <h2 id="same-offer-twice" class="section__head">Can the same offer cost 83% less the second time?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>AFL Kids ran the same offer twice. Holiday Camp 2026 went out as a Meta campaign in June, and again in August. Between the two runs, cost per registration fell <b class="fig">83%</b>.</p>
+        <p>This is the cleanest before-and-after on the page because almost nothing else changed. Same client, same product, same platform, same conversion event. The second run is the first run with the audience, placement and creative decisions that the first run paid to learn.</p>
+        <p>The August campaign has produced <b class="fig">22</b> registrations and is still running, so the final number is not in yet. The 83% reduction is measured between the two campaigns as they stand.</p>
+      </div>
+      <p class="source u-mt-sm">AFL Kids · Meta Ads Manager · Holiday Camp 2026, August campaign vs June campaign</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — GOOGLE ADS, AND A DIFFERENT JOB
+       ========================================================== -->
+  <section class="section" aria-labelledby="google-ads-avicenna">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — The other platform</p>
+      <h2 id="google-ads-avicenna" class="section__head">What does the Google Ads work look like at Avicenna Lawyers?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>Avicenna Lawyers is an Australian law firm, and it is the account where Google Ads rather than Meta carries the work. Flowers on Norton St and Crox also have Google Ads accounts, but Avicenna is the one where Search is the programme. The account is built as 4 Search campaigns segmented by practice area: Brand, Criminal Law, Commercial Law and Civil Litigation. Between 1 and 14 September 2026 it recorded 2,975 impressions and 36 conversions.</p>
+        <p>Segmenting by practice area is not a tidiness decision. Someone searching for criminal representation and someone searching for a commercial contract dispute are different people with different urgency, and putting them in one campaign means one budget and one set of bids has to serve both. Split, each practice area can be read, funded and argued for on its own.</p>
+      </div>
+
+      <h3 class="u-mt-lg">&ldquo;Limited by budget&rdquo; is a recommendation, not a failure</h3>
+      <div class="prose u-mt-sm">
+        <p>Google flags two of the four campaigns, Criminal Law and Civil Litigation, as &ldquo;Limited by budget&rdquo;. That status means the campaign could serve more than it is serving. On a lead account where the practice areas are already segmented, it reads as demand the client is not currently buying — and it names exactly which two practice areas have room.</p>
+        <p>Two campaigns also carry &ldquo;Missing enough relevant keywords&rdquo;. That one is mine to fix, not the client&rsquo;s, and it is the first thing I would work on: a capped campaign with thin keyword coverage is capped twice.</p>
+        <p>The account launched recently, so there is no long history behind these numbers. Fourteen days of data tells you what the account is doing this fortnight. It does not tell you what the account is worth, and I am not going to present it as though it does.</p>
+      </div>
+      <p class="source u-mt-sm">Avicenna Lawyers · Google Ads via the Uppercut Digital MCC · 1&ndash;14 September 2026</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" aria-labelledby="what-i-would-do-differently">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — What I would do differently</p>
+      <h2 id="what-i-would-do-differently" class="section__head">What would I do differently on On The Nose?</h2>
+      </div>
+      <div class="prose u-mt-sm">
+        <p>On The Nose is my largest account by spend and my weakest by return. It has run 24 Meta campaigns across Australia and New Zealand, produced 2,360 purchases, and returns <b class="fig">1.71x</b> blended purchase ROAS.</p>
+        <p>I am not going to dress that up. Depending on margin, 1.71x is at or below breakeven for most e-commerce. The account may well be buying revenue that costs more to fulfil than it brings in, and the only person who can settle that is the client with their own margin figures in front of them. Those 2,360 purchases are real customers, and they are also why a weak ratio on an account this size matters more than a strong ratio on a small one.</p>
+        <p>The account is currently restricted because a payment failed, so the ads are not delivering at all right now. A restricted account returns nothing regardless of how well it is built, and unblocking it comes before every other item below.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would rebuild it on what the other two accounts already proved</h3>
+      <div class="prose u-mt-sm">
+        <p>bodytonix says retargeting and catalog remarketing carry the return, and that automated prospecting beats manual prospecting at filling those audiences. Flowers on Norton St says discount-led and generic promotional campaigns underperform occasion-led ones, and bodytonix says the same thing in its own numbers with the Black Friday cluster sitting below the account average. On The Nose is the account where I have not yet applied either finding hard enough.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would split Australia and New Zealand into separate campaigns</h3>
+      <div class="prose u-mt-sm">
+        <p>On The Nose runs across two markets and reports as one blended ratio. That means I can tell you the account returns 1.71x and I cannot tell you which market is dragging. Two markets in one campaign is one number where there should be two, and it is the reporting decision I would reverse first.</p>
+      </div>
+
+      <h3 class="u-mt-lg">I would set a floor and act on it</h3>
+      <div class="prose u-mt-sm">
+        <p>I switched a <b class="fig">3.52x</b> campaign off at bodytonix because it was below the account average. On The Nose has run at <b class="fig">1.71x</b> across 24 campaigns without an equivalent line in the sand. The standard should not be looser on the larger account than on the smaller one.</p>
+      </div>
+      <p class="source u-mt-sm">On The Nose · Meta Ads Manager · 24 campaigns, lifetime · Australia and New Zealand</p>
+    </div>
+  </section>
+
+    <!-- ==========================================================
+       08 — NEXT
+       ========================================================== -->
+  <section class="section c-contact" aria-labelledby="next">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">08 — Next</p>
+      <h2 id="next" class="section__head">Next</h2>
+      </div>
+      <p class="prose">Every case study on this site is written the same way: the situation, the constraint, the mechanism, the measured result, and what the number does not say.</p>
+      <p class="prose u-mt-sm"><a href="inapps-technology.html">Previous case study: InApps Technology, organic that produced leads rather than traffic</a></p>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+        <a class="c-btn c-btn--primary" href="../services.html">Work with me</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

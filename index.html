@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is NOT set here: it is set by the first statement of
+     site.js, so the class that hides .reveal content can only exist once
+     the script that reveals it is actually running. If site.js never
+     executes, the class is absent and every .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+
+<title>Andrew Hoang — SEO, AEO &amp; ASO</title>
+<meta name="description" content="I run organic and app-install growth. 84% more installs in three months at ELSA Speak. 145% YoY organic sessions at Mindful Organization. Based in Ho Chi Minh City.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Andrew Hoang — SEO, AEO &amp; ASO">
+<meta property="og:description" content="I run organic and app-install growth. 84% more installs in three months at ELSA Speak. 145% YoY organic sessions at Mindful Organization. Based in Ho Chi Minh City.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="profile:first_name" content="Tuan Anh">
+<meta property="profile:last_name" content="Hoang">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Andrew Hoang — SEO, AEO &amp; ASO">
+<meta name="twitter:description" content="I run organic and app-install growth. 84% more installs in three months at ELSA Speak. 145% YoY organic sessions at Mindful Organization. Based in Ho Chi Minh City.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang — SEO, AEO & ASO",
+      "description": "I run organic and app-install growth. 84% more installs in three months at ELSA Speak. 145% YoY organic sessions at Mindful Organization. Based in Ho Chi Minh City.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "about": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "mainEntity": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "dateCreated": "2026-09-13",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="work/index.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- Hidden until site.js un-hides it. With JS off the page follows the
+           OS theme and there is no dead control stating the wrong state. -->
+      <button class="c-theme" type="button" hidden aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       00 — THE LEDE
+       ========================================================== -->
+  <!-- The hero floats Andrew's own figures rather than photography.
+       The reference design floats lifestyle shots here; he has almost
+       none, and stock imagery would be decoration standing in for
+       evidence on a page whose whole argument is evidence. Every
+       number below is sourced elsewhere on this site. -->
+  <section class="section c-hero" aria-labelledby="lede-h">
+    <div class="c-hero__wash" aria-hidden="true"></div>
+    <div class="shell">
+
+      <div class="c-hero__head">
+        <h1 id="lede-h">Organic growth, <em class="u-grad">engineered</em>. Measured end to end.</h1>
+        <p class="c-hero__dek">Senior Manager, SEO &amp; Organic Growth at ELSA Speak. Nine years running organic and app-install growth across health, education, insurance and B2B &mdash; plus a thirteen-account paid media portfolio for an Australian agency.</p>
+
+        <div class="c-actions c-actions--center u-mt-lg">
+          <a class="c-btn c-btn--primary" href="work/index.html">Read the case studies</a>
+          <a class="c-btn c-btn--secondary" href="assets/andrew-hoang-resume.pdf">R&eacute;sum&eacute; (PDF)</a>
+        </div>
+      </div>
+
+      <div class="c-hero__floats">
+        <div class="c-float"><b>+84%</b><span>App installs &middot; ELSA Speak</span></div>
+        <div class="c-float"><b>#1</b><span>US App Store &middot; &ldquo;english app&rdquo;</span></div>
+        <div class="c-float"><b>+145%</b><span>YoY sessions &middot; Mindful</span></div>
+        <div class="c-float"><b>10.1x</b><span>Purchase ROAS &middot; UpperCut</span></div>
+      </div>
+
+      <div class="c-hero__panel">
+        <figure class="c-portrait">
+          <img src="assets/img/andrew-hoang.png"
+               alt="Andrew Hoang, photographed against a plain background."
+               width="800" height="800"
+               fetchpriority="high" decoding="async">
+          <figcaption>Andrew Hoang (Hoang Tuan Anh), Ho Chi Minh City</figcaption>
+        </figure>
+        <div>
+          <p class="c-tag c-tag--peach">Latest result &middot; app installs +84% in the first 3 months</p>
+          <div class="prose u-mt-sm">
+            <p>I run organic and app-install growth. Right now that means owning SEO, AEO and ASO for ELSA Speak across Japan, Vietnam, Thailand, the US and Taiwan, with month-over-month installs as the business KPI.</p>
+            <p>I have been doing this since 2017. The part I am best known for internally is not the growth &mdash; it is finding out that a number everybody trusted was wrong.</p>
+          </div>
+          <p class="prose u-mt-sm"><a href="services.html">Work with me &mdash; consulting engagements</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       01 — SELECTED RESULTS  ·  figures bar, results table, notes
+       ========================================================== -->
+  <section class="section section--flush" id="results" aria-labelledby="results-h">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — Selected results</p>
+      <h2 id="results-h" class="section__head">Selected results</h2>
+      </div>
+
+      <!-- Every cell carries its source line. A cell without one cannot ship. -->
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure">84%</p>
+          <p class="label">More app installs</p>
+          <p class="source">ELSA Speak · Mar&ndash;May 2026</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">#1</p>
+          <p class="label">US App Store, &ldquo;english app&rdquo;</p>
+          <p class="source">ELSA Speak · up from position 2</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--long">114%</p>
+          <p class="label">YoY sales revenue</p>
+          <p class="source">Mindful Organization · Apr 2024 – Jun 2026</p>
+        </li>
+        <li class="c-metric reveal" style="--i:3">
+          <p class="figure figure--xlong">22,339%</p>
+          <p class="label">Organic click growth</p>
+          <p class="source">Permate Global · final 6 months vs the previous 6</p>
+        </li>
+      </ul>
+
+      <!-- The results table. Same markup at every width; below 48rem it
+           reflows to stacked records. The explicit ARIA roles are what
+           keep it a table in the a11y tree once display changes. -->
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="results-cap">
+        <table class="c-table c-table--period" role="table" aria-labelledby="results-cap">
+          <caption id="results-cap" class="label">Selected results, by client</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Client</th>
+              <th role="columnheader" scope="col">Sector</th>
+              <th role="columnheader" scope="col">Result</th>
+              <th role="columnheader" scope="col">Period</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/elsa-speak.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>ELSA Speak</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Education / App</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">App installs +84%; #1 US App Store, &ldquo;english app&rdquo;</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Mar&ndash;May 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/mindful-organization.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Mindful Organization</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Wellness</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Organic sessions +145% YoY; revenue +114% YoY; orders +79% YoY</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Apr 2024 – Jun 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/permate.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Permate Global</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Affiliate</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Organic clicks +22,339%; impressions +195,464%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Aug 2024 – Jul 2025 (L6M vs P6M)</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/inapps-technology.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>InApps Technology</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">B2B Services</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Organic clicks +116%; 80% of target keywords in top 10</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Aug 2024 – Mar 2026</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/cleanipedia.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>cleanipedia.com</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Unilever</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">16M visitors against a 14M annual KPI, +14% over target</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Phibious, 2023</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/pacific-cross.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>pacificcross.com.vn</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Insurance</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Total traffic +506%</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">2023 vs 2022</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/bridgestone.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>bridgestone.com.vn</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Tire Products</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">Organic 30k → 50k in 3 months</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Phibious, 2023&ndash;2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/schneider-electric.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>se.com (Schneider Electric)</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Electronics</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">70% top-1, 20% top-5, 10% top-10</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Phibious, 2023–2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/marrybaby.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>marrybaby.vn</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Mother &amp; Baby</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">~2,000,000 monthly traffic</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Hellobacsi, Dec 2021 &ndash; Apr 2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/dai-ichi-life.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>dai-ichi-life.com.vn</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Insurance</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">200,000 monthly traffic</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">2021</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/ferrovit.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Ferrovit</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Health</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">200 → 150,000/mo</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Hellobacsi, Dec 2021 – Apr 2024</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/marry.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Marry Network</span></span></th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Sector</span><span class="c-table__val">Wedding</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Result</span><span class="c-table__val">+500% organic growth; 20,000 → 120,000/mo</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Period</span><span class="c-table__val">Mar 2021 – Dec 2022</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <p class="label u-mt-2xl">Case notes</p>
+      <ul class="c-notes">
+
+        <li class="c-note reveal" style="--i:0">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">01</span> Education / App · Mar 2026 – Present</p>
+            <div>
+              <h3 class="c-note__client" id="note-elsa"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/elsa-speak.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>ELSA Speak</span></span></h3>
+              <p class="figure">84%</p>
+              <p class="source">ELSA Speak · app installs, first 3 months</p>
+              <p class="prose">84% install growth in three months, #1 in the US App Store for &ldquo;english app&rdquo;, and a 10x correction to our own reported SEO installs. Built a semantic embedding and vector database of <b class="fig">~20,000</b> Vietnamese content URLs powering semantic search, deduplication, topic clustering, and RAG retrieval.</p>
+              <p class="c-note__more"><a href="work/elsa-speak.html">Read the ELSA Speak case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:1">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">02</span> Wellness · Apr 2024 – Jun 2026</p>
+            <div>
+              <h3 class="c-note__client" id="note-mindful"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/mindful-organization.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Mindful Organization</span></span></h3>
+              <p class="figure figure--long">145%</p>
+              <p class="source">Mindful Organization · YoY organic sessions</p>
+              <p class="prose">145% YoY sessions, 114% YoY revenue, and Core Web Vitals from <b class="fig">5% → 90%</b> of pages. Orders rose <b class="fig">79%</b> YoY and the mailing list reached about <b class="fig">60,000</b>, on WordPress and Shopify running side by side &mdash; two platforms that fail differently, so fixing one never helped the other.</p>
+              <p class="c-note__more"><a href="work/mindful-organization.html">Read the Mindful Organization case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:2">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">03</span> Enterprise · Apr 2023 – Dec 2024</p>
+            <div>
+              <h3 class="c-note__client" id="note-phibious"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/phibious.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Phibious enterprise accounts</span></span></h3>
+              <p class="figure">16M</p>
+              <p class="source">Cleanipedia · 2023 visitors vs a 14M KPI</p>
+              <p class="prose">Bridgestone, Cleanipedia and Schneider Electric. A 14 million annual KPI, delivered at 16 million. Bridgestone went <b class="fig">30k → 50k</b> organic in three months, Cleanipedia held <b class="fig">1.5M</b> monthly visits, Schneider Electric ranked <b class="fig">70%</b> top-1, and a migrated site came back <b class="fig">1.5x</b> faster.</p>
+              <p class="c-note__more"><a href="work/phibious-enterprise-seo.html">Read the Phibious case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:3">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">04</span> Affiliate · Aug 2024 – Jul 2025</p>
+            <div>
+              <h3 class="c-note__client" id="note-permate"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/permate.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Permate Global</span></span></h3>
+              <p class="figure figure--xlong">22,339%</p>
+              <p class="source">Permate Global · organic clicks, L6M vs P6M</p>
+              <p class="prose">A marketplace launched from zero to <b class="fig">200</b> partners and <b class="fig">500</b> publishers in three months. A two-sided marketplace will not fill from one side &mdash; partners will not join without publishers, and publishers will not join without partners &mdash; so the organic work had to build both at once, in Vietnamese.</p>
+              <p class="c-note__more"><a href="work/permate.html">Read the Permate case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:4">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">05</span> B2B Services · Aug 2024 – Mar 2026</p>
+            <div>
+              <h3 class="c-note__client" id="note-inapps"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/inapps-technology.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>InApps Technology</span></span></h3>
+              <p class="figure figure--long">116%</p>
+              <p class="source">InApps Technology · organic clicks, from Aug 2024 launch</p>
+              <p class="prose">Organic clicks +116% and inbound leads from <b class="fig">14 → 20</b> a month. Impressions rose <b class="fig">285%</b> and <b class="fig">80%</b> of target keywords reached the top 10, including <b class="fig">#1</b> for &ldquo;Mobile Apps Developer in HCM&rdquo;. Reviews on B2B marketplaces went <b class="fig">0 → 15</b>, because in B2B services the decision is not made on your own site.</p>
+              <p class="c-note__more"><a href="work/inapps-technology.html">Read the InApps Technology case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:5">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">06</span> Agency / Paid media · Current</p>
+            <div>
+              <h3 class="c-note__client" id="note-uppercut"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/uppercut-digital.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Uppercut Digital</span></span></h3>
+              <p class="figure figure--long">8.89x</p>
+              <p class="source">Best account blended ROAS, account lifetime · Flowers on Norton St · Uppercut Digital</p>
+              <p class="prose">Thirteen Australian ad accounts across eleven clients, on Meta and Google Ads. Occasion campaigns returned up to <b class="fig">18.63x</b> against <b class="fig">6.04x</b> for the best generic monthly special, AFL Kids cut its cost per registration <b class="fig">83%</b> running the same offer twice, and one account sits at <b class="fig">1.71x</b> — reported as it stands.</p>
+              <p class="c-note__more"><a href="work/uppercut-digital.html">Read the Uppercut Digital case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:6">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">07</span> Health &amp; supplements · Freelance · measured Dec 2023 – Apr 2025</p>
+            <div>
+              <h3 class="c-note__client" id="note-tomorrow-nutrition"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/tomorrow-nutrition.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Tomorrow&rsquo;s Nutrition</span></span></h3>
+              <p class="figure figure--long">741K</p>
+              <p class="source">Tomorrow&rsquo;s Nutrition · organic impressions, Sunfiber product brand, 16 months</p>
+              <p class="prose">741,000 organic impressions and <b class="fig">22,300</b> clicks over about 16 months, at an average position of <b class="fig">11.1</b>. Sunfiber queries outpull the company name roughly <b class="fig">5 to 1</b>. An average position of <b class="fig">11.1</b> is the bottom of page one: the impressions are already there, so the gap is click-through rather than demand. No period-over-period comparison was pulled, so no lift figure is claimed.</p>
+              <p class="c-note__more"><a href="work/tomorrow-nutrition.html">Read the Tomorrow&rsquo;s Nutrition case study</a></p>
+            </div>
+          </article>
+        </li>
+
+        <li class="c-note reveal" style="--i:7">
+          <article class="row">
+            <p class="row__rail"><span class="c-note__idx">08</span> Licensed-IP e-commerce · Jun 2024 – Dec 2025</p>
+            <div>
+              <h3 class="c-note__client" id="note-craft-hub"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/craft-hub.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Craft Hub</span></span></h3>
+              <p class="figure figure--xlong">$8.52M</p>
+              <p class="source">Craft Hub · account-lifetime Meta spend across two accounts, 30 Jun 2022 – 30 Jul 2025 · engagement Jun 2024 – Dec 2025</p>
+              <p class="prose">Meta paid media on a craft brand selling under licences including The Lord of the Rings, Jurassic World and Wicked. <b class="fig">421</b> campaigns and ad sets across two accounts, <b class="fig">615,637,572</b> impressions, and cost per purchase from <b class="fig">$22.62</b> to <b class="fig">$138.26</b> in the larger account. No blended ROAS: objectives and attribution windows are mixed, so the account does not support one. Execution ran with a team.</p>
+              <p class="c-note__more"><a href="work/craft-hub.html">Read the Craft Hub case study</a></p>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+
+      <p class="prose u-mt-lg"><a href="work/index.html">All work, and the full results table</a></p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — WHAT I DO  ·  purchasable capability, not keyword cover
+       ========================================================== -->
+  <section class="section" id="capability" aria-labelledby="capability-h">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — What I do</p>
+      <h2 id="capability-h" class="section__head">What I do</h2>
+      </div>
+
+      <!-- Each tinted panel holds a white card carrying a real figure
+           and its source, never a decorative mock. The panel is the
+           only decoration in the block. -->
+      <div class="c-feats">
+
+        <article class="c-feat c-feat--lilac">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>~20,000</b>
+              <p>Vietnamese content URLs in a semantic embedding and vector database, powering semantic search, deduplication, topic clustering and RAG retrieval.</p>
+              <p class="source">ELSA Speak &middot; 2026</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--lilac">AI search</p>
+            <h3 id="cap-ai">Content built for <em class="u-grad">retrieval</em>, not just for ranking.</h3>
+            <p class="prose">Query fan-out coverage, schema, chunk-level structure for RAG indexing, and tracking whether AI systems actually cite you. At ELSA Speak that included a semantic embedding and vector database of around 20,000 Vietnamese content URLs.</p>
+            <p class="c-tags">AEO / GEO &middot; RAG pipelines &middot; vector embeddings &amp; semantic search &middot; query fan-out coverage &middot; topic clustering &middot; LLM content optimization &middot; AI citation tracking &middot; AI share-of-voice (Ahrefs Brand Radar) &middot; duplicate detection &middot; schema &amp; structured data</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--mint">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>#1</b>
+              <p>US App Store for &ldquo;english app&rdquo;, up from position 2, through keyword research and metadata localization written per locale rather than translated.</p>
+              <p class="source">ELSA Speak &middot; Mar&ndash;May 2026</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--mint">SEO &amp; ASO</p>
+            <h3 id="cap-seo">Fixing what <em class="u-grad">caps</em> a site before content can help it.</h3>
+            <p class="prose">Core Web Vitals, indexation, site architecture, crawl waste, and moving a site without losing what it earned. On the app side it is keyword research and metadata localization per market, tied to installs rather than to store impressions.</p>
+            <p class="c-tags">Technical SEO &middot; technical audits &middot; XML sitemaps &middot; canonicalisation &middot; duplicate content &amp; redundant pages &middot; 4XX / 5XX handling &middot; click depth &amp; orphan pages &middot; internal linking &middot; log analysis &middot; Core Web Vitals &middot; site migrations &middot; App Store Optimization (Apple App Store, Google Play) &middot; keyword &amp; SERP strategy &middot; international / multi-market SEO &middot; regional subdomains</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--peach">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <div class="c-feat__rows">
+                <div class="c-feat__row"><span>Ad accounts</span><b>13</b></div>
+                <div class="c-feat__row"><span>Clients</span><b>11</b></div>
+                <div class="c-feat__row"><span>Purchases, Mar&ndash;Sep 2026</span><b>636</b></div>
+                <div class="c-feat__row"><span>Purchase ROAS, strongest account</span><b>10.1x</b></div>
+              </div>
+              <p class="source">Uppercut Digital &middot; Meta Ads Manager, Mar&ndash;Sep 2026</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--peach">Paid media</p>
+            <h3 id="cap-paid">Thirteen accounts, eleven clients, <em class="u-grad">one</em> operator.</h3>
+            <p class="prose">Current, alongside the organic work: I am Paid Media Specialist at Uppercut Digital, an Australian agency, running three Google Ads accounts under a single MCC plus ten Meta ad accounts. I own budget pacing, allocation and run-rate forecasting against brief.</p>
+            <p class="c-tags">Meta Ads &middot; Google Ads Search &middot; Advantage+ &amp; catalog prospecting &middot; retargeting &amp; remarketing &middot; audience and creative testing &middot; purchase ROAS reporting</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--sky">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>~10x</b>
+              <p>An AppsFlyer methodology fault was inflating reported &ldquo;SEO installs&rdquo; by roughly ten times. I found it, and the correction made my own reported results smaller.</p>
+              <p class="source">ELSA Speak &middot; web-to-app attribution rebuild</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--sky">Analytics &amp; attribution</p>
+            <h3 id="cap-analytics">Establishing whether the number is <em class="u-grad">real</em>.</h3>
+            <p class="prose">GA4, Search Console, AppsFlyer, BigQuery, Looker Studio. Mostly this means working out whether the number you are about to spend money against is true before anyone budgets against it.</p>
+            <p class="c-tags">GA4 &middot; Google Search Console &middot; AppsFlyer (web-to-app attribution) &middot; Mixpanel &middot; BigQuery &middot; Looker Studio &middot; Ahrefs &middot; SEMrush &middot; Screaming Frog &middot; ContentKing &middot; GTM &middot; dataLayer &amp; custom-HTML tags &middot; GA4 purchase / e-commerce tracking</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--sand">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <div class="c-stack">
+                <div class="c-stack__row">
+                  <p class="c-stack__label">Languages</p>
+                  <ul class="c-stack__items"><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span>Python</span></li><li><span>SQL</span></li><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg><span>JavaScript</span></li></ul>
+                </div>
+                <div class="c-stack__row">
+                  <p class="c-stack__label">Platforms</p>
+                  <ul class="c-stack__items"><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></svg><span>WordPress</span></li><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg><span>Shopify</span></li></ul>
+                </div>
+                <div class="c-stack__row">
+                  <p class="c-stack__label">Automation</p>
+                  <ul class="c-stack__items"><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.363 2.54a3.136 3.136 0 0 0-.376.022 2.864 2.864 0 0 0-1.589.828c-.562.58-.82 1.115-.773 1.943-.01.264.193 1.023.272 1.274 1.115 3.546 2.09 6.75 3.26 10.279.08.246.168.486.267.72.02.047.035.046.048-.004.077-.297.174-.612.29-.945.894-2.576 1.772-5.14 2.633-7.696a.345.345 0 0 0 .004-.217 163.054 163.054 0 0 0-1.49-4.572 2.603 2.603 0 0 0-.704-.933c-.55-.46-1.166-.694-1.842-.7Zm9.078.117a2.734 2.734 0 0 0-2.878 1.828l-4.576 13.289a2.734 2.734 0 0 0 1.695 3.475l.12.04a2.734 2.734 0 0 0 3.475-1.694L23.85 6.307a2.734 2.734 0 0 0-1.695-3.476c-.233-.1-.506-.124-.716-.174ZM12.375 3.96a1.396 1.396 0 1 1 0 2.791 1.395 1.395 0 0 1 0-2.79zm8.809.07a1.402 1.402 0 1 1 0 2.803 1.402 1.402 0 0 1 0-2.803zM5.419 7.605a2.853 2.853 0 0 0-.468.052 2.683 2.683 0 0 0-1.337.627 2.62 2.62 0 0 0-.924 1.833 3.808 3.808 0 0 0 0 .648 2.52 2.52 0 0 0 .673 1.52c.221.238.465.454.732.648 3.043 2.21 6.08 4.43 9.108 6.664a.78.78 0 0 0 .158.089c.03-.043.032-.098.007-.167a17.409 17.409 0 0 0-.317-1.066 532.752 532.752 0 0 1-2.02-6.251 41.91 41.91 0 0 0-.497-1.477c-.967-.849-2.078-1.6-3.023-2.302A3.848 3.848 0 0 0 6.153 7.7a2.388 2.388 0 0 0-.734-.094Zm.02 1.424a1.398 1.398 0 1 1 0 2.796 1.398 1.398 0 0 1 0-2.796zm-2.458 6.792c-.733-.006-1.375.202-1.927.622a2.72 2.72 0 0 0-.95 1.45 2.78 2.78 0 0 0-.09 1.04 2.74 2.74 0 0 0 .695 1.583c.664.578 1.26.85 2 .945 1.42-.005 2.84-.012 4.262-.02h.418c2.277-.003 4.513-.002 6.706.003.148.005.28.003.392-.01.06-.005.091-.031.092-.077a10.656 10.656 0 0 0-.834-.653 488.746 488.746 0 0 1-6.57-4.815.236.236 0 0 0-.14-.047c-1.34-.003-2.691-.01-4.054-.02zm-.19 1.418a1.402 1.402 0 1 1 0 2.803 1.402 1.402 0 0 1 0-2.803zm13.874.002a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg><span>Apps Script</span></li><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.157 0A4.151 4.151 0 0 0 0 4.161v15.678A4.151 4.151 0 0 0 4.157 24h15.682A4.152 4.152 0 0 0 24 19.839V4.161A4.152 4.152 0 0 0 19.839 0H4.157Zm10.61 8.761h.03a.577.577 0 0 1 .23.038.585.585 0 0 1 .201.124.63.63 0 0 1 .162.431.612.612 0 0 1-.162.435.58.58 0 0 1-.201.128.58.58 0 0 1-.23.042.529.529 0 0 1-.235-.042.585.585 0 0 1-.332-.328.559.559 0 0 1-.038-.235.613.613 0 0 1 .17-.431.59.59 0 0 1 .405-.162Zm2.853 1.572c.03.004.061.004.095.004.325-.011.646.064.937.219.238.144.431.355.552.609.128.279.189.582.185.888v.193a2 2 0 0 1 0 .219h-2.498c.003.227.075.45.204.642a.78.78 0 0 0 .646.265.714.714 0 0 0 .484-.136.642.642 0 0 0 .23-.318l.915.257a1.398 1.398 0 0 1-.28.537c-.14.159-.321.284-.521.355a2.234 2.234 0 0 1-.836.136 1.923 1.923 0 0 1-1.001-.245 1.618 1.618 0 0 1-.665-.703 2.221 2.221 0 0 1-.227-1.036 1.95 1.95 0 0 1 .48-1.398 1.9 1.9 0 0 1 1.3-.488Zm-9.607.023c.162.004.325.026.48.079.207.065.4.174.563.314.26.302.393.692.366 1.088v2.276H8.53l-.109-.711h-.065c-.064.163-.155.31-.272.439a1.122 1.122 0 0 1-.374.264 1.023 1.023 0 0 1-.453.083 1.334 1.334 0 0 1-.866-.264.965.965 0 0 1-.329-.801.993.993 0 0 1 .076-.431 1.02 1.02 0 0 1 .242-.363 1.478 1.478 0 0 1 1.043-.303h.952v-.181a.696.696 0 0 0-.136-.454.553.553 0 0 0-.438-.154.695.695 0 0 0-.378.086.48.48 0 0 0-.193.254l-.99-.144a1.26 1.26 0 0 1 .257-.563c.14-.174.321-.302.533-.378.261-.091.54-.136.82-.129.053-.003.106-.007.163-.007Zm4.384.007c.174 0 .347.038.506.114.182.083.34.211.458.374.257.423.377.911.351 1.406a2.53 2.53 0 0 1-.355 1.448 1.148 1.148 0 0 1-1.009.517c-.204 0-.401-.045-.582-.136a1.052 1.052 0 0 1-.48-.457 1.298 1.298 0 0 1-.114-.234h-.045l.004 1.784h-1.059v-4.713h.904l.117.805h.057c.068-.208.177-.401.328-.56a1.129 1.129 0 0 1 .843-.344h.076v-.004Zm7.559.084h.903l.113.805h.053a1.37 1.37 0 0 1 .235-.484.813.813 0 0 1 .313-.242.82.82 0 0 1 .39-.076h.234v1.051h-.401a.662.662 0 0 0-.313.008.623.623 0 0 0-.272.155.663.663 0 0 0-.174.26.683.683 0 0 0-.027.314v1.875h-1.054v-3.666Zm-17.515.003h3.262v.896L3.73 13.104l.034.113h1.973l.042.9H2.4v-.9l1.931-1.754-.045-.117H2.441v-.896Zm11.815 0h1.055v3.659h-1.055V10.45Zm3.443.684.019.016a.69.69 0 0 0-.351.045.756.756 0 0 0-.287.204c-.11.155-.174.336-.189.522h1.545c-.034-.526-.257-.787-.74-.787h.003Zm-5.718.163c-.026 0-.057 0-.083.004a.78.78 0 0 0-.31.053.746.746 0 0 0-.257.189 1.016 1.016 0 0 0-.204.695v.064c-.015.257.057.507.204.711a.634.634 0 0 0 .253.196.638.638 0 0 0 .314.061.644.644 0 0 0 .578-.265c.14-.223.204-.48.189-.74a1.216 1.216 0 0 0-.181-.711.677.677 0 0 0-.503-.257Zm-4.509 1.266a.464.464 0 0 0-.268.102.373.373 0 0 0-.114.276c0 .053.008.106.027.155a.375.375 0 0 0 .087.132.576.576 0 0 0 .397.11v.004a.863.863 0 0 0 .563-.182.573.573 0 0 0 .211-.457v-.14h-.903Z"/></svg><span>Zapier</span></li><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"/></svg><span>n8n</span></li></ul>
+                </div>
+                <div class="c-stack__row">
+                  <p class="c-stack__label">Warehouse</p>
+                  <ul class="c-stack__items"><li><svg class="c-stack__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M5.676 10.595h2.052v5.244a5.892 5.892 0 0 1-2.052-2.088v-3.156zm18.179 10.836a.504.504 0 0 1 0 .708l-1.716 1.716a.504.504 0 0 1-.708 0l-4.248-4.248a.206.206 0 0 1-.007-.007c-.02-.02-.028-.045-.043-.066a10.736 10.736 0 0 1-6.334 2.065C4.835 21.599 0 16.764 0 10.799S4.835 0 10.8 0s10.799 4.835 10.799 10.8c0 2.369-.772 4.553-2.066 6.333.025.017.052.028.074.05l4.248 4.248zm-5.028-10.632a8.015 8.015 0 1 0-8.028 8.028h.024a8.016 8.016 0 0 0 8.004-8.028zm-4.86 4.98a6.002 6.002 0 0 0 2.04-2.184v-1.764h-2.04v3.948zm-4.5.948c.442.057.887.08 1.332.072.4.025.8.025 1.2 0V7.692H9.468v9.035z"/></svg><span>BigQuery</span></li></ul>
+                </div>
+              </div>
+              <p class="source">Used on the projects named across this site</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--sand">Dev &amp; automation</p>
+            <h3 id="cap-dev">Shipping it myself instead of <em class="u-grad">queuing</em> behind a sprint.</h3>
+            <p class="prose">Python, SQL, HTML, CSS and JavaScript, plus Apps Script, Zapier and n8n. It means I can build the vector database, ship the schema, and pull the BigQuery cut myself.</p>
+            <p class="c-tags">Python &middot; SQL &middot; HTML / CSS / JS &middot; WordPress &middot; Shopify &middot; Strapi &middot; Adobe &middot; Colorful CMS &middot; REST APIs &middot; Apps Script &middot; Zapier &amp; n8n &middot; HubSpot CRM</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — THE LEDGER  ·  reverse-chronological, rail + column
+       ========================================================== -->
+  <section class="section" id="ledger" aria-labelledby="ledger-h">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The ledger</p>
+      <h2 id="ledger-h" class="section__head">The ledger</h2>
+      </div>
+      <p class="prose u-mt-sm">Roles are listed most recent first. The dated version is in the <a href="assets/andrew-hoang-resume.pdf">PDF CV</a>.</p>
+
+      <h3 class="label u-mt-2xl" id="current">Current</h3>
+
+      <ul class="c-ledger">
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">01</span> Education / App</p>
+            <div>
+              <h4 id="role-elsa-speak"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/elsa-speak.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Senior Manager, SEO &amp; Organic Growth — ELSA Speak</span></span></h4>
+              <p class="c-ledger__scope">I own SEO, AEO and ASO strategy across ELSA&rsquo;s top markets: Japan, Vietnam, Thailand, the US and Taiwan. Month-over-month app installs is the core business KPI I am measured on.</p>
+              <ul class="c-ledger__bullets">
+                <li>Increased app installs <b class="fig">84%</b> within the first three months by leading ASO keyword research and metadata localization across <b class="fig">8–10</b> markets.</li>
+                <li>Ranked <b class="fig">#1</b> in the US App Store for the keyword &ldquo;english app&rdquo;, up from position 2.</li>
+                <li>Own technical SEO across <b class="fig">70,075</b> indexed pages on eight sites. The indexation audit found <b class="fig">54,969</b> 404s, <b class="fig">14,330</b> canonical errors, <b class="fig">3,020</b> schema errors and <b class="fig">1,020</b> duplicate pages to merge; about <b class="fig">80%</b> of what it found is fixed.</li>
+                <li>Rebuilt web-to-app install attribution integrity. Corrected an AppsFlyer methodology issue that was inflating reported SEO installs roughly <b class="fig">10x</b>, and fixed a domain-exclusion bug silently blocking Smart Banners on regional subdomains.</li>
+                <li>Built a semantic embedding and vector database of around <b class="fig">20,000</b> Vietnamese content URLs, powering semantic search, deduplication, topic clustering and RAG retrieval.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">02</span> Agency / Paid media</p>
+            <div>
+              <h4 id="role-uppercut"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/uppercut-digital.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Paid Media Specialist &mdash; UpperCut</span></span></h4>
+              <p class="c-ledger__scope">I run a thirteen-account paid media portfolio for an Australian agency, concurrent with the ELSA Speak role: three Google Ads accounts under a single MCC plus ten Meta ad accounts, across eleven clients.</p>
+              <ul class="c-ledger__bullets">
+                <li>Own budget pacing, allocation and run-rate forecasting against brief for every account in the portfolio.</li>
+                <li>Meta portfolio, Mar&ndash;Sep 2026: <b class="fig">A$40,500</b> managed across nine accounts, returning <b class="fig">636</b> purchases and <b class="fig">76</b> leads from <b class="fig">4.3M</b> impressions and <b class="fig">128K</b> clicks at a blended <b class="fig">3.00%</b> CTR and <b class="fig">A$0.32</b> CPC. Strongest account at <b class="fig">10.1x</b> purchase ROAS.</li>
+                <li>Built the reporting layer: API data pulls, scripted account extraction and a database-backed pacing dashboard with period-over-period comparison and anomaly alerting.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">03</span> Education / Test prep</p>
+            <div>
+              <h4 id="role-lumetest"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/pte-magic.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>SEO Lead &amp; Email Marketing Specialist — LUMEtest (Lume) · PTE Magic</span></span></h4>
+              <p class="c-ledger__scope">I lead organic growth and lifecycle email for AI-powered English test-prep platforms covering PTE Academic, PTE Core and the Duolingo English Test.</p>
+              <ul class="c-ledger__bullets">
+                <li>Grew monthly organic clicks <b class="fig">18.7K → 25.6K</b> and impressions <b class="fig">786K → 1.56M</b> between Sep 2025 and May 2026, across a Next.js and headless WordPress stack of <b class="fig">538</b> posts in four locales.</li>
+                <li>Ran a five-round technical audit, <b class="fig">39</b> findings: <b class="fig">105</b> slugs duplicated across categories behind self-canonicals, <b class="fig">251</b> non-English URLs declaring <code>lang=&quot;en&quot;</code>, AI crawlers blocked at Cloudflare, and no Organization, WebSite or Breadcrumb schema. Orphan posts went <b class="fig">103 → 11</b>, <b class="fig">193</b> internal links were added, <b class="fig">198</b> links to a retired section were replaced across <b class="fig">58</b> posts and <b class="fig">308</b> stale anchors were fixed on <b class="fig">153</b>. All <b class="fig">538</b> meta descriptions were rewritten, and <b class="fig">136</b> titles by click priority.</li>
+                <li>Built email automation and lifecycle campaigns that convert free-trial users into paid subscribers, segmented by exam type and study stage.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h3 class="label u-mt-2xl" id="previous">Previous</h3>
+
+      <ul class="c-ledger">
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">04</span> Licensed-IP e-commerce</p>
+            <div>
+              <h4 id="role-craft-hub"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/craft-hub.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>Paid Media Specialist &mdash; Craft Hub</span></span></h4>
+              <p class="c-ledger__scope">I ran Meta acquisition across two ad accounts for a licensed e-commerce brand, June 2024 to December 2025.</p>
+              <ul class="c-ledger__bullets">
+                <li>Ran paid social acquisition across <b class="fig">159</b> campaigns and <b class="fig">262</b> ad sets for licensed catalogues including Warner, DC, The Lord of the Rings and Jurassic World.</li>
+                <li>Ran value-based bidding &mdash; ROAS goal, Highest value and Bid cap &mdash; across Advantage+ Shopping, CBO and ABO structures, with US-only, worldwide and US-excluded market splits.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">05</span> Wellness / E-commerce</p>
+            <div>
+              <h4 id="role-mindful-organization"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/mindful-organization.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>SEO Manager &amp; IT Support — Mindful Organization</span></span></h4>
+              <p class="c-ledger__scope">I owned SEO, AEO, conversion and technical site operations across WordPress and Shopify for a wellness community brand.</p>
+              <ul class="c-ledger__bullets">
+                <li>Drove <b class="fig">145%</b> YoY organic sessions, <b class="fig">114%</b> YoY sales revenue and <b class="fig">79%</b> YoY order volume.</li>
+                <li>Lifted Core Web Vitals compliance from <b class="fig">5% → 90%</b> of pages and reduced page errors to near zero.</li>
+                <li>Engineered content for the AI answer layer: query fan-out coverage, schema, semantic density scoring, topical depth and chunk-level optimization for RAG indexing.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">06</span> Enterprise / Agency</p>
+            <div>
+              <h4 id="role-phibious"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/phibious.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>SEO Manager — Phibious</span></span></h4>
+              <p class="c-ledger__scope">I led SEO and content strategy for enterprise clients, focused on technical SEO, AI-assisted content and strategic site migrations, working alongside product and development teams.</p>
+              <ul class="c-ledger__bullets">
+                <li>Grew Bridgestone organic traffic <b class="fig">30k → 50k</b> in three months; maintained Cleanipedia at <b class="fig">1.5M</b> monthly visits.</li>
+                <li>At Bridgestone, <b class="fig">768</b> pages were held back by JavaScript rendering and failed network requests. The fix ran alongside an eleven-check audit register on a monthly and bi-weekly cadence: sitemap errors, error pages not returning 404, internal links to 4XX and 5XX, wrong canonicals, pages more than four clicks deep and orphan pages.</li>
+                <li>Improved Threexfive (Dep365) site performance <b class="fig">1.5x</b> post-migration; ranked Schneider Electric at <b class="fig">70%</b> top-1, <b class="fig">20%</b> top-5 and <b class="fig">10%</b> top-10.</li>
+                <li>Ran advanced analysis in BigQuery and Google Cloud; managed Colorful, Strapi and Adobe CMS platforms.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">07</span> Health / Publisher</p>
+            <div>
+              <h4 id="role-hellobacsi"><span class="c-markrow"><span class="c-mark c-mark--sm c-mark--img" aria-hidden="true"><img src="assets/img/clients/hellobacsi.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span><span>SEO &amp; ASO Manager — Hellobacsi</span></span></h4>
+              <p class="c-ledger__scope">I led web and app SEO and ASO and a team of more than 20 people, integrating CRM, Web Push and Media Push for direct engagement and retention.</p>
+              <ul class="c-ledger__bullets">
+                <li>Scaled domains to <b class="fig">150,000</b> monthly visits: Ferrovit <b class="fig">200 → 150,000/mo</b>, Vitacap <b class="fig">0 → 70,000/mo</b>, Normagut <b class="fig">0 → 15,000/mo</b>, Giloba <b class="fig">0 → 8,000/mo</b>., Skinwecare <b class="fig">0 → 5,000/mo</b>.</li>
+                <li>Owned technical SEO across seven projects. On hellobacsi.com: <b class="fig">11,168</b> pages more than four clicks deep, <b class="fig">15,527</b> images without alt text, <b class="fig">5,015</b> titles over 70 characters, <b class="fig">372</b> pages linking to 404s and <b class="fig">106</b> redirect chains ticketed to Product, <b class="fig">7,810</b> unoptimised image file names, <b class="fig">356</b> missing H1s and <b class="fig">367</b> missing meta descriptions on Expert, Author and Health Tools pages, and <b class="fig">512</b> thin Drug &amp; Supplements descriptions routed to the content team — and <b class="fig">169</b> pages moved off 307s onto 301 and 308.</li>
+                <li>Grew app downloads and engagement on the Apple App Store and Google Play through App Search Optimization and targeted push campaigns.</li>
+                <li>Maintained rankings and stable traffic for hellobacsi.com, marrybaby.vn and pacificcross.com.vn.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">08</span> Agency / Brand</p>
+            <div>
+              <h4 id="role-earlier">Digital Marketing Lead &amp; Specialist — 5Sense · Kem Nghia · 17 Production · Golden Period</h4>
+              <p class="c-ledger__scope">Progressive full-funnel digital marketing roles across paid media, social, content, PR and CRM, in both agency and brand environments.</p>
+              <ul class="c-ledger__bullets">
+                <li>Drove a <b class="fig">50%</b> lift in brand engagement, <b class="fig">200%</b> ROI and <b class="fig">300%</b> ROAS across Facebook, Google, TikTok and Zalo campaigns.</li>
+                <li>Grew Dong Shop Sun from <b class="fig">2,000 → 50,000</b> visits a month and built a <b class="fig">20,000</b>-customer community for Tinh Lam Jewelry.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — PROOF AT SCALE  ·  full-bleed --paper-2 roster band
+       ========================================================== -->
+  <section class="c-roster-band" id="roster" aria-labelledby="roster-h">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — Proof at scale</p>
+      <h2 id="roster-h" class="section__head">Sites and brands I have worked on</h2>
+      </div>
+      <!-- The scatter is decorative and aria-hidden: 27 client marks
+           read out one after another would be noise, and every one of
+           these properties is already named in the roster below. The
+           cloud restates in pictures what that list states in words.
+
+           Positions come from --x/--y/--s/--r on each item rather than
+           27 nth-child rules, so a mark can be nudged here, where you
+           can see which one it is. -->
+      <div class="c-cloud">
+        <ul class="c-cloud__scatter" aria-hidden="true">
+          <li class="c-cloud__item" style="--x:7.5%;--y:0.2%;--s:0.76;--r:-8.2deg"><img src="assets/img/clients/bridgestone.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:17.1%;--y:2.3%;--s:0.8;--r:-3.0deg"><img src="assets/img/clients/cleanipedia.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:23.8%;--y:5.4%;--s:0.96;--r:-1.7deg"><img src="assets/img/clients/craft-hub.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:37.3%;--y:5.2%;--s:0.75;--r:6.2deg"><img src="assets/img/clients/dai-ichi-life.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:47.5%;--y:3.8%;--s:0.88;--r:-3.9deg"><img src="assets/img/clients/dong-shop-sun.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:60.9%;--y:3.2%;--s:0.92;--r:0.2deg"><img src="assets/img/clients/elsa-speak.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:66.4%;--y:5.2%;--s:0.93;--r:-8.0deg"><img src="assets/img/clients/ferrovit.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:77.3%;--y:3.5%;--s:0.98;--r:1.3deg"><img src="assets/img/clients/hellobacsi.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:89.7%;--y:1.1%;--s:0.98;--r:3.8deg"><img src="assets/img/clients/inapps-technology.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:7.0%;--y:88.4%;--s:0.87;--r:-2.1deg"><img src="assets/img/clients/loribeds.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:16.0%;--y:90.3%;--s:0.97;--r:-1.0deg"><img src="assets/img/clients/marry.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:31.1%;--y:89.9%;--s:0.94;--r:2.1deg"><img src="assets/img/clients/marrybaby.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:40.3%;--y:86.5%;--s:0.78;--r:-5.7deg"><img src="assets/img/clients/megawecare.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:52.7%;--y:85.5%;--s:0.89;--r:5.1deg"><img src="assets/img/clients/mindful-organization.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:63.7%;--y:90.8%;--s:0.78;--r:8.1deg"><img src="assets/img/clients/moveek.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:76.3%;--y:86.4%;--s:0.86;--r:-4.2deg"><img src="assets/img/clients/pacific-cross.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:87.7%;--y:86.3%;--s:0.75;--r:-5.7deg"><img src="assets/img/clients/phibious.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:0.1%;--y:19.6%;--s:0.98;--r:5.5deg"><img src="assets/img/clients/pte-magic.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:8.0%;--y:30.9%;--s:0.85;--r:4.0deg"><img src="assets/img/clients/schneider-electric.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:5.7%;--y:43.3%;--s:1.0;--r:0.7deg"><img src="assets/img/clients/spacet.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:10.3%;--y:59.6%;--s:0.81;--r:7.7deg"><img src="assets/img/clients/the-eye-observer.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:7.2%;--y:72.5%;--s:0.9;--r:3.0deg"><img src="assets/img/clients/toa-group.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:93.2%;--y:17.9%;--s:0.83;--r:-5.6deg"><img src="assets/img/clients/unilever.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:94.6%;--y:27.3%;--s:0.95;--r:-8.0deg"><img src="assets/img/clients/uppercut-digital.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:94.8%;--y:44.1%;--s:0.83;--r:8.0deg"><img src="assets/img/clients/urbox.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:88.7%;--y:61.9%;--s:0.84;--r:6.2deg"><img src="assets/img/clients/vitable.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+          <li class="c-cloud__item" style="--x:83.6%;--y:73.5%;--s:0.96;--r:3.8deg"><img src="assets/img/clients/vitacap.png" width="160" height="160" alt="" loading="lazy" decoding="async"></li>
+        </ul>
+        <div class="c-cloud__mid">
+          <p class="c-tag c-tag--sand">Proof at scale</p>
+          <h3 class="c-cloud__h">Nine years, thirty-plus sites and apps, <em class="u-grad">end to end</em>.</h3>
+          <p class="c-cloud__dek">Health, education, insurance, e-commerce, wedding, finance, B2B SaaS and industrial &mdash; across Vietnam, Japan, Thailand, Taiwan, the US, Australia and Singapore.</p>
+          <p class="c-actions c-actions--center u-mt-lg"><a class="c-btn c-btn--primary" href="work/index.html">Read the case studies</a></p>
+        </div>
+      </div>
+
+      <ul class="roster">
+        <li>elsaspeak.com <span>(Education / App)</span></li>
+        <li>uppercutdigital.com.au <span>(Agency / Paid media)</span></li>
+        <li>craft-hub.com <span>(Licensed-IP e-commerce)</span></li>
+        <li>ptemagic.com <span>(Test prep)</span></li>
+        <li>mindful.org <span>(Wellness)</span></li>
+        <li>phibious.com <span>(Agency)</span></li>
+        <li>unilever.com <span>(FMCG)</span></li>
+        <li>megawecare.com <span>(Health)</span></li>
+        <li>ferrovit.com.vn <span>(Health)</span></li>
+        <li>livolin.vn <span>(Health)</span></li>
+        <li>normagut.com <span>(Health)</span></li>
+        <li>marry.vn <span>(Wedding)</span></li>
+        <li>marrybaby.vn <span>(Health)</span></li>
+        <li>tinhlamjw.com <span>(E-commerce)</span></li>
+        <li>dongshopsun.vn <span>(Financial)</span></li>
+        <li>dai-ichi-life.com.vn <span>(Insurance)</span></li>
+        <li>hellobacsi.com <span>(Health)</span></li>
+        <li>pacificcross.com.vn <span>(Insurance)</span></li>
+        <li>cleanipedia.com <span>(Unilever)</span></li>
+        <li>bridgestone.com.vn <span>(Tire Products)</span></li>
+        <li>loribeds.com <span>(Global E-commerce)</span></li>
+        <li>Kem Nghia <span>(cosmetics)</span></li>
+        <li>theeyeobserver.com <span>(Health)</span></li>
+        <li>InApps Technology <span>(B2B Services)</span></li>
+        <li>Permate <span>(Affiliate Services)</span></li>
+        <li>se.com <span>(Electronics)</span></li>
+        <li>dep365.com <span>(Beauty)</span></li>
+        <li>findingschool <span>(Education)</span></li>
+        <li>TOA Group <span>(Paint)</span></li>
+        <li>spacet.vn <span>(E-commerce Interior)</span></li>
+        <li>hansokuest.jp <span>(Realtor)</span></li>
+        <li>recruitery.co <span>(Recruite)</span></li>
+        <li>moveek.com <span>(Movie)</span></li>
+        <li>vitacap.com.vn <span>(Health)</span></li>
+        <li>vitable.com.au <span>(Health)</span></li>
+        <li>urbox.vn <span>(Voucher/Gifts)</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — METHOD NOTE  ·  the only --signal-fix block on the page
+       ========================================================== -->
+  <section class="section" id="method" aria-labelledby="fix-h">
+    <div class="shell">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — Method note</p>
+
+      <aside class="c-fix" aria-labelledby="fix-h">
+        <p class="c-fix__kicker">Correction · not a growth figure</p>
+        <h2 class="c-fix__h" id="fix-h">I corrected my own numbers down by 10x</h2>
+        <div class="prose">
+          <p>At ELSA Speak I inherited a web-to-app attribution setup that reported SEO installs at roughly ten times their real volume. The cause was a methodology issue in how AppsFlyer was attributing the web-to-app journey, not a tracking outage — everything looked healthy.</p>
+          <p>I found it, proved it, and corrected the reported figure downward. That erased a large share of the organic installs my own team was credited with.</p>
+          <p>I did it because a growth number that is wrong is worse than no number at all. Budget gets allocated against it. Roadmaps get built on it. The same audit surfaced a second problem: a domain-exclusion bug that was silently blocking Smart Banners on regional subdomains. I re-architected the setup to one AppsFlyer workspace per subdomain and the banners started serving.</p>
+          <p><a href="work/elsa-speak.html#attribution">Read how the audit ran</a></p>
+        </div>
+        <p class="source">ELSA Speak · AppsFlyer web-to-app attribution</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — THE BRIEF  ·  two doors, one action each
+       ========================================================== -->
+  <section class="section" id="brief" aria-labelledby="brief-h">
+    <div class="shell">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — The brief</p>
+      <h2 id="brief-h" class="section__head">The brief</h2>
+      </div>
+
+      <div class="c-doors">
+
+        <section class="c-door" aria-labelledby="door-hire">
+          <p class="label">For hiring teams</p>
+          <h3 id="door-hire">Senior in-house roles</h3>
+          <p class="prose">I run a function, not a channel: SEO, AEO and ASO strategy, the technical floor underneath it, and the measurement that says whether any of it worked. Roles are listed most recent first on the about page; the dated version is in the PDF CV.</p>
+          <a class="c-btn c-btn--secondary" href="assets/andrew-hoang-resume.pdf">Résumé (PDF)</a>
+          <a class="c-btn c-btn--secondary" href="assets/andrew-hoang-portfolio.pdf">Portfolio deck (PDF, 17&nbsp;MB)</a>
+        </section>
+
+        <section class="c-door" aria-labelledby="door-client">
+          <p class="label">For clients</p>
+          <h3 id="door-client">Consulting engagements</h3>
+          <p class="prose">I take on a small number of engagements alongside my in-house role. They tend to be one of two shapes: something is measurably broken and nobody can say why, or something needs to be launched into organic from zero. Tell me the number you want to move and what it is now.</p>
+          <a class="c-door__mail" href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — CONTACT  ·  the page relaxes at the end
+       ========================================================== -->
+  <section class="section c-contact" id="contact" aria-labelledby="contact-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — Contact</p>
+      <h2 id="contact-h" class="section__head">Get in touch</h2>
+      </div>
+      <p class="prose">I am in Ho Chi Minh City and I work with teams in Japan, Thailand, Taiwan, the US, Vietnam, Australia and Singapore. I take on senior in-house roles and a small number of consulting engagements.</p>
+      <ul class="c-contact__list">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="contact.html">Contact</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

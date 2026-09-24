@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>Consulting — Andrew Hoang</title>
+<meta name="description" content="Technical SEO, answer-engine optimisation, App Store Optimization and attribution audits. What I take on, how engagements start, and what you get.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/services.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Consulting — Andrew Hoang">
+<meta property="og:description" content="Technical SEO, answer-engine optimisation, App Store Optimization and attribution audits. What I take on, how engagements start, and what you get.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/services.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Consulting — Andrew Hoang">
+<meta name="twitter:description" content="Technical SEO, answer-engine optimisation, App Store Optimization and attribution audits. What I take on, how engagements start, and what you get.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/services.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/services.html",
+      "name": "SEO, AEO & GEO Consulting | Andrew Hoang",
+      "description": "Freelance SEO, AEO, GEO and ASO consulting from Andrew Hoang in Ho Chi Minh City: technical SEO, answer-engine content, ASO and attribution analytics.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "about": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/services.html#breadcrumb" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-14"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/services.html#service",
+      "name": "SEO, AEO, GEO and ASO consulting",
+      "serviceType": "Search and answer-engine optimization consulting",
+      "provider": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "areaServed": [
+        { "@type": "Country", "name": "Vietnam" },
+        { "@type": "Country", "name": "Japan" },
+        { "@type": "Country", "name": "Thailand" },
+        { "@type": "Country", "name": "Taiwan" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "Australia" },
+        { "@type": "Country", "name": "Singapore" }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://REPLACE-WITH-YOUR-DOMAIN/contact.html"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Consulting focus areas",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO and site migrations" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App Store Optimization (ASO) for Apple App Store and Google Play" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Analytics and web-to-app attribution" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Organic launches from zero" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lifecycle email and marketing automation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paid media on Meta and Google Ads" } }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/services.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does Andrew Hoang specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Andrew Hoang specializes in SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO) and App Store Optimization (ASO). His core areas are technical SEO, schema and structured data, RAG pipelines and vector embeddings, query fan-out coverage, topic clustering, and AI citation and share-of-voice tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Andrew Hoang based and which markets does he work in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Andrew Hoang is based in Ho Chi Minh City, Vietnam. At ELSA Speak he owns SEO, AEO and ASO strategy across the company’s top markets: Japan, Vietnam, Thailand, the United States and Taiwan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What results has Andrew Hoang delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At ELSA Speak, Andrew Hoang increased app installs 84% within the first three months and ranked #1 in the US App Store for the keyword “english app”, up from position 2. At Mindful Organization he drove 145% YoY organic sessions, 114% YoY sales revenue and 79% YoY order volume, and lifted Core Web Vitals compliance from 5% to 90% of pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Andrew Hoang available for freelance consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Alongside in-house roles, Andrew Hoang runs consulting engagements including DrCom (health, Aug 2023 to present), and has run Permate Global (affiliate, Aug 2024 to Jul 2025) and InApps Technology (B2B, Aug 2024 to Mar 2026)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tools and platforms does Andrew Hoang work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GA4, Google Search Console, AppsFlyer for web-to-app attribution, BigQuery, Looker Studio, Ahrefs, SEMrush, Screaming Frog and Google Tag Manager, plus Google Ads (MCC), Meta, TikTok and Zalo Ads for paid media, plus Python, SQL, HTML/CSS/JS, WordPress, Shopify, Apps Script, Zapier, n8n and HubSpot CRM."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/services.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Consulting" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work/index.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- Breadcrumb. Mirrors the BreadcrumbList in the head, one for one. -->
+  <nav class="c-crumbs" aria-label="Breadcrumb">
+    <div class="shell shell--narrow">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Consulting</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       THE HERO  ·  subpage archetype (§5.20). Narrow shell.
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="dateline">Consulting · Ho Chi Minh City · 13 September 2026</p>
+    <h1>Consulting</h1>
+    <p class="dek">I take on a small number of engagements alongside my in-house role. They tend to be one of two shapes: something is measurably broken and nobody can say why, or something needs to be launched into organic from zero.</p>
+    <p class="prose u-mt-md">I work with teams in Vietnam, Japan, Thailand, Taiwan, the US, Australia and Singapore. Five of those are the markets I own at ELSA Speak; Australia is the agency paid media. Everything below is work I have actually done and can point to.</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — WHAT I TAKE ON  ·  six service lines on the rail+column
+       skeleton. Every line ends in its own mono source line.
+       ========================================================== -->
+  <section class="section" id="scope" aria-labelledby="scope-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — What I take on</p>
+      <h2 id="scope-h" class="section__head">What I take on</h2>
+      </div>
+
+      <!-- Seven engagements in the pastel feature pattern. The white
+           card inside each panel carries a real figure and its source;
+           the tint is the only decorative thing in the block. The
+           #scope-* ids are kept so any existing deep link survives. -->
+      <div class="c-feats">
+
+        <article class="c-feat c-feat--sky">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>~10x</b>
+              <p>A methodology issue was inflating reported SEO installs by roughly ten times, alongside a domain-exclusion bug silently blocking Smart Banners on regional subdomains. Neither surfaced as an error anywhere.</p>
+              <p class="source">ELSA Speak &middot; AppsFlyer web-to-app attribution</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--sky">01 &middot; Attribution</p>
+            <h3 id="scope-attribution">Attribution and measurement <em class="u-grad">audits</em></h3>
+            <p class="prose">I establish whether your reported numbers are real before you make decisions with them. That means tracing the full path &mdash; GA4, Search Console, AppsFlyer, GTM &mdash; and testing the methodology, not just checking that the tags fire.</p>
+            <p class="c-note__more"><a href="work/elsa-speak.html#attribution">Read how the audit ran</a></p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--mint">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>5% &rarr; 90%</b>
+              <p>of pages passing Core Web Vitals at Mindful Organization, with page errors reduced to near zero through ongoing technical maintenance.</p>
+              <p class="source">Mindful Organization &middot; Phibious</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--mint">02 &middot; Technical</p>
+            <h3 id="scope-technical">Technical SEO and site <em class="u-grad">migrations</em></h3>
+            <p class="prose">Core Web Vitals, indexation, crawl waste, site architecture, duplicate content, redundant pages and structural errors. At Phibious it meant moving enterprise sites without losing what they had earned &mdash; Threexfive (Dep365) came out of its migration at 1.5x the previous performance figure.</p>
+            <p class="c-note__more"><a href="work/mindful-organization.html">Read the Mindful Organization case study</a></p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--lilac">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>4 markets</b>
+              <p>ChatGPT identified and scaled as a material new install source across Japan, Vietnam, Thailand and Taiwan, while AI share of voice was defended against a declining Google AI Overviews presence.</p>
+              <p class="source">ELSA Speak &middot; tracked via Ahrefs Brand Radar</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--lilac">03 &middot; AI answers</p>
+            <h3 id="scope-aeo">AEO and GEO &mdash; building for AI <em class="u-grad">answers</em></h3>
+            <p class="prose">Content structured for retrieval rather than only for ranking: query fan-out coverage, schema and structured data, semantic density, topical depth, and chunk-level optimization so your pages survive RAG indexing intact. Plus the tracking to tell whether it worked &mdash; AI citation counts and share-of-voice.</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--blush">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>+84%</b>
+              <p>install growth in three months across 8&ndash;10 markets, and &ldquo;english app&rdquo; moved from position 2 to position 1 in the US App Store.</p>
+              <p class="source">ELSA Speak &middot; ASO keyword research and metadata localization</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--blush">04 &middot; App stores</p>
+            <h3 id="scope-aso">App Store <em class="u-grad">Optimization</em></h3>
+            <p class="prose">Keyword research and metadata localization for the Apple App Store and Google Play, run per market rather than translated once. Measured against installs, not store impressions.</p>
+            <p class="c-note__more"><a href="work/elsa-speak.html">Read the ELSA Speak case study</a></p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--sand">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <div class="c-feat__rows">
+                <div class="c-feat__row"><span>Permate partners onboarded</span><b>200</b></div>
+                <div class="c-feat__row"><span>Permate publishers onboarded</span><b>500</b></div>
+                <div class="c-feat__row"><span>Time to both</span><b>3 months</b></div>
+                <div class="c-feat__row"><span>InApps target keywords in top 10</span><b>80%</b></div>
+                <div class="c-feat__row"><span>InApps inbound leads</span><b>14 &rarr; 20/mo</b></div>
+              </div>
+              <p class="source">Permate Global &middot; InApps Technology</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--sand">05 &middot; Launches</p>
+            <h3 id="scope-launch">Organic launches from <em class="u-grad">zero</em></h3>
+            <p class="prose">New site, new market, or a product with no organic footprint. Top ranking for &ldquo;<span lang="vi">ti&#7871;p th&#7883; li&#234;n k&#7871;t</span>&rdquo; was Permate&rsquo;s stated launch KPI, not a delivered result, and is reported that way on the case study.</p>
+            <p class="c-note__more"><a href="work/permate.html">Read the Permate case study</a></p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--sky">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <b>~60,000</b>
+              <p>email subscribers reached at Mindful Organization through signup forms, pop-ups, gated e-books and webinars, with Zapier workflows feeding Mailchimp.</p>
+              <p class="source">Mindful Organization &middot; level reached, not added</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--sky">06 &middot; Lifecycle</p>
+            <h3 id="scope-lifecycle">Lifecycle email and marketing <em class="u-grad">automation</em></h3>
+            <p class="prose">Segmented lifecycle campaigns that convert trial users into paid subscribers, plus the capture and routing behind them &mdash; signup forms, pop-ups, gated content, and Zapier or n8n workflows into your CRM or Mailchimp.</p>
+          </div>
+        </article>
+
+        <article class="c-feat c-feat--peach">
+          <div class="c-feat__panel">
+            <div class="c-feat__card">
+              <div class="c-feat__rows">
+                <div class="c-feat__row"><span>Ad accounts</span><b>13</b></div>
+                <div class="c-feat__row"><span>Clients</span><b>11</b></div>
+                <div class="c-feat__row"><span>Best account ROAS, lifetime</span><b>8.89x</b></div>
+                <div class="c-feat__row"><span>Cost per registration, second run</span><b>&minus;83%</b></div>
+              </div>
+              <p class="source">Uppercut Digital &middot; Meta Ads Manager and Google Ads</p>
+            </div>
+          </div>
+          <div class="c-feat__body">
+            <p class="c-tag c-tag--peach">07 &middot; Paid media</p>
+            <h3 id="scope-paid">Paid media on Meta and <em class="u-grad">Google Ads</em></h3>
+            <p class="prose">Campaign structure, audience and creative testing, and the discipline to switch a campaign off when it sits below the account average &mdash; measured against the conversion you actually count. I run three Google Ads accounts under a single MCC plus ten Meta ad accounts, owning budget pacing, allocation and run-rate forecasting against brief.</p>
+            <p class="prose u-mt-sm">The same offer run twice at AFL Kids came back the second time at 83% lower cost per registration: the first run paid to learn the audience, placement and creative decisions the second run started with.</p>
+            <p class="c-note__more"><a href="work/uppercut-digital.html">Read the Uppercut Digital case study</a></p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — HOW AN ENGAGEMENT STARTS  ·  ordered list, four steps.
+       The ordinal lives in the rail so the heading stays a heading.
+       ========================================================== -->
+  <section class="section" id="engagement" aria-labelledby="engagement-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — How an engagement starts</p>
+      <h2 id="engagement-h" class="section__head">How an engagement starts</h2>
+      </div>
+      <p class="prose u-mt-sm">The same way every time.</p>
+
+      <ol class="c-ledger">
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">01</span> Step one</p>
+            <div>
+              <h3 id="step-one">A conversation about the number you care about</h3>
+              <p class="c-ledger__scope">Not traffic, unless traffic is genuinely the KPI. Usually it is installs, orders, revenue, or qualified leads. I want to know which one, and what it is now.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">02</span> Step two</p>
+            <div>
+              <h3 id="step-two">An audit before any recommendation</h3>
+              <p class="c-ledger__scope">I establish the current state and whether the reporting behind it can be trusted. Sometimes this is the whole engagement, and sometimes it changes what the engagement should have been.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">03</span> Step three</p>
+            <div>
+              <h3 id="step-three">A prioritised plan with the mechanism written down</h3>
+              <p class="c-ledger__scope">What gets changed, in what order, why that order, and what should move as a result. If I cannot say what a task is supposed to move, it does not go on the list.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">04</span> Step four</p>
+            <div>
+              <h3 id="step-four">Delivery and reporting against the original number</h3>
+              <p class="c-ledger__scope">Including when it goes the wrong way.</p>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — INDUSTRIES
+       ========================================================== -->
+  <section class="section" id="industries" aria-labelledby="industries-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — Industries</p>
+      <h2 id="industries-h" class="section__head">Industries I have worked in</h2>
+      </div>
+      <p class="prose u-mt-sm">Health and pharma, insurance, wellness and e-commerce, education and test prep, affiliate and marketplace, B2B technology services, FMCG, tyres and industrial, beauty, jewellery, financial services, and wedding. The full list of sites is on the <a href="work/index.html">work page</a>.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — COMMON QUESTIONS  ·  the visible half of the FAQPage
+       node in the head. The two are identical by rule: markup that
+       describes content not on the page is a policy violation.
+       ========================================================== -->
+  <section class="section" id="questions" aria-labelledby="questions-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — Common questions</p>
+      <h2 id="questions-h" class="section__head">Common questions</h2>
+      </div>
+      <p class="prose u-mt-sm">These five answers are written in the third person and kept self-contained on purpose: an answer engine quoting one of them should be able to lift the whole passage without needing the rest of the page.</p>
+
+      <ul class="c-ledger">
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">01</span> Specialism</p>
+            <div>
+              <h3 id="faq-1">What does Andrew Hoang specialize in?</h3>
+              <p class="c-ledger__scope">Andrew Hoang specializes in SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO) and App Store Optimization (ASO). His core areas are technical SEO, schema and structured data, RAG pipelines and vector embeddings, query fan-out coverage, topic clustering, and AI citation and share-of-voice tracking.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">02</span> Location &amp; markets</p>
+            <div>
+              <h3 id="faq-2">Where is Andrew Hoang based and which markets does he work in?</h3>
+              <p class="c-ledger__scope">Andrew Hoang is based in Ho Chi Minh City, Vietnam. At ELSA Speak he owns SEO, AEO and ASO strategy across the company&rsquo;s top markets: Japan, Vietnam, Thailand, the United States and Taiwan.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">03</span> Results</p>
+            <div>
+              <h3 id="faq-3">What results has Andrew Hoang delivered?</h3>
+              <p class="c-ledger__scope">At ELSA Speak, Andrew Hoang increased app installs 84% within the first three months and ranked #1 in the US App Store for the keyword &ldquo;english app&rdquo;, up from position 2. At Mindful Organization he drove 145% YoY organic sessions, 114% YoY sales revenue and 79% YoY order volume, and lifted Core Web Vitals compliance from 5% to 90% of pages.</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">04</span> Availability</p>
+            <div>
+              <h3 id="faq-4">Is Andrew Hoang available for freelance consulting?</h3>
+              <p class="c-ledger__scope">Yes. Alongside in-house roles, Andrew Hoang runs consulting engagements including DrCom (health, Aug 2023 to present), and has run Permate Global (affiliate, Aug 2024 to Jul 2025) and InApps Technology (B2B, Aug 2024 to Mar 2026).</p>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="row">
+            <p class="row__rail"><span class="c-note__idx">05</span> Tools &amp; platforms</p>
+            <div>
+              <h3 id="faq-5">Which tools and platforms does Andrew Hoang work with?</h3>
+              <p class="c-ledger__scope">GA4, Google Search Console, AppsFlyer for web-to-app attribution, BigQuery, Looker Studio, Ahrefs, SEMrush, Screaming Frog and Google Tag Manager, plus Google Ads (MCC), Meta, TikTok and Zalo Ads for paid media, plus Python, SQL, HTML/CSS/JS, WordPress, Shopify, Apps Script, Zapier, n8n and HubSpot CRM.</p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <p class="source u-mt-md">core expertise and professional experience</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — START A CONVERSATION  ·  the page ends in the client
+       door, one action. The commercial terms note is deliberate.
+       ========================================================== -->
+  <section class="section" id="start" aria-labelledby="start-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — Start a conversation</p>
+      <h2 id="start-h" class="section__head">Start a conversation</h2>
+      </div>
+
+      <!-- One door, one action. The .c-doors grid is deliberately absent:
+           a single child of a two-column grid would fill half a row. -->
+      <div class="c-door u-mt-md">
+        <p class="label">For clients</p>
+        <p class="prose">Tell me the number you want to move and what it is now. Email is the fastest way to reach me.</p>
+        <a class="c-door__mail" href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a>
+      </div>
+
+      <p class="prose u-mt-lg">This page states no rates, no minimum engagement length and no availability. None of that is in the written record this site is built from, so none of it is written here. Ask me directly.</p>
+
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="contact.html">Contact</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Theme, before first paint. Tiny, and it cannot throw: localStorage
+     raises in private mode, so both the read and the parse sit in try/catch.
+     The `js` class is set here too so the reveal transitions never paint
+     content and then hide it; without JS the class is absent and every
+     .reveal rule is inert. -->
+<script>try{var t=localStorage.getItem("ah-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js");</script>
+
+<title>ELSA Speak — Andrew Hoang</title>
+<meta name="description" content="84% install growth in three months, #1 in the US App Store for &quot;english app&quot;, and a 10x downward correction to our own reported SEO installs.">
+<meta name="author" content="Andrew Hoang">
+<!-- STAGING: site is hidden from search engines. Run ./go-live.sh to reverse. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191712" media="(prefers-color-scheme: dark)">
+
+<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html">
+<!-- Icons. The .ico answers /favicon.ico and Google's SERP, the SVG
+     serves modern browsers at any density, the 192px PNG is the touch
+     icon. Relative hrefs only: a leading "/" 404s on a project site. -->
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../icon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="../icon-192.png">
+
+<link rel="me" href="https://www.linkedin.com/in/tuananhhoang2811">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrew Hoang">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="ELSA Speak — Andrew Hoang">
+<meta property="og:description" content="84% install growth in three months, #1 in the US App Store for &quot;english app&quot;, and a 10x downward correction to our own reported SEO installs.">
+<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html">
+<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+<meta property="article:author" content="Andrew Hoang">
+<meta property="article:section" content="Case Study">
+<meta property="article:published_time" content="2026-09-13T00:00:00+07:00">
+<meta property="article:modified_time" content="2026-09-13T00:00:00+07:00">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ELSA Speak — Andrew Hoang">
+<meta name="twitter:description" content="84% install growth in three months, #1 in the US App Store for &quot;english app&quot;, and a 10x downward correction to our own reported SEO installs.">
+<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png">
+<meta name="twitter:image:alt" content="Portrait of Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam.">
+
+<link rel="stylesheet" href="../assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person",
+      "name": "Andrew Hoang",
+      "alternateName": ["Hoang Tuan Anh", "Tuan Anh Hoang"],
+      "givenName": "Tuan Anh",
+      "familyName": "Hoang",
+      "jobTitle": "Senior Manager, SEO & Organic Growth",
+      "description": "Andrew Hoang is an SEO, AEO, GEO and ASO specialist based in Ho Chi Minh City, Vietnam, with nine years of experience driving organic growth for web and mobile app products.",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#webpage" },
+      "image": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "email": "mailto:tuananhhoang2811@gmail.com",
+      "telephone": "+84329658296",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ho Chi Minh City",
+        "addressCountry": "VN"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "VN"
+        }
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/tuananhhoang2811"
+      ],
+      "knowsAbout": [
+        "Answer Engine Optimization (AEO)",
+        "Generative Engine Optimization (GEO)",
+        "Search Engine Optimization",
+        "Technical SEO",
+        "App Store Optimization (ASO)",
+        "Schema and structured data",
+        "RAG pipelines",
+        "Vector embeddings and semantic search",
+        "Query fan-out coverage",
+        "Topic clustering",
+        "LLM content optimization",
+        "AI citation and share-of-voice tracking",
+        "Core Web Vitals",
+        "Keyword and SERP strategy",
+        "Site migrations",
+        "International and multi-market SEO",
+        "Google Analytics 4",
+        "Google Search Console",
+        "AppsFlyer web-to-app attribution",
+        "BigQuery",
+        "Looker Studio",
+        "Google Tag Manager",
+        "Google Ads (MCC and multi-account management)",
+        "Meta Ads (Advantage+ Shopping, dynamic product ads, CBO and ABO)",
+        "TikTok Ads",
+        "Zalo Ads",
+        "Value-based bidding",
+        "Budget pacing and run-rate forecasting",
+        "Python",
+        "SQL"
+      ],
+      "hasOccupation": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation" },
+      "alumniOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university" },
+      "worksFor": [
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Senior Manager, SEO & Organic Growth",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "SEO Lead & Email Marketing Specialist",
+          "startDate": "2025-09",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest" }
+        },
+        {
+          "@type": "OrganizationRole",
+          "roleName": "Paid Media Specialist",
+          "startDate": "2026-03",
+          "worksFor": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut" }
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Technical SEO & SEO Manager",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Bluearray" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Google Ads Search",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Digital Marketing",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "HubSpot" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Analysis Masterclass",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "Udemy" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Data Science",
+          "credentialCategory": "certificate",
+          "recognizedBy": { "@type": "Organization", "name": "DataCamp" }
+        }
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#occupation",
+      "name": "SEO, AEO and GEO Specialist",
+      "occupationalCategory": {
+        "@type": "CategoryCode",
+        "codeValue": "13-1161.01",
+        "name": "Search Marketing Strategists",
+        "inCodeSet": {
+          "@type": "CategoryCodeSet",
+          "name": "O*NET-SOC",
+          "url": "https://www.onetonline.org/"
+        }
+      },
+      "skills": "Technical SEO, Answer Engine Optimization, Generative Engine Optimization, App Store Optimization, schema and structured data, RAG pipelines, vector embeddings, GA4, Google Search Console, AppsFlyer, BigQuery, Google Ads, Meta Ads, TikTok Ads, Zalo Ads, value-based bidding, budget pacing and forecasting, Python, SQL",
+      "responsibilities": "Owning SEO, AEO and ASO strategy across multiple markets with app installs and organic revenue as core KPIs."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "contentUrl": "https://REPLACE-WITH-YOUR-DOMAIN/assets/img/andrew-hoang.png",
+      "width": 800,
+      "height": 800,
+      "caption": "Andrew Hoang, SEO, AEO and GEO specialist based in Ho Chi Minh City, Vietnam"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+      "name": "Andrew Hoang",
+      "alternateName": "Andrew Hoang — SEO, AEO & GEO",
+      "description": "Portfolio, case studies and resume of Andrew Hoang, an SEO, AEO, GEO and ASO specialist in Ho Chi Minh City, Vietnam.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightHolder": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "copyrightYear": 2026
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak",
+      "name": "ELSA Speak"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-uppercut",
+      "name": "Uppercut Digital",
+      "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-lumetest",
+      "name": "LUMEtest",
+      "alternateName": "Lume"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-pte-magic",
+      "name": "PTE Magic"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-mindful-organization",
+      "name": "Mindful Organization"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-phibious",
+      "name": "Phibious"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hellobacsi",
+      "name": "Hellobacsi",
+      "url": "https://hellobacsi.com/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-hcmc-open-university",
+      "name": "Ho Chi Minh City Open University"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#webpage",
+      "url": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html",
+      "name": "ELSA Speak: 84% App Install Lift via ASO | Andrew Hoang",
+      "description": "84% install growth in three months, #1 in the US App Store for \"english app\", and a 10x downward correction to our own reported SEO installs.",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#website" },
+      "primaryImageOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#headshot" },
+      "breadcrumb": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#breadcrumb" },
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#article",
+      "isPartOf": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#webpage" },
+      "mainEntityOfPage": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#webpage" },
+      "headline": "ELSA Speak: 84% app install lift via ASO across 8-10 markets",
+      "description": "How Andrew Hoang increased ELSA Speak app installs 84% within three months, reached #1 in the US App Store for \"english app\", and rebuilt web-to-app attribution integrity in AppsFlyer.",
+      "articleSection": "Case Study",
+      "keywords": "App Store Optimization, ASO, AppsFlyer attribution, AI share of voice, ELSA Speak, app installs",
+      "author": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "publisher": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "creator": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#person" },
+      "about": { "@id": "https://REPLACE-WITH-YOUR-DOMAIN/#org-elsa-speak" },
+      "mentions": [
+        { "@type": "SoftwareApplication", "name": "AppsFlyer", "applicationCategory": "BusinessApplication" },
+        { "@type": "SoftwareApplication", "name": "Ahrefs Brand Radar", "applicationCategory": "BusinessApplication" }
+      ],
+      "inLanguage": "en",
+      "datePublished": "2026-09-13",
+      "dateModified": "2026-09-13"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://REPLACE-WITH-YOUR-DOMAIN/work/elsa-speak.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-WITH-YOUR-DOMAIN/" },
+        { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://REPLACE-WITH-YOUR-DOMAIN/work/index.html" },
+        { "@type": "ListItem", "position": 3, "name": "ELSA Speak" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="c-skip" href="#main">Skip to main content</a>
+
+<!-- ============================================================
+     SITE HEADER — folio strip + masthead. Replicated verbatim on
+     every page; only aria-current and the ../ depth change.
+     Not sticky, by design. The nav wraps; there is no hamburger.
+     ============================================================ -->
+<header class="c-head">
+  <div class="shell">
+    <p class="c-head__folio">
+      <span>Ho Chi Minh City, Vietnam · UTC+7</span>
+      <span>SEO · AEO / GEO · ASO</span>
+    </p>
+    <div class="c-head__bar">
+      <a class="c-head__mark" href="../index.html">Andrew Hoang</a>
+      <nav class="c-nav" aria-label="Primary">
+        <ul class="c-nav__list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Work</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="c-theme" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+        <span class="c-theme__track" aria-hidden="true"><span class="c-theme__knob"></span></span>
+        <span class="c-theme__text" aria-hidden="true">Dark</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ==========================================================
+       BREADCRUMB — matches the BreadcrumbList in the head
+       ========================================================== -->
+  <nav class="c-crumbs" aria-label="Breadcrumb">
+    <div class="shell shell--narrow">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Work</a></li>
+        <!-- The nav's Work link indicates the section with aria-current="page";
+             the terminal crumb stays a plain span so only one element
+             announces as current. -->
+        <li><span>ELSA Speak</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       CASE HERO  ·  §5.20 archetype. One h1 on the page.
+       ========================================================== -->
+  <header class="c-case-hero shell shell--narrow">
+    <p class="label">Case note · 01</p>
+    <!-- The mark is the client's own logo, lifted from Andrew's portfolio
+         deck (see _source/client-logos.md for provenance and the grid
+         mapping). Decorative, so aria-hidden and alt="": the client is
+         already named in full by the h1 beside it, and a logo in the
+         accessibility tree would just read the name twice.
+         .c-markrow is a flex row, so it wraps the mark and the heading in a
+         div — a span cannot legally contain an h1. -->
+    <div class="c-markrow">
+      <span class="c-mark c-mark--lg c-mark--img" aria-hidden="true"><img src="../assets/img/clients/elsa-speak.png" width="160" height="160" alt="" loading="lazy" decoding="async"></span>
+      <h1>ELSA Speak: 84% more installs, and a 10x correction to how we counted them</h1>
+    </div>
+    <p class="dateline">Mar 2026 – Present · Education / App · Senior Manager, SEO &amp; Organic Growth</p>
+    <p class="dek">Senior Manager, SEO &amp; Organic Growth. I own SEO, AEO and ASO across ELSA&rsquo;s top markets — Japan, Vietnam, Thailand, the US and Taiwan — with month-over-month app installs as the core business KPI.</p>
+    <p class="source u-mt-md">By <a href="../about.html">Andrew Hoang</a> · Ho Chi Minh City · Published 13 September 2026</p>
+  </header>
+
+  <!-- ==========================================================
+       01 — AT A GLANCE  ·  three figure cells, then the brief
+       ========================================================== -->
+  <section class="section" id="glance" aria-labelledby="glance-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">01 — At a glance</p>
+      <h2 id="glance-h" class="section__head">What was the role, and what did it deliver?</h2>
+      </div>
+      <p class="prose u-mt-md">I am Senior Manager, SEO &amp; Organic Growth at ELSA Speak, an AI English-learning app, and I own SEO, AEO and ASO strategy across its top markets. The three figures below are the headline outcomes of the first three months; the correction that runs alongside them is set out separately in section 05.</p>
+    </div>
+
+    <!-- THE FIGURES BAR · full shell, not shell--narrow: at 4-up a 128px
+         figure does not fit a 52rem column (§3.3, §5.20).
+         Every cell carries its source line. A cell without one cannot ship. -->
+    <div class="shell">
+      <ul class="c-metrics">
+        <li class="c-metric reveal" style="--i:0">
+          <p class="figure">84%</p>
+          <p class="label">More app installs</p>
+          <p class="source">ELSA Speak · Mar&ndash;May 2026</p>
+        </li>
+        <li class="c-metric reveal" style="--i:1">
+          <p class="figure">#1</p>
+          <p class="label">US App Store, &ldquo;english app&rdquo;</p>
+          <p class="source">ELSA Speak · up from position 2</p>
+        </li>
+        <li class="c-metric reveal" style="--i:2">
+          <p class="figure figure--xlong">~20,000</p>
+          <p class="label">Vietnamese URLs in the vector database</p>
+          <p class="source">ELSA Speak · semantic embedding database</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shell shell--narrow">
+      <p class="label u-mt-2xl">The brief</p>
+      <dl class="u-stack-md u-mt-md" style="margin:0">
+        <div class="row">
+          <dt class="row__rail">Role</dt>
+          <dd class="prose" style="margin:0">Senior Manager, SEO &amp; Organic Growth</dd>
+        </div>
+        <div class="row">
+          <dt class="row__rail">Scope</dt>
+          <dd class="prose" style="margin:0">SEO, AEO and ASO strategy; technical SEO for the global site</dd>
+        </div>
+        <div class="row">
+          <dt class="row__rail">Markets</dt>
+          <dd class="prose" style="margin:0">Japan, Vietnam, Thailand, the US, Taiwan (metadata localization across <b class="fig">8–10</b> markets)</dd>
+        </div>
+        <div class="row">
+          <dt class="row__rail">Core KPI</dt>
+          <dd class="prose" style="margin:0">Month-over-month app installs</dd>
+        </div>
+        <div class="row">
+          <dt class="row__rail">Stack</dt>
+          <dd class="c-tags" style="margin:0">AppsFlyer (web-to-app attribution) · Ahrefs Brand Radar · Apple App Store · Google Play · GA4 · Google Search Console · vector embeddings &amp; semantic search</dd>
+        </div>
+      </dl>
+      <p class="source u-mt-md">ELSA Speak, Mar 2026 – Present</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       02 — THE SITUATION
+       ========================================================== -->
+  <section class="section" id="situation" aria-labelledby="situation-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">02 — The situation</p>
+      <h2 id="situation-h" class="section__head">What was the situation at ELSA Speak?</h2>
+      </div>
+      <div class="prose u-mt-md">
+        <p>ELSA Speak is an AI English-learning app. Installs are the business. Not sessions, not impressions, not keyword counts — installs, measured month over month, and then what those installs do in the funnel afterwards.</p>
+        <p>That reframes the whole job. Organic search matters only to the extent that it puts the app on a phone, and then only to the extent that the person opens it. So the work splits three ways: get the app found in the app stores, get the web traffic to convert into installs, and be able to prove which of the two did it.</p>
+        <p>I also picked up the funnel beyond the install. I work with the CRM teams on install-to-trial and trial-to-subscription rates, because an install that never becomes a subscription is not growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       03 — THE CONSTRAINT
+       ========================================================== -->
+  <section class="section" id="constraint" aria-labelledby="constraint-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">03 — The constraint</p>
+      <h2 id="constraint-h" class="section__head">What was the constraint?</h2>
+      </div>
+      <div class="prose u-mt-md">
+        <p>Five priority markets in five languages, on two app stores, with metadata rules that differ per store and per locale. ASO is not translation — the keyword a Japanese learner types is not the translated form of the keyword a US learner types, and the character limits are not the same either.</p>
+        <p>The harder constraint was underneath all of it: I could not trust the numbers I was being measured on. More on that below, because it turned out to be the most important thing I did here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       04 — WHAT I DID  ·  four workstreams
+       ========================================================== -->
+  <section class="section" id="what-i-did" aria-labelledby="did-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">04 — What I did</p>
+      <h2 id="did-h" class="section__head">What did I actually do?</h2>
+      </div>
+
+      <h3 class="u-mt-lg" id="did-aso">ASO keyword research and metadata localization, per market</h3>
+      <div class="prose u-mt-sm">
+        <p>I ran keyword research and metadata localization across <b class="fig">8–10</b> markets rather than translating a single master listing. Each market got its own keyword set, its own title and subtitle structure, and its own iteration cycle against install volume.</p>
+        <p>Result over the first three months: installs up <b class="fig">84%</b>.</p>
+        <p>In the US App Store, &ldquo;english app&rdquo; moved from position 2 to position 1. That is a head term in the US App Store, and position 1 versus position 2 is not a small difference in install volume.</p>
+      </div>
+      <p class="source u-mt-sm">ELSA Speak · installs, Mar&ndash;May 2026</p>
+
+      <h3 class="u-mt-lg" id="did-technical">Technical SEO for the global site</h3>
+      <div class="prose u-mt-sm">
+        <p>I own site architecture, performance and indexation for the global web presence, aligned specifically to organic and install growth rather than to traffic for its own sake. The site&rsquo;s job is to hand the user to the app store with the attribution intact.</p>
+        <p>The estate is <b class="fig">70,075</b> indexed pages across eight sites &mdash; Global, VN, TH, TW, JP, HK, BR and ID. The indexation audit came back with <b class="fig">54,969</b> 404s, <b class="fig">14,330</b> canonical errors, <b class="fig">3,020</b> schema errors, <b class="fig">2,878</b> redirects, <b class="fig">9</b> soft 404s and <b class="fig">1,020</b> duplicate pages to merge. About <b class="fig">80%</b> of what it found is fixed.</p>
+        <p>Organic followed: Vietnam <b class="fig">+30.6%</b> from March to August 2026, and <b class="fig">+56.8%</b> measured off the May trough, with all markets <b class="fig">+25.1%</b> off that same trough. These are Ahrefs estimates rather than Search Console figures, so they are directional &mdash; the install number is the one measured end to end.</p>
+      </div>
+
+      <h3 class="u-mt-lg" id="did-vector">A semantic embedding and vector database over ~20,000 URLs</h3>
+      <div class="prose u-mt-sm">
+        <p>I built a vector database of around <b class="fig">20,000</b> Vietnamese content URLs. It powers four things:</p>
+      </div>
+      <ul class="c-ledger__bullets">
+        <li>semantic search across the corpus</li>
+        <li>deduplication, which at that scale is not something you can do by hand</li>
+        <li>topic clustering, to see where coverage is thin and where it is redundant</li>
+        <li>RAG retrieval</li>
+      </ul>
+      <div class="prose u-mt-sm">
+        <p>At twenty thousand URLs, &ldquo;do we already have a page about this&rdquo; stops being answerable with a spreadsheet. Embeddings make it a query.</p>
+      </div>
+      <p class="source u-mt-sm">ELSA Speak · ~20,000 Vietnamese content URLs</p>
+
+      <h3 class="u-mt-lg" id="did-ai">Defending AI share-of-voice, and finding ChatGPT in the install data</h3>
+      <div class="prose u-mt-sm">
+        <p>Our presence in Google AI Overviews was declining. I tracked it in Ahrefs Brand Radar and worked to defend share-of-voice as that surface moved against us.</p>
+        <p>While looking at where installs were actually originating, I identified ChatGPT as a material new install source — not a rounding error, a real channel — across Japan, Vietnam, Thailand and Taiwan, and scaled it. That is a channel that did not exist in anyone&rsquo;s attribution model a short time ago, and it only shows up if you are looking at source data rather than at a dashboard someone built two years ago.</p>
+      </div>
+      <p class="source u-mt-sm">ELSA Speak · Ahrefs Brand Radar · JP, VN, TH, TW</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       05 — THE ATTRIBUTION AUDIT  ·  the only --signal-fix block
+       on this page. Linked directly from the homepage method note
+       as work/elsa-speak.html#attribution.
+       ========================================================== -->
+  <section class="section" id="attribution" aria-labelledby="attr-h">
+    <div class="shell shell--narrow">
+      <div class="section__rule"></div>
+      <p class="section__folio">05 — The attribution audit</p>
+
+      <div class="c-fix">
+        <p class="c-fix__kicker">Correction · not a growth figure</p>
+        <h2 class="c-fix__h" id="attr-h">How did I find a 10x error in our own reported SEO installs?</h2>
+
+        <div class="prose">
+          <p>This is the part of this role I would most want to be judged on.</p>
+          <p>ELSA reported a healthy volume of SEO-attributed app installs. Nothing was flagged. No tags were broken, no integration was down, and the dashboards were green.</p>
+          <p>The number was wrong by roughly an order of magnitude.</p>
+          <p>The cause was a methodology issue in how AppsFlyer was attributing the web-to-app journey — the way the attribution was being credited, not a failure of tracking. That distinction matters, because a tracking outage announces itself and a methodology error does not. It just quietly produces a plausible number, forever.</p>
+          <p>I traced it, proved it, and corrected the reported figure downward by roughly <b class="fig">10x</b>.</p>
+          <p>I want to be precise about what that cost. It removed a large share of the organic installs my own team was credited with. Reporting the correction meant reporting that my channel was substantially smaller than the business believed.</p>
+          <p>I did it because the alternative is worse. An inflated organic number does not sit still — it gets used. Paid budget gets moved away from channels that are actually working. Headcount gets argued for on the strength of it. Roadmap priorities get set against it. Every one of those decisions is then wrong, and nobody can tell why, because the source number looks fine.</p>
+        </div>
+
+        <h3 class="u-mt-lg" id="attr-scope">Which numbers this correction applies to</h3>
+        <div class="prose u-mt-sm">
+          <p>The 84% install lift in section 01 came from ASO — keyword research and metadata localization in the app stores, across 8–10 markets. The correction described here applies to web-to-app SEO-attributed installs reported through AppsFlyer. They are two different measurements, taken from two different systems, and this page keeps them apart deliberately. The growth figure is not the corrected figure, and the corrected figure is not a growth figure.</p>
+        </div>
+
+        <h3 class="u-mt-lg" id="attr-second-bug">The second bug</h3>
+        <div class="prose u-mt-sm">
+          <p>The same audit surfaced something else. A domain-exclusion rule was silently blocking Smart Banners on regional subdomains. The banners were configured. They were simply never serving to a portion of regional traffic, and nothing reported an error.</p>
+          <p>I re-architected the setup to one AppsFlyer workspace per subdomain, which removed the exclusion conflict at the root rather than patching around it.</p>
+        </div>
+
+        <h3 class="u-mt-lg" id="attr-evidence">What this is evidence of</h3>
+        <div class="prose u-mt-sm">
+          <p>Two things, and they are the same thing. First, that I will go looking underneath a number that nobody has asked me to question. Second, that I will report what I find even when it makes my own results look smaller.</p>
+        </div>
+
+        <p class="source">ELSA Speak · AppsFlyer web-to-app attribution</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       06 — WHAT IT PRODUCED  ·  real table, one row per figure.
+       The Kind column is what keeps the growth numbers and the
+       correction from being read as the same claim.
+       ========================================================== -->
+  <section class="section" id="produced" aria-labelledby="produced-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">06 — What it produced</p>
+      <h2 id="produced-h" class="section__head">What did the work produce?</h2>
+      </div>
+      <p class="prose u-mt-md">Six figures came out of the ELSA Speak work; the install lift is the one my sources measure over the first three months. Four of them are growth, ranking, scope or build numbers; one is a new channel; one is a correction that made my own reported results smaller. The Kind column says which is which.</p>
+
+      <div class="c-table-wrap" tabindex="0" role="region" aria-labelledby="produced-cap">
+        <table class="c-table" role="table" aria-labelledby="produced-cap">
+          <caption id="produced-cap" class="label">What the ELSA Speak work produced</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col">Figure</th>
+              <th role="columnheader" scope="col">What it measures</th>
+              <th role="columnheader" scope="col">Kind</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th role="rowheader" scope="row">84%</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">Increase in app installs within the first three months</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Growth</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">#1</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">US App Store ranking for &ldquo;english app&rdquo;, up from position 2</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Ranking</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">8–10</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">Markets covered by ASO keyword research and metadata localization</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Scope</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">~10x</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">Overstatement corrected in reported SEO installs</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Correction</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">~20,000</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">Vietnamese content URLs in the semantic embedding and vector database</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Build</span></td>
+            </tr>
+            <tr role="row">
+              <th role="rowheader" scope="row">4</th>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">What it measures</span><span class="c-table__val">Markets (JP, VN, TH, TW) where ChatGPT was identified and scaled as a new install source</span></td>
+              <td role="cell"><span class="c-table__lab" aria-hidden="true">Kind</span><span class="c-table__val">Channel</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source u-mt-md">ELSA Speak, Mar 2026 – Present</p>
+
+      <div class="prose u-mt-lg">
+        <p>One of these is a growth number and one of them is a correction. They belong on the same page. A team that can only report the first kind is a team you cannot plan against.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       07 — WHAT I WOULD DO DIFFERENTLY
+       ========================================================== -->
+  <section class="section" id="differently" aria-labelledby="differently-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">07 — What I would do differently</p>
+      <h2 id="differently-h" class="section__head">What would I do differently?</h2>
+      </div>
+      <div class="prose u-mt-md">
+        <p><b>I would audit attribution in week one, before agreeing to any baseline.</b> I found the 10x issue, but I found it after the reporting had already been running. Everything measured against that baseline before the correction was measured against a number that was wrong. I now treat an attribution audit as the first deliverable of any app growth role, before I accept a target — because a target set against an inflated baseline is a target nobody can hit honestly.</p>
+        <p><b>I would test Smart Banner delivery per subdomain rather than per configuration.</b> The domain-exclusion bug survived because the setup looked correct. Checking that something is configured is not the same as checking that it is serving. I would add a per-subdomain delivery check to the standing monitoring rather than relying on a configuration review.</p>
+        <p><b>I would have started tracking non-Google AI sources earlier.</b> ChatGPT turned out to be a material install source across four markets. It was material before I started measuring it — I just could not see it. The lesson is that the attribution model needs a route for sources that did not exist when the model was built, otherwise new channels arrive as unattributed traffic and get ignored.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       08 — NEXT  ·  two doors, one action each
+       ========================================================== -->
+  <section class="section" id="next" aria-labelledby="next-h">
+    <div class="shell shell--narrow">
+      <div class="section__open">
+      <div class="section__rule"></div>
+      <p class="section__folio">08 — Next</p>
+      <h2 id="next-h" class="section__head">Where next?</h2>
+      </div>
+      <p class="prose u-mt-md">The next case study is <a href="mindful-organization.html">Mindful Organization</a> — 145% YoY organic sessions, 114% YoY revenue, and Core Web Vitals compliance lifted from 5% to 90% of pages. The <a href="../index.html#method">method note on the homepage</a> is the short version of the attribution audit above.</p>
+      <p class="source u-mt-sm">Mindful Organization · Apr 2024 – Jun 2026</p>
+      <p class="prose u-mt-md">If you are hiring, the dated version of all of this is in the <a href="../assets/andrew-hoang-resume.pdf">résumé (PDF)</a>.</p>
+      <p class="c-actions u-mt-lg">
+        <a class="c-btn c-btn--primary" href="../services.html">Work with me</a>
+        <a class="c-btn c-btn--secondary" href="index.html">All work</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     COLOPHON — credentials merged in. Year and dateline are
+     hard-coded; never generated with JavaScript.
+     ============================================================ -->
+<footer class="c-colophon">
+  <div class="shell row">
+    <p class="row__rail">Contact</p>
+    <div>
+      <ul class="c-colophon__links">
+        <li><a href="mailto:tuananhhoang2811@gmail.com">tuananhhoang2811@gmail.com</a></li>
+        <li><a href="tel:+84329658296">+84 329 658 296</a></li>
+        <li><a href="https://www.linkedin.com/in/tuananhhoang2811" rel="noopener">linkedin.com/in/tuananhhoang2811</a></li>
+      </ul>
+      <p class="source">&copy; 2026 Andrew Hoang &middot; Ho Chi Minh City, Vietnam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>
