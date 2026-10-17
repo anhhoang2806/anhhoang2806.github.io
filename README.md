@@ -799,13 +799,17 @@ These come from the **"GAPS — ANDREW MUST SUPPLY"** section of
 summary. Nothing on the site was invented to paper over any of them, which is why it is
 safe to ship as it stands — but each one either weakens the site or is a real risk.
 
-- [ ] **Employment dates.** Resolved in the build, still worth your eye. Every role on
-      `about.html` now carries a range, and the overlaps are labelled rather than hidden:
-      the intro line says the in-house role, the agency work and the consulting projects
-      are concurrent, not sequential. That is the honest reading — Mindful Organization's
-      end overlaps the ELSA start by about four months, Phibious overlaps both Mindful
-      Organization and Hellobacsi, and the 2017–2024 agency span overlaps everything.
-      Read the eight ranges against your CV once and confirm them.
+- [x] **Employment dates — settled by Resume V2 (17 Oct 2026).** The overlaps this item
+      used to list are gone. V2 runs employment end to end: Hello Health Group Dec 2021 –
+      Mar 2023, Phibious Apr 2023 – Mar 2024, Mindful Organization Apr 2024 – Mar 2026,
+      ELSA Speak Mar 2026 – present, earlier agency and brand roles 2017 – 2021. Uppercut,
+      LUMEtest · PTE Magic, Craft Hub, InApps, Permate and DrCom are consulting projects
+      running alongside, titled "Consultant". The site, the JSON-LD and
+      `assets/andrew-hoang-resume.pdf` (now the V2 file) all carry these dates. The V1
+      text is kept at `_source/resume-v1-2026-09.txt`. Two V2 reframings to keep straight:
+      the ELSA 84% is *reported* app installs against historical data, measured during
+      the attribution fix and CRO rollout — not an ASO result; and "Adobe" is written as
+      Adobe Experience Manager (AEM) everywhere, because nobody searches for "Adobe CMS".
 - [ ] **Permission to name clients.** This is the highest-risk item on the site. The ELSA
       Speak internal metrics — the 84% figure, the ~10x attribution correction, the
       ~20,000-URL vector database — are internal operating detail. Check your contract or
