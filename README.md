@@ -133,7 +133,7 @@ should displace one of these rather than be added to them.
 | `assets/js/site.js` | Small vanilla JS — theme toggle and reveal behaviour. No dependencies. |
 | `assets/img/andrew-hoang.png` | Your headshot, 800×800. (`andrew-hoang-64.png` sits beside it and is referenced by nothing — safe to delete.) |
 | `assets/andrew-hoang-resume.pdf` | Your CV. Linked in-body from index, about, contact, work/index and work/elsa-speak, and listed in the sitemap. |
-| `assets/andrew-hoang-portfolio.pdf` | The 43-page portfolio deck, 17 MB. Linked in-body from index, about, contact and work/index, listed in `llms.txt` and in the sitemap. The largest file in the repository by an order of magnitude. |
+| `assets/andrew-hoang-portfolio.pdf` | The 49-page portfolio deck, 17 MB. Linked in-body from index, about, contact and work/index, listed in `llms.txt` and in the sitemap. The largest file in the repository by an order of magnitude. |
 | `assets/img/clients/`, `assets/img/stack/` | Client marks and stack logos, inline-referenced by the results table, the case notes and the capability panel. Provenance is documented in `_source/client-logos.md` and `_source/stack-logos.md`. |
 | `favicon.ico`, `icon.svg`, `icon-192.png` | Site icons, referenced from every page head and from `site.webmanifest`. |
 | `robots.txt` | Tells crawlers everything is open, and disallows `/_source/`. Points at the sitemap. |
@@ -823,18 +823,15 @@ safe to ship as it stands — but each one either weakens the site or is a real 
       as the increase), and **Marry Network is +500%, not 600%**, for the same reason
       (120,000 from 20,000). The site also says organic **clicks** rather than "traffic",
       which is the more precise and more defensible claim.
-- [ ] **The 24 Sep portfolio export is broken — do not ship it.**
-      `Andrew Hoang Portfolio.pdf` (24 Sep, 49 pages) has the right content: it
-      carries 9+ years, 70,075, 12,465, and the corrected wording. But the
-      corrections were **added, not applied**. On pages 3 and 24 the new strings
-      (+116% Organic click growth, maintained at marrybaby.vn, AUG 2024 – MAR 2026,
-      AUG 2024 – JUL 2025) sit at coordinate **x=0, y=11** — the bottom-left corner
-      of the page — while the originals stay in place at their real positions. So
-      the page still READS 116% Organic traffic growth, built at marrybaby.vn and
-      2024 – PRESENT, and text extraction returns both versions at once.
-      The site was rolled back to the 43-page deck. Re-export with the fixes applied
-      to the source text rather than overlaid, then swap the file and update the
-      "43 pages" and "17 MB" wording in index, about, contact, work/index and llms.txt.
+- [x] **Portfolio deck — rebuilt 17 Oct 2026, 49 pages.** Built by
+      `_portfolio-build/patch_oct.py` from the 43-page source in `_archive/portfolio/`
+      plus the six Technical SEO pages (`techseo-pages.html`). It carries the same dates,
+      titles and figures as the October CV. Every patch covers the old text with an
+      interpolated image and draws the correction on top, and `strip_patched_text.py`
+      then deletes the original text runs under each patch (including inside the card
+      Form XObjects), so copy-paste, ATS parsers and LLMs read only the corrected
+      strings. The strip step is pixel-verified: rendering is identical with and
+      without it. The 24 Sep 49-page file is kept in `_archive/portfolio/`.
 
 - [ ] **The two PDFs contradict the site.** `assets/andrew-hoang-portfolio.pdf` is linked
       from `index.html`, `work/index.html` and `llms.txt`, so a reader can hold both open
