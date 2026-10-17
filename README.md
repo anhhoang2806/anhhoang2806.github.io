@@ -805,7 +805,7 @@ safe to ship as it stands — but each one either weakens the site or is a real 
       ELSA Speak Mar 2026 – present, earlier agency and brand roles 2017 – 2021. Uppercut,
       LUMEtest · PTE Magic, Craft Hub, InApps, Permate and DrCom are consulting projects
       running alongside, titled "Consultant". The site, the JSON-LD and
-      `assets/andrew-hoang-resume.pdf` (now the V2 file) all carry these dates. The V1
+      `assets/andrew-hoang-resume.pdf` (now V2.1: V2 with DrCom dated Aug 2023 – Sep 2025, rebuilt from `tmp/resume-v2/build_v21.py`) all carry these dates. The V1
       text is kept at `_source/resume-v1-2026-09.txt`. Two V2 reframings to keep straight:
       the ELSA 84% is *reported* app installs against historical data, measured during
       the attribution fix and CRO rollout — not an ASO result; and "Adobe" is written as
