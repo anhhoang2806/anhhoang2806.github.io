@@ -854,8 +854,10 @@ safe to ship as it stands — but each one either weakens the site or is a real 
         Nine is the span from the first role, Golden Period in July 2017; 8+ counted
         only the months actually inside a role, which excludes the six-month gap in
         2019. Both were true, which is why they drifted — pick nine and keep it.
-        `Andrew Hoang AI.pdf`, `PPC.pdf` and `QA.pdf` already say nine; the shipped
-        CV states no figure at all.
+        The current CVs (`Resume chính/` plus `Andrew Hoang - Technical SEO Manager.pdf` and
+        `Andrew Hoang - Marketing & Website QA Specialist.pdf`) say nine, and so does the shipped CV
+        (`assets/andrew-hoang-resume.pdf`, the SEO & Organic Growth Manager CV since 20 Oct 2026).
+        The AI Agent, AI Engineer, Lead PPC and Creative QA CVs were archived in `_archive/resume/`.
 
 - [ ] **"What I would do differently."** Each case study ends with one. Those points are
       conservative inferences from your source material — defensible, but not your words.
